@@ -1,0 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+{insert name='ads' id=$ads_id num=$ads_num}
+
+<div class="blank"></div>
