@@ -42,9 +42,14 @@ ul.shopping_grid li{
 	min-height: 70px;
 	color:#000;
 }
-.container ul {
+/*.container ul {
 padding-left:45px;
 
+}*/
+
+
+.copy {
+float:left;
 }
 
  #Out {
@@ -484,7 +489,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	width:40%;
 }
 .search input[type="text"] {
-	padding:7px 10px;
+	padding:8px 10px;
 	outline: none;
 	color: #fff;
 	background:#c9c9c9;
@@ -495,7 +500,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 .search input[type="submit"] {
 	background: url('../images/search.png') no-repeat 6px 5px #df1f26;
-	padding: 4px 17px;
+	padding: 3px 17px;
 	border: none;
 	cursor: pointer;
 	position: absolute;

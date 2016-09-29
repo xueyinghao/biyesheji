@@ -43,5 +43,9 @@ namespace EduProject.Areas.User.Controllers
             return RedirectToAction("Index");
             //return View("index");
         }
+        public ActionResult Register()
+        {
+            return View();
+        }
 	}
 }

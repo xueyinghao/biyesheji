@@ -1,34 +1,33 @@
-﻿@{
-    Layout = null;
-}
-@model EduProject.Areas.User.Models.login
+﻿@model EduProject.Areas.User.Models.UserInfo
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Beauty mall, beauty and convenience stores around you" />
+    <meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Custom Theme files -->
-    <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <!--webfont-->
     <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
     <div class="header">
         <div class="header_top">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                    <a href="index.html"><img src="images/logo.png" alt="" /></a>
                 </div>
                 <ul class="shopping_grid">
-                    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
-                    <a href="#"><li>注&nbsp;册</li></a>
+                    <a href="#"><li>Join</li></a>
+                    <a href="login.html"><li>Sign In</li></a>
+                    <a href="#"><li><span class="m_1">Shopping Bag</span>&nbsp;&nbsp;(0) &nbsp;<img src="images/bag.png" alt="" /></li></a>
                     <div class="clearfix"> </div>
                 </ul>
                 <div class="clearfix"> </div>
@@ -39,23 +38,22 @@
             <div class="container">
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="index.html" data-hover="Home">首页</a></li>
-                    <li><a href="about.html" data-hover="Beauty care">美容护理</a></li>
-                    <li><a href="careers.html" data-hover="Fragrance makeup">香氛彩妆</a></li>
-                    <li><a href="contact.html" data-hover="Personal care">个人护理</a></li>
-                    <li><a href="404.html" data-hover="Boutique men">精品男士</a></li>
-                    <li><a href="register.html" data-hover="Beauty tools">美妆工具</a></li>
-                    <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
-                    <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
+                    <li><a href="index.html" data-hover="Home">Home</a></li>
+                    <li><a href="about.html" data-hover="About Us">About Us</a></li>
+                    <li><a href="careers.html" data-hover="Careers">Careers</a></li>
+                    <li><a href="contact.html" data-hover="Contact Us">Contact Us</a></li>
+                    <li><a href="404.html" data-hover="Company Profile">Company Profile</a></li>
+                    <li class="active"><a href="register.html" data-hover="Company Registration">Company Registration</a></li>
+                    <li><a href="wishlist.html" data-hover="Wish List">Wish List</a></li>
                 </ul>
-                <script type="text/javascript" src="~/Content/User/js/nav.js"></script>
+                <script type="text/javascript" src="js/nav.js"></script>
             </div><!-- end h_menu4 -->
         </div>
     </div>
     <div class="column_center">
         <div class="container">
             <div class="search">
-                <div class="stay">搜索商品</div>
+                <div class="stay">Search Product</div>
                 <div class="stay_right">
                     <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
                     <input type="submit" value="">
@@ -68,35 +66,46 @@
     <div class="about">
         <div class="container">
             <div class="register">
-                <div class="col-md-6 login-left">
-                    <h3>新用户</h3>
-                    <p>在我们的商店你可以创建一个账户，通过此账户你将能够对你购买的商品进行结账、存储多个送货地址、查看和跟踪你的订单等</p>
-                    <a class="acount-btn" href="/User/Home/Register">注册新账户</a>
-                </div>
-                <div class="col-md-6 login-right">
-                    <h3>用户登录</h3>
-                    <p>已有账号?请登录</p>
-                    @*<form>*@
-                    @using (Html.BeginForm("login", "Home", FormMethod.Post))
-                    {
+                <form>
+                    <div class="register-top-grid">
+                        <h3>PERSONAL INFORMATION</h3>
                         <div>
-                            <span>邮箱地址：<label>*</label></span>
-                            @*<input type="text">*@
-                            @Html.TextBoxFor(c => c.email)
+                            <span>First Name<label>*</label></span>
+                            <input type="text">
                         </div>
                         <div>
-                            <span>密码：<label>*</label></span>
-                            @*<input type="text">*@
-                            @Html.TextBoxFor(c => c.password)
+                            <span>Last Name<label>*</label></span>
+                            <input type="text">
                         </div>
-                        <a class="forgot" href="#">忘记密码?</a>
-
-                        <input type="submit" value="登录">
-                    }
-
-                    @*</form>*@
-                </div>
+                        <div>
+                            <span>Email Address<label>*</label></span>
+                            <input type="text">
+                        </div>
+                        <div class="clearfix"> </div>
+                        <a class="news-letter" href="#">
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
+                        </a>
+                    </div>
+                    <div class="register-bottom-grid">
+                        <h3>LOGIN INFORMATION</h3>
+                        <div>
+                            <span>Password<label>*</label></span>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <span>Confirm Password<label>*</label></span>
+                            <input type="text">
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </form>
                 <div class="clearfix"> </div>
+                <div class="register-but">
+                    <form>
+                        <input type="submit" value="submit">
+                        <div class="clearfix"> </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -106,7 +115,7 @@
         <div class="container">
             <div class="col-md-3 f_grid1">
                 <h3>About</h3>
-                <a href="#"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                <a href="#"><img src="images/logo.png" alt="" /></a>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
             </div>
             <div class="col-md-3 f_grid1 f_grid2">
@@ -134,7 +143,7 @@
     </div>
     <div class="footer_bottom">
         <div class="container">
-            @*<div class="cssmenu">
+            <div class="cssmenu">
                 <ul>
                     <li class="active"><a href="login.html">Privacy Policy</a></li> .
                     <li><a href="checkout.html">Terms of Service</a></li> .
@@ -142,15 +151,14 @@
                     <li><a href="login.html">Contact Us</a></li> .
                     <li><a href="register.html">Support & FAQ</a></li>
                 </ul>
-            </div>*@
+            </div>
             <div class="copy">
-                <p>Copyright &copy; 2015.Company name All rights reserved.</p>
+                <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
     <div style="display:none">
-        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
-    </div>
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>		
