@@ -222,6 +222,7 @@
     <Content Include="Content\User\images\footer_bg.jpg" />
     <Content Include="Content\User\images\f_menu.png" />
     <Content Include="Content\User\images\img-sprite.png" />
+    <Content Include="Content\User\images\img-sprite2.png" />
     <Content Include="Content\User\images\logo.png" />
     <Content Include="Content\User\images\p1.jpg" />
     <Content Include="Content\User\images\p10.jpg" />

@@ -970,24 +970,28 @@ p.m_3{
 	margin:0;
 	color:#343333;
 }
-i.fb,i.tw,i.google,i.instagram {
-	width: 20px;
-	height: 20px;
-	float:left;
-	background: url(../images/img-sprite.png)no-repeat;
-	margin-right:10px;
+i.sina, i.tencent, i.renren, i.douban {
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(../images/img-sprite2.png)no-repeat;
+    margin-right: 10px;
 }
-i.fb{
-	background-position:-98px -8px;
+
+i.sina {
+    background-position: -98px -8px;
 }
-i.tw {
-	background-position:-130px -8px;
+
+i.tencent {
+    background-position: -130px -8px;
 }
-i.google {
-	background-position:-162px -8px;
+
+i.renren {
+    background-position: -162px -8px;
 }
-i.instagram {
-	background-position:-194px -8px;
+
+i.douban {
+    background-position: -194px -8px;
 }
 ul.list{
 	padding:0;
@@ -1037,13 +1041,13 @@ ul.list1 li p{
 	color: #df1f26;
 }
 .copy {
-	float: right;
+	text-align: center;
 	margin-top:8px;
 }
 .copy p {
 	color: #999;
 	font:300 14px/1px 'Lato', sans-serif;
-	text-transform:uppercase;
+	//text-transform:uppercase;
 }
 .copy p a {
 	color: #df1f26;
