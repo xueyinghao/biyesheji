@@ -1,40 +1,128 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@RenderSection("Title",true)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Beauty mall, beauty and convenience stores around you" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+ 
+    <div class="header">
+        <div class="header_top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                </div>
+                @*<ul class="shopping_grid">
+                    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
+                    <a href="#"><li>注&nbsp;册</li></a>
+                    <div class="clearfix"> </div>
+                </ul>*@
+                @RenderSection("Logo", true)
+                <div class="clearfix"> </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+        </div>
+        <div class="h_menu4">
+            <!-- start h_menu4 -->
+            <div class="container">
+                <a class="toggleMenu" href="#">Menu</a>
+                <ul class="nav">
+                    <li class="active"><a href="index.html" data-hover="Home">首页</a></li>
+                    <li><a href="about.html" data-hover="Beauty care">美容护理</a></li>
+                    <li><a href="careers.html" data-hover="Fragrance makeup">香氛彩妆</a></li>
+                    <li><a href="contact.html" data-hover="Personal care">个人护理</a></li>
+                    <li><a href="404.html" data-hover="Boutique men">精品男士</a></li>
+                    <li><a href="register.html" data-hover="Beauty tools">美妆工具</a></li>
+                    <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
+                    <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
                 </ul>
+                <script type="text/javascript" src="~/Content/User/js/nav.js"></script>
+            </div><!-- end h_menu4 -->
+        </div>
+    </div>
+    <div class="column_center">
+        <div class="container">
+            <div class="search">
+                <div class="stay">搜索商品</div>
+                <div class="stay_right">
+                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                    <input type="submit" value="">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="footer_bg">
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 f_grid1">
+                <h3>About</h3>
+                <a href="#"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                <p>
+                    美妆商城是中国首家第三方化妆品网络供销与品牌推广平台
+
+                    国际名品与经典国货化妆品供应商
+
+                    全新的O2O营销模式
+
+                    即将引发化妆品行业新一轮营销革命！
+                </p>
+            </div>
+            <div class="col-md-3 f_grid1 f_grid2">
+                <h3>Follow Us</h3>
+                <ul class="social">
+                    <li><a href=""> <i class="sina"> </i><p class="m_3">新浪微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="tencent"> </i><p class="m_3">腾讯微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="renren"> </i><p class="m_3">人人网</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="douban"> </i><p class="m_3">豆瓣</p><div class="clearfix"> </div></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 f_grid3">
+                <h3>Contact Info</h3>
+                <ul class="list">
+                    <li><p>Phone : 1.800.254.5487</p></li>
+                    <li><p>Fax : 1.800.254.2548</p></li>
+                    <li><p>Email : <a href="mailto:info(at)fashionpress.com"> info(at)fashionpress.com</a></p></li>
+                </ul>
+                <ul class="list1">
+                    <li><p>Aliquam augue a bibendum ipsum diam, semper porttitor libero elit egestas gravida, ut quam, nunc taciti</p></li>
+                </ul>
+                <div class="clearfix"> </div>
             </div>
         </div>
     </div>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div class="footer_bottom">
+        <div class="container">
+            @*<div class="cssmenu">
+                    <ul>
+                        <li class="active"><a href="login.html">Privacy Policy</a></li> .
+                        <li><a href="checkout.html">Terms of Service</a></li> .
+                        <li><a href="checkout.html">Creative Rights Policy</a></li> .
+                        <li><a href="login.html">Contact Us</a></li> .
+                        <li><a href="register.html">Support & FAQ</a></li>
+                    </ul>
+                </div>*@
+            <div class="copy">
+                <p>Copyright &copy; 2015.Company name All rights reserved.</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
 </body>
-</html>
+</html>		

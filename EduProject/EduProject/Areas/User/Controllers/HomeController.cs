@@ -36,12 +36,11 @@ namespace EduProject.Areas.User.Controllers
             }
             ViewBag.name = user.UserName;
             log.Info(user.UserName);
-            return View("index1");
+            return View("indexIn");
         }
         public ActionResult LogOut()
         {
             return RedirectToAction("Index");
-            //return View("index");
         }
         public ActionResult Register()
         {

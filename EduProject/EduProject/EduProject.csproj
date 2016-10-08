@@ -333,7 +333,7 @@
     <Content Include="Content\User\images\img-sprite.psd" />
     <Content Include="Areas\User\Views\Home\Index.cshtml" />
     <Content Include="Areas\User\Views\Home\login.cshtml" />
-    <Content Include="Areas\User\Views\Home\Index1.cshtml" />
+    <Content Include="Areas\User\Views\Home\IndexIn.cshtml" />
     <Content Include="Areas\User\Views\Home\Register.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
