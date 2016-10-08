@@ -1,4 +1,7 @@
-﻿@model EduProject.Areas.User.Models.UserInfo
+﻿@{
+    Layout = null;
+}
+@model EduProject.Areas.User.Models.Register
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +38,7 @@
         <div class="h_menu4">
             <!-- start h_menu4 -->
             <div class="container">
-                <a class="toggleMenu" href="#">Menu</a>
+                <a class="toggleMenu" href="/User/Home/Index">Menu</a>
                 <ul class="nav">
                     <li class="/User/Home/Index"><a href="index.html" data-hover="Home">首页</a></li>
                     <li><a href="about.html" data-hover="Beauty care">美容护理</a></li>
@@ -53,7 +56,7 @@
     <div class="column_center">
         <div class="container">
             <div class="search">
-                <div class="stay">Search Product</div>
+                <div class="stay">搜索商品</div>
                 <div class="stay_right">
                     <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
                     <input type="submit" value="">
@@ -66,20 +69,34 @@
     <div class="about">
         <div class="container">
             <div class="register">
-                <form>
-                    <div class="register-top-grid">
-                        <h3>PERSONAL INFORMATION</h3>
+                @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                { 
+                      <div class="register-top-grid">
+                        <h3>个人信息</h3>
                         <div>
-                            <span>First Name<label>*</label></span>
-                            <input type="text">
+                            <span>姓名<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(c=>c.UserName)
                         </div>
                         <div>
-                            <span>Last Name<label>*</label></span>
-                            <input type="text">
+                            <span>性别<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(c=>c.Sex)
                         </div>
                         <div>
-                            <span>Email Address<label>*</label></span>
-                            <input type="text">
+                            <span>年龄<label>*</label></span>
+                              @*<input type="text">*@
+                            @Html.TextBoxFor(c => c.Age)
+                        </div>
+                        <div>
+                            <span>手机<label>*</label></span>
+                              @*<input type="text">*@
+                            @Html.TextBoxFor(c => c.Phone)
+                        </div>
+                        <div>
+                            <span>邮箱<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(c=>c.Email)
                         </div>
                         <div class="clearfix"> </div>
                         <a class="news-letter" href="#">
@@ -87,25 +104,28 @@
                         </a>
                     </div>
                     <div class="register-bottom-grid">
-                        <h3>LOGIN INFORMATION</h3>
+                        <h3>登录信息</h3>
                         <div>
-                            <span>Password<label>*</label></span>
-                            <input type="text">
+                            <span>密码<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(c=>c.PassWord)
                         </div>
                         <div>
-                            <span>Confirm Password<label>*</label></span>
-                            <input type="text">
+                            <span>确认密码<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(c=>c.ConfirmPassWord)
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                </form>
-                <div class="clearfix"> </div>
+                    <div class="clearfix"> </div>
                 <div class="register-but">
                     <form>
-                        <input type="submit" value="submit">
+                        <input type="submit" value="注册">
                         <div class="clearfix"> </div>
                     </form>
                 </div>
+                }
+                
             </div>
         </div>
     </div>
@@ -115,16 +135,24 @@
         <div class="container">
             <div class="col-md-3 f_grid1">
                 <h3>About</h3>
-                <a href="#"><img src="images/logo.png" alt="" /></a>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <a href="#"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                <p>
+                    美妆商城是中国首家第三方化妆品网络供销与品牌推广平台
+
+                    国际名品与经典国货化妆品供应商
+
+                    全新的O2O营销模式
+
+                    即将引发化妆品行业新一轮营销革命！
+                </p>
             </div>
             <div class="col-md-3 f_grid1 f_grid2">
                 <h3>Follow Us</h3>
                 <ul class="social">
-                    <li><a href=""> <i class="fb"> </i><p class="m_3">Facebook</p><div class="clearfix"> </div></a></li>
-                    <li><a href=""><i class="tw"> </i><p class="m_3">Twittter</p><div class="clearfix"> </div></a></li>
-                    <li><a href=""><i class="google"> </i><p class="m_3">Google</p><div class="clearfix"> </div></a></li>
-                    <li><a href=""><i class="instagram"> </i><p class="m_3">Instagram</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""> <i class="sina"> </i><p class="m_3">新浪微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="tencent"> </i><p class="m_3">腾讯微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="renren"> </i><p class="m_3">人人网</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="douban"> </i><p class="m_3">豆瓣</p><div class="clearfix"> </div></a></li>
                 </ul>
             </div>
             <div class="col-md-6 f_grid3">
@@ -132,7 +160,7 @@
                 <ul class="list">
                     <li><p>Phone : 1.800.254.5487</p></li>
                     <li><p>Fax : 1.800.254.2548</p></li>
-                    <li><p>Email : <a href="mailto:info(at)fashionpress.com"> info(at)fashionpress.com</a></p></li>
+                    <li><p>Email : <a href="mailto:info(at)BeautyShop.com">1286843477@qq.com</a></p></li>
                 </ul>
                 <ul class="list1">
                     <li><p>Aliquam augue a bibendum ipsum diam, semper porttitor libero elit egestas gravida, ut quam, nunc taciti</p></li>
@@ -143,17 +171,8 @@
     </div>
     <div class="footer_bottom">
         <div class="container">
-            <div class="cssmenu">
-                <ul>
-                    <li class="active"><a href="login.html">Privacy Policy</a></li> .
-                    <li><a href="checkout.html">Terms of Service</a></li> .
-                    <li><a href="checkout.html">Creative Rights Policy</a></li> .
-                    <li><a href="login.html">Contact Us</a></li> .
-                    <li><a href="register.html">Support & FAQ</a></li>
-                </ul>
-            </div>
             <div class="copy">
-                <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                <p>Copyright &copy; 2015.稻草人之恋 All rights reserved.</p>
             </div>
             <div class="clearfix"> </div>
         </div>

@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-@model EduProject.Areas.User.Models.login
+@model EduProject.Areas.User.Models.loginInfo
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,7 +82,7 @@
                         <div>
                             <span>邮箱地址：<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c => c.email)
+                            @Html.TextBoxFor(c=>c.email)
                         </div>
                         <div>
                             <span>密码：<label>*</label></span>

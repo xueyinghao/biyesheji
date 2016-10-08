@@ -5,7 +5,7 @@ using System.Web;
 
 namespace EduProject.Areas.User.Models
 {
-    public class login
+    public class loginInfo
     {
         public string email { get; set; }
         public string password { get; set; }

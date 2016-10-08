@@ -11,13 +11,17 @@ namespace EduProject.Areas.User.Controllers
 {
     public class HomeController : Controller
     {
+        //测试日志组件
         private ILog log = LogManager.GetLogger("MoonTest");
-        //
+
+        //美妆商城首页
         // GET: /User/index/
         public ActionResult Index()
         {
             return View();
         }
+        
+        //登录
         public ActionResult login()
         {
             return View();
@@ -38,13 +42,30 @@ namespace EduProject.Areas.User.Controllers
             log.Info(user.UserName);
             return View("indexIn");
         }
+
+        //退出系统
         public ActionResult LogOut()
         {
             return RedirectToAction("Index");
         }
+
+        //用户注册
         public ActionResult Register()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(FormCollection form)
+        {
+            string UserName = HttpUtility.HtmlEncode(form["UserName"]);
+            string PassWord = HttpUtility.HtmlEncode(form["PassWord"]);
+            string Email = HttpUtility.HtmlEncode(form["Email"]);
+            string Phone = HttpUtility.HtmlEncode(form["Phone"]);
+            string Age = HttpUtility.HtmlEncode(form["Age"]);
+            string sex = HttpUtility.HtmlEncode(form["Sex"]);
+
+
         }
 	}
 }
