@@ -12,9 +12,9 @@ namespace EduProject
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderInfo
+    public partial class Order
     {
-        public OrderInfo()
+        public Order()
         {
             this.Product = new HashSet<Product>();
         }
@@ -26,7 +26,7 @@ namespace EduProject
         public string OrderDetail { get; set; }
         public int UserInfoId { get; set; }
     
-        public virtual UserInfo UserInfo { get; set; }
         public virtual ICollection<Product> Product { get; set; }
+        public virtual UserInfo UserInfo { get; set; }
     }
 }

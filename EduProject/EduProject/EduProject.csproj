@@ -196,7 +196,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="OrderInfo.cs">
+    <Compile Include="Order.cs">
       <DependentUpon>BeautyShop.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">

@@ -25,7 +25,7 @@ namespace EduProject
                 url: "User/{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "index", id = UrlParameter.Optional },
                 namespaces: new string[] { "EduProject.Areas.User.Controllers" }
-                ).DataTokens.Add("Area", "User");
+                ).DataTokens.Add("Areas", "User");
 
 
         }

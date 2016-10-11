@@ -26,7 +26,7 @@ namespace EduProject
         }
     
         public virtual DbSet<Log> Log { get; set; }
-        public virtual DbSet<OrderInfo> Order { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
     }

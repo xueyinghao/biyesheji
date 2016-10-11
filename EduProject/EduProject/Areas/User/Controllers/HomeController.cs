@@ -86,7 +86,7 @@ namespace EduProject.Areas.User.Controllers
             if(ModelState.IsValid)
             {
                 UserRegist user = new UserRegist();
-                bool res=user.RegistData(UserModel);
+                bool res = user.RegistData(UserModel);
                 if (res == true)
                 {
                     ViewBag.message = "注册成功";

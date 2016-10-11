@@ -16,7 +16,7 @@ namespace EduProject
     {
         public UserInfo()
         {
-            this.OrderInfo = new HashSet<OrderInfo>();
+            this.Order = new HashSet<Order>();
         }
     
         public int Id { get; set; }
@@ -29,6 +29,6 @@ namespace EduProject
         public string Age { get; set; }
         public string Sex { get; set; }
     
-        public virtual ICollection<OrderInfo> OrderInfo { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

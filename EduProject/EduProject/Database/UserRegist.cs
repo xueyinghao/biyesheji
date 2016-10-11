@@ -9,8 +9,8 @@ namespace EduProject.Database
 {
     public class UserRegist
     {
-        BeautyShopEntities shopEntity = new BeautyShopEntities();
-        public  bool RegistData(Register userModel)
+        BeautyShopEntities shopEneity = new BeautyShopEntities();
+        public bool RegistData(Register userModel)
         {
             bool flag = false;
             var user = new UserInfo()
@@ -22,8 +22,8 @@ namespace EduProject.Database
                 Phone = userModel.Phone,
                 Email = userModel.Email
             };
-            shopEntity.UserInfo.Add(user);
-            int i=shopEntity.SaveChanges();
+            shopEneity.UserInfo.Add(user);
+            int i=shopEneity.SaveChanges();
             if (i==1)
             {
                 flag = true;

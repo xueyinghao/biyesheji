@@ -8,10 +8,10 @@ namespace EduProject.Areas.User.Models
 {
     public class Register
     {
-        [Required]
+       
         public string UserName { get; set; }
 
-        [Required]
+      
         public string PassWord { get; set; }
         
         
@@ -19,7 +19,7 @@ namespace EduProject.Areas.User.Models
         public string Sex { get; set; }
         public string Age { get; set; }
 
-        [Required]
+        
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string Email { get; set; }
 
