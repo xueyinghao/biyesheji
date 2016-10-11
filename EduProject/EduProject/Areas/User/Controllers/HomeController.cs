@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using EduProject.Database;
 using EduProject.Areas.User.Models;
 using log4net;
+ 
 
 namespace EduProject.Areas.User.Controllers
 {
@@ -13,6 +14,7 @@ namespace EduProject.Areas.User.Controllers
     {
         //测试日志组件
         private ILog log = LogManager.GetLogger("MoonTest");
+        
 
         //美妆商城首页
         // GET: /User/index/
@@ -56,15 +58,47 @@ namespace EduProject.Areas.User.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(FormCollection form)
+        public ActionResult Register(Register UserModel)
         {
-            string UserName = HttpUtility.HtmlEncode(form["UserName"]);
-            string PassWord = HttpUtility.HtmlEncode(form["PassWord"]);
-            string Email = HttpUtility.HtmlEncode(form["Email"]);
-            string Phone = HttpUtility.HtmlEncode(form["Phone"]);
-            string Age = HttpUtility.HtmlEncode(form["Age"]);
-            string sex = HttpUtility.HtmlEncode(form["Sex"]);
+            if (string.IsNullOrEmpty(UserModel.UserName))
+            {
+                ModelState.AddModelError("UserName", "用户名不能为空");
+            }
+            
+            if(string.IsNullOrEmpty(UserModel.PassWord))
+            {
+                ModelState.AddModelError("PassWord", "密码不能为空");
+            }
+            else if (UserModel.PassWord.Length < 6)
+            {
+                ModelState.AddModelError("PassWord", "密码长度不能少于6位");
+            }
 
+            if (string.IsNullOrEmpty(UserModel.Phone))
+            {
+                ModelState.AddModelError("Phone", "手机号码不能为空");
+            }
+            else if (UserModel.Phone.Length < 11)
+            {
+                ModelState.AddModelError("Phone", "手机号码格式不正确");
+            }
+          
+            if(ModelState.IsValid)
+            {
+                UserRegist user = new UserRegist();
+                bool res=user.RegistData(UserModel);
+                if (res == true)
+                {
+                    ViewBag.message = "注册成功";
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+
+                    return RedirectToAction("Register");
+                }
+            }
+            return View("Register");
 
         }
 	}

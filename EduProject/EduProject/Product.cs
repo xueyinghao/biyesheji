@@ -16,16 +16,16 @@ namespace EduProject
     {
         public Product()
         {
-            this.Order = new HashSet<Order>();
+            this.OrderInfo = new HashSet<OrderInfo>();
         }
     
-        public int ProductId { get; set; }
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public string ProductType { get; set; }
         public decimal Price { get; set; }
         public string ProdutStatus { get; set; }
         public string ProductDetail { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<OrderInfo> OrderInfo { get; set; }
     }
 }

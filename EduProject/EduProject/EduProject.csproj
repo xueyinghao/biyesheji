@@ -165,7 +165,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
-    <Compile Include="Areas\User\Models\login.cs" />
+    <Compile Include="Areas\User\Models\loginInfo.cs" />
+    <Compile Include="Areas\User\Models\Register.cs" />
     <Compile Include="Areas\User\Models\UserInfo.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="BeautyShop.Context.cs">
@@ -186,6 +187,7 @@
     <Compile Include="Database\LogFactory.cs" />
     <Compile Include="Database\loginData.cs" />
     <Compile Include="Database\LogHelper.cs" />
+    <Compile Include="Database\UserRegist.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,7 +196,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Order.cs">
+    <Compile Include="OrderInfo.cs">
       <DependentUpon>BeautyShop.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
@@ -207,6 +209,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BeautyShop.edmx.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\User\css\etalage.css" />

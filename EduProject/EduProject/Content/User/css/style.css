@@ -1891,7 +1891,7 @@ i.mail {
     margin-top: 1em;
 }
 
-    .register-but form input[type="submit"] {
+    /*.register-but form input[type="submit"] {
         background: #df1f26;
         color: #FFF;
         font-size: 0.8em;
@@ -1908,6 +1908,24 @@ i.mail {
 
     .register-but input[type="submit"]:hover {
         background: #000;
+    }*/
+
+#regSubmit {
+        background: #df1f26;
+        color: #FFF;
+        font-size: 0.8em;
+        padding: 0.8em 2em;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        display: inline-block;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+}
+    #regSubmit:hover {
+    background:#000;
     }
 
 div.register-bottom-grid {

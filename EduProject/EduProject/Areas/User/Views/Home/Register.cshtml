@@ -10,21 +10,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Beauty mall, beauty and convenience stores around you" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Custom Theme files -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <!--webfont-->
     <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
     <div class="header">
         <div class="header_top">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                    <a href="index.html"><img src="~/Content/User/images/logo.png" alt="" /></a>
                 </div>
                 <ul class="shopping_grid">
                     <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
@@ -49,7 +49,7 @@
                     <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
                     <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
                 </ul>
-                <script type="text/javascript" src="js/nav.js"></script>
+                <script type="text/javascript" src="~/Content/User/js/nav.js"></script>
             </div><!-- end h_menu4 -->
         </div>
     </div>
@@ -76,27 +76,32 @@
                         <div>
                             <span>姓名<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c=>c.UserName)
+                            @Html.TextBoxFor(model=>model.UserName)
+                            @Html.ValidationMessageFor(model => model.UserName)
                         </div>
                         <div>
                             <span>性别<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c=>c.Sex)
+                            @Html.TextBoxFor(model=>model.Sex)
+                            @Html.ValidationMessageFor(model=>model.Sex)
                         </div>
                         <div>
                             <span>年龄<label>*</label></span>
                               @*<input type="text">*@
-                            @Html.TextBoxFor(c => c.Age)
+                            @Html.TextBoxFor(model => model.Age)
+                            @Html.ValidationMessageFor(model=>model.Age)
                         </div>
                         <div>
                             <span>手机<label>*</label></span>
                               @*<input type="text">*@
-                            @Html.TextBoxFor(c => c.Phone)
+                            @Html.TextBoxFor(model => model.Phone)
+                            @Html.ValidationMessageFor(model=>model.Phone)
                         </div>
                         <div>
                             <span>邮箱<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c=>c.Email)
+                            @Html.TextBoxFor(model => model.Email)
+                            @Html.ValidationMessageFor(model=>model.Email)
                         </div>
                         <div class="clearfix"> </div>
                         <a class="news-letter" href="#">
@@ -108,19 +113,21 @@
                         <div>
                             <span>密码<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c=>c.PassWord)
+                            @Html.TextBoxFor(model => model.PassWord)
+                            @Html.ValidationMessageFor(model=>model.PassWord)
                         </div>
                         <div>
                             <span>确认密码<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c=>c.ConfirmPassWord)
+                            @Html.TextBoxFor(model => model.ConfirmPassWord)
+                            @Html.ValidationMessageFor(model=>model.ConfirmPassWord)
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="clearfix"> </div>
                 <div class="register-but">
                     <form>
-                        <input type="submit" value="注册">
+                        <input type="submit" value="注   册" id="regSubmit">
                         <div class="clearfix"> </div>
                     </form>
                 </div>

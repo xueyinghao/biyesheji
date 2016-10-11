@@ -11,8 +11,10 @@ namespace EduProject.Areas.User.Models
         public string UserName { get; set; }
         public string PassWord { get; set; }
         public string UserType { get; set; }
-        public string Tell { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
+        public string Age { get; set; }
+        public string Sex { get; set; }
     }
 }

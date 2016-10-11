@@ -6,11 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="1e5796e638264db298147ef18e67d9d4" Name="Diagram1">
         <EntityTypeShape EntityType="BeautyShopModel.Log" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeautyShopModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeautyShopModel.OrderInfo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BeautyShopModel.Product" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BeautyShopModel.UserInfo" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="BeautyShopModel.FK_UserOrder" ManuallyRouted="false" />
-        <AssociationConnector Association="BeautyShopModel.ProductOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="BeautyShopModel.UserInfoOrderInfo" />
+        <AssociationConnector Association="BeautyShopModel.OrderInfoProduct" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
