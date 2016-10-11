@@ -1,3 +1,0 @@
-TRUNCATE TABLE ecs_ad;
-TRUNCATE TABLE ecs_ad_position;
-TRUNCATE TABLE ecs_template;
