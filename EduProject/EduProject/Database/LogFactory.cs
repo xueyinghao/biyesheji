@@ -11,10 +11,10 @@ namespace EduProject.Database
         static LogFactory()
         { 
         }
-        public static LogHelper GetLogger(Type type)
-        {
-            return new LogHelper(LogManager.GetLogger(type));
-        }
+        //public static LogHelper GetLogger(Type type)
+        //{
+        //    return new LogHelper(LogManager.GetLogger(type));
+        //}
         public static LogHelper GetLogger(string str)
         {
             return new LogHelper(LogManager.GetLogger(str));

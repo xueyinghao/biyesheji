@@ -12,20 +12,20 @@ namespace EduProject
     using System;
     using System.Collections.Generic;
     
-    public partial class UserInfo
+    public partial class User
     {
-        public UserInfo()
+        public User()
         {
             this.Order = new HashSet<Order>();
         }
     
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string PassWord { get; set; }
-        public string UserType { get; set; }
+        public string UName { get; set; }
+        public string Password { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        public string Phone { get; set; }
+        public string UType { get; set; }
         public string Age { get; set; }
         public string Sex { get; set; }
     

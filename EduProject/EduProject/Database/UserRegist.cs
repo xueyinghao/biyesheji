@@ -9,26 +9,30 @@ namespace EduProject.Database
 {
     public class UserRegist
     {
-        BeautyShopEntities shopEneity = new BeautyShopEntities();
+        BShopEntities shopEntity = new BShopEntities();
         public bool RegistData(Register userModel)
         {
             bool flag = false;
-            var user = new UserInfo()
+            var user = new User()
             {
-                UserName = userModel.UserName,
-                PassWord = userModel.PassWord,
-                Sex = userModel.Sex,
+                UName = userModel.UName,
+                Password = userModel.Password,
+                Address = userModel.Address,
                 Age = userModel.Age,
                 Phone = userModel.Phone,
                 Email = userModel.Email
             };
-            shopEneity.UserInfo.Add(user);
-            int i=shopEneity.SaveChanges();
+            shopEntity.User.Add(user);
+            int i=shopEntity.SaveChanges();
             if (i==1)
             {
                 flag = true;
             }
             return flag;
         }
+
+
+       
+
     }
 }

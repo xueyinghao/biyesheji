@@ -76,8 +76,8 @@
                         <div>
                             <span>姓名<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(model=>model.UserName)
-                            @Html.ValidationMessageFor(model => model.UserName)
+                            @Html.TextBoxFor(model=>model.UName)
+                            @Html.ValidationMessageFor(model => model.UName)
                         </div>
                         <div>
                             <span>性别<label>*</label></span>
@@ -113,14 +113,14 @@
                         <div>
                             <span>密码<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(model => model.PassWord)
-                            @Html.ValidationMessageFor(model=>model.PassWord)
+                            @Html.TextBoxFor(model => model.Password)
+                            @Html.ValidationMessageFor(model=>model.Password)
                         </div>
                         <div>
                             <span>确认密码<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(model => model.ConfirmPassWord)
-                            @Html.ValidationMessageFor(model=>model.ConfirmPassWord)
+                            @Html.TextBoxFor(model => model.ConfirmPassword)
+                            @Html.ValidationMessageFor(model=>model.ConfirmPassword)
                         </div>
                         <div class="clearfix"> </div>
                     </div>

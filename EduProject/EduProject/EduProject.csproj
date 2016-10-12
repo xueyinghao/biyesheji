@@ -167,22 +167,22 @@
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\Models\loginInfo.cs" />
     <Compile Include="Areas\User\Models\Register.cs" />
-    <Compile Include="Areas\User\Models\UserInfo.cs" />
+    <Compile Include="Areas\User\Models\user.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
-    <Compile Include="BeautyShop.Context.cs">
+    <Compile Include="BShop.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BeautyShop.Context.tt</DependentUpon>
+      <DependentUpon>BShop.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BeautyShop.cs">
+    <Compile Include="BShop.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BeautyShop.tt</DependentUpon>
+      <DependentUpon>BShop.tt</DependentUpon>
     </Compile>
-    <Compile Include="BeautyShop.Designer.cs">
+    <Compile Include="BShop.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BeautyShop.edmx</DependentUpon>
+      <DependentUpon>BShop.edmx</DependentUpon>
     </Compile>
     <Compile Include="Database\LogFactory.cs" />
     <Compile Include="Database\loginData.cs" />
@@ -191,21 +191,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Log.cs">
-      <DependentUpon>BeautyShop.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Order.cs">
-      <DependentUpon>BeautyShop.tt</DependentUpon>
+      <DependentUpon>BShop.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>BeautyShop.tt</DependentUpon>
+      <DependentUpon>BShop.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="UserInfo.cs">
-      <DependentUpon>BeautyShop.tt</DependentUpon>
+    <Compile Include="Type.cs">
+      <DependentUpon>BShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>BShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserOrderDetail.cs">
+      <DependentUpon>BShop.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -315,29 +318,29 @@
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
-    <EntityDeploy Include="BeautyShop.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BeautyShop.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="BeautyShop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BeautyShop.edmx</DependentUpon>
-      <LastGenOutput>BeautyShop.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BeautyShop.edmx.diagram">
-      <DependentUpon>BeautyShop.edmx</DependentUpon>
-    </Content>
-    <Content Include="BeautyShop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BeautyShop.edmx</DependentUpon>
-      <LastGenOutput>BeautyShop.cs</LastGenOutput>
-    </Content>
     <Content Include="HTML\images\img-sprite.psd" />
     <Content Include="Content\User\images\img-sprite.psd" />
     <Content Include="Areas\User\Views\Home\Index.cshtml" />
     <Content Include="Areas\User\Views\Home\login.cshtml" />
     <Content Include="Areas\User\Views\Home\IndexIn.cshtml" />
     <Content Include="Areas\User\Views\Home\Register.cshtml" />
+    <EntityDeploy Include="BShop.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BShop.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BShop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BShop.edmx</DependentUpon>
+      <LastGenOutput>BShop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BShop.edmx.diagram">
+      <DependentUpon>BShop.edmx</DependentUpon>
+    </Content>
+    <Content Include="BShop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BShop.edmx</DependentUpon>
+      <LastGenOutput>BShop.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -378,7 +381,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

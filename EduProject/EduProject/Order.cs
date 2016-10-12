@@ -14,19 +14,19 @@ namespace EduProject
     
     public partial class Order
     {
-        public Order()
-        {
-            this.Product = new HashSet<Product>();
-        }
-    
         public int Id { get; set; }
-        public string OrderName { get; set; }
-        public System.TimeSpan OrderTime { get; set; }
-        public string Address { get; set; }
-        public string OrderDetail { get; set; }
-        public int UserInfoId { get; set; }
+        public System.DateTime STime { get; set; }
+        public string CName { get; set; }
+        public string CPhone { get; set; }
+        public string CAddress { get; set; }
+        public string PostCode { get; set; }
+        public string TransportWay { get; set; }
+        public string PayWay { get; set; }
+        public string Status { get; set; }
+        public int UserId { get; set; }
+        public int UserOrderDetail_Id { get; set; }
     
-        public virtual ICollection<Product> Product { get; set; }
-        public virtual UserInfo UserInfo { get; set; }
+        public virtual UserOrderDetail UserOrderDetail { get; set; }
+        public virtual User User { get; set; }
     }
 }

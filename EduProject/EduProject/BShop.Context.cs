@@ -13,10 +13,10 @@ namespace EduProject
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BeautyShopEntities : DbContext
+    public partial class BShopEntities : DbContext
     {
-        public BeautyShopEntities()
-            : base("name=BeautyShopEntities")
+        public BShopEntities()
+            : base("name=BShopEntities")
         {
         }
     
@@ -25,9 +25,10 @@ namespace EduProject
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<UserInfo> UserInfo { get; set; }
+        public virtual DbSet<Type> Type { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserOrderDetail> UserOrderDetail { get; set; }
     }
 }
