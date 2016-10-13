@@ -80,9 +80,9 @@
                     @using (Html.BeginForm("login", "Home", FormMethod.Post))
                     {
                         <div>
-                            <span>邮箱地址：<label>*</label></span>
+                            <span>用户名：<label>*</label></span>
                             @*<input type="text">*@
-                            @Html.TextBoxFor(c=>c.email)
+                            @Html.TextBoxFor(c=>c.username)
                         </div>
                         <div>
                             <span>密码：<label>*</label></span>

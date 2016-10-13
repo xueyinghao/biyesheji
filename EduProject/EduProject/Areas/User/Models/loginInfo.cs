@@ -7,6 +7,7 @@ namespace EduProject.Areas.User.Models
 {
     public class loginInfo
     {
+        public string username { get; set; }
         public string email { get; set; }
         public string password { get; set; }
     }

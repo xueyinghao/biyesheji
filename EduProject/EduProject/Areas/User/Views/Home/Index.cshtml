@@ -112,18 +112,18 @@
                 <div class="col-md-3 sidebar_box">
                     <div class="sidebar">
                         <div class="menu_box">
-                            <h3 class="menu_head">Products Menu</h3>
+                            <h3 class="menu_head">@*Products Menu*@商品列表</h3>
                             <ul class="menu">
                                 <li class="item1">
-                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" /> Man</a>
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" /> 美容护理</a>
                                     <ul class="cute">
-                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>      
                                         <li class="subitem2"><a href="#">Strange Stuff </a></li>
                                         <li class="subitem3"><a href="#">Automatic Fails </a></li>
                                     </ul>
                                 </li>
                                 <li class="item2">
-                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Women</a>
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />香氛彩妆</a>
                                     <ul class="cute">
                                         <li class="subitem1"><a href="#">Cute Kittens </a></li>
                                         <li class="subitem2"><a href="#">Strange Stuff </a></li>
@@ -131,7 +131,7 @@
                                     </ul>
                                 </li>
                                 <li class="item3">
-                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Fashion 2015</a>
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />个人护理</a>
                                     <ul class="cute">
                                         <li class="subitem1"><a href="#">Cute Kittens </a></li>
                                         <li class="subitem2"><a href="#">Strange Stuff </a></li>
@@ -139,7 +139,7 @@
                                     </ul>
                                 </li>
                                 <li class="item4">
-                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Kids</a>
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />精品男士</a>
                                     <ul class="cute">
                                         <li class="subitem1"><a href="#">Cute Kittens </a></li>
                                         <li class="subitem2"><a href="#">Strange Stuff </a></li>
@@ -147,14 +147,14 @@
                                     </ul>
                                 </li>
                                 <li class="item5">
-                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Jeans</a>
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />美妆工具</a>
                                     <ul class="cute">
                                         <li class="subitem1"><a href="#">Cute Kittens </a></li>
                                         <li class="subitem2"><a href="#">Strange Stuff </a></li>
                                         <li class="subitem3"><a href="#">Automatic Fails </a></li>
                                     </ul>
                                 </li>
-                                <li class="item6">
+                                @*<li class="item6">
                                     <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Tshirt</a>
                                     <ul class="cute">
                                         <li class="subitem1"><a href="#">Cute Kittens </a></li>
@@ -185,7 +185,7 @@
                                         <li class="subitem2"><a href="#">Strange Stuff </a></li>
                                         <li class="subitem3"><a href="#">Automatic Fails </a></li>
                                     </ul>
-                                </li>
+                                </li>*@
                             </ul>
                         </div>
                         <!--initiate accordion-->
@@ -218,16 +218,17 @@
                                     <div class="b-link-stroke b-animate-go  thickbox">
                                         <img src="~/Content/User/images/p1.jpg" class="img-responsive" alt="" />
                                     </div>
+                                    </a>
                                     <div class="grid_2">
                                         <p>There are many variations of passages</p>
                                         <ul class="grid_2-bottom">
                                             <li class="grid_2-left"><p>$99<small>.33</small></p></li>
-                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
-                                            <div class="clearfix"> </div>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline btn-addCart " target="_self" title="Get It">Get It</div></li>
                                         </ul>
+                                        <div class="clearfix"> </div>
                                     </div>
                             </div>
-                            </a>
+                            @*</a>*@
                         </div>
                         <div class="col-md-8 box_1">
                             <a href="single.html">
@@ -518,5 +519,20 @@
     <div style="display:none">
         <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
     </div>
+    <script>
+        //使用ajax将商品加入购物车
+        $('.btn-addCart').click(function () {
+            //获取Cookie判断用户是否登录
+            var Cookie = document.cookie.indexOf("myCookie");
+            if (Cookie == -1) {
+                alert("用户尚未登录");
+                location.href = "/User/Home/Login";
+            }
+            else {
+                alert("用户已登陆");s
+            }
+          
+        })
+    </script>
 </body>
 </html>

@@ -11,9 +11,9 @@
         <EntityTypeShape EntityType="BShopModel.User" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BShopModel.UserOrderDetail" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="BShopModel.FK_OrderUserOrderDetail" ManuallyRouted="false" />
-        <AssociationConnector Association="BShopModel.FK_UserOrder" ManuallyRouted="false" />
         <AssociationConnector Association="BShopModel.FK_TypeProduct" ManuallyRouted="false" />
         <AssociationConnector Association="BShopModel.ProductUserOrderDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="BShopModel.UserOrder" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

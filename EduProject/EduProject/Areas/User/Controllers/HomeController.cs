@@ -32,20 +32,15 @@ namespace EduProject.Areas.User.Controllers
         [HttpPost]
         public ActionResult login(FormCollection form)
         {
-            //读取Cookie
-            if (Request.Cookies["myCookie"] != null)
-            {
-
-            }
-
-            string email =HttpUtility.HtmlEncode(form["email"]);
+            string username =HttpUtility.HtmlEncode(form["username"]);
             string pwd = HttpUtility.HtmlEncode(form["passWord"]);
             loginData logData = new loginData();
-            var userData = logData.getLoginData(email, pwd);
+            var userData = logData.getLoginData(username, pwd);
             if (userData.Count() <=0)
             {
                 string script = string.Format("<script>alert('用户名和密码不一致！');location.href='{0}'</script>", Url.Action("Login", "Home", "User"));
                 return Content(script, "text/html");
+                
             }
             else if (userData.Count() > 1)
             {
@@ -59,10 +54,10 @@ namespace EduProject.Areas.User.Controllers
                 DateTime dt = DateTime.Now;
                 TimeSpan ts = new TimeSpan(0, 0, 1, 0, 0);//过期时间为1分钟
                 cookie.Expires = dt.Add(ts);//设置过期时间
-                cookie.Values.Add("email", email);
+                cookie.Values.Add("name", username);
                 cookie.Values.Add("pwd", pwd);
                 Response.AppendCookie(cookie);
-                ViewBag.Name = userData.First().UName;
+                ViewBag.Name = username;
             }
             return View("IndexIn");
         }
