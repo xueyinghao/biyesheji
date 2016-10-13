@@ -8,6 +8,7 @@ My graduation project
 原因：当前使用的是https而不是ssh，需要更新一下origin
 
 解决方案: git remote remove origin 
+
 		  git remote add origin git@github.com:Username/Your_Repo_Name.git'
 		  
           之后还需要重新设置track branch
