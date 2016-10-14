@@ -216,6 +216,7 @@
     <Content Include="BShop.edmx.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\User\css\base.css" />
     <Content Include="Content\User\css\etalage.css" />
     <Content Include="Content\User\css\style.css" />
     <Content Include="Content\User\images\arrows.png" />
@@ -250,14 +251,24 @@
     <Content Include="Content\User\images\s3.jpg" />
     <Content Include="Content\User\images\s4.jpg" />
     <Content Include="Content\User\images\search.png" />
+    <Content Include="Content\User\images\ShopCart\chongzhi.png" />
+    <Content Include="Content\User\images\ShopCart\ibar_sprites.png" />
+    <Content Include="Content\User\images\ShopCart\item-pic.jpg" />
+    <Content Include="Content\User\images\ShopCart\loading.gif" />
+    <Content Include="Content\User\images\ShopCart\no-img_mid_.jpg" />
+    <Content Include="Content\User\images\ShopCart\wdsc.png" />
+    <Content Include="Content\User\images\ShopCart\weixin_code_145.png" />
     <Content Include="Content\User\images\tick1.png" />
     <Content Include="Content\User\images\wishlist.png" />
+    <Content Include="Content\User\js\common.js" />
     <Content Include="Content\User\js\easyResponsiveTabs.js" />
     <Content Include="Content\User\js\hover_pack.js" />
     <Content Include="Content\User\js\jquery-1.11.1.min.js" />
     <Content Include="Content\User\js\jquery.etalage.min.js" />
     <Content Include="Content\User\js\nav.js" />
+    <Content Include="Content\User\js\quick_links.js" />
     <Content Include="Content\User\js\responsiveslides.min.js" />
+    <Content Include="Content\User\js\ShopCart.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -321,9 +332,8 @@
     <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
     <Content Include="HTML\images\img-sprite.psd" />
     <Content Include="Content\User\images\img-sprite.psd" />
-    <Content Include="Areas\User\Views\Home\Index.cshtml" />
+    <Content Include="Areas\User\Views\Home\Index-v1.0.cshtml" />
     <Content Include="Areas\User\Views\Home\login.cshtml" />
-    <Content Include="Areas\User\Views\Home\IndexIn.cshtml" />
     <Content Include="Areas\User\Views\Home\Register.cshtml" />
     <EntityDeploy Include="BShop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -342,6 +352,8 @@
       <DependentUpon>BShop.edmx</DependentUpon>
       <LastGenOutput>BShop.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\User\Views\Home\LoginIn.cshtml" />
+    <Content Include="Areas\User\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

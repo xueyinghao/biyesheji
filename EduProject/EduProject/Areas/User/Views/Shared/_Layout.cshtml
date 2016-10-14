@@ -14,6 +14,21 @@
     <!--webfont-->
     <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/User/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <script src="~/Content/User/js/hover_pack.js"></script>
+    @*<link href="~/Content/User/css/base.css" rel="stylesheet" />*@
+    <script src="~/Content/User/js/ShopCart.js"></script>
 </head>
 <body>
  
@@ -23,11 +38,6 @@
                 <div class="logo">
                     <a href="index.html"><img src="~/Content/User/images/logo.png" alt="" /></a>
                 </div>
-                @*<ul class="shopping_grid">
-                    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
-                    <a href="#"><li>注&nbsp;册</li></a>
-                    <div class="clearfix"> </div>
-                </ul>*@
                 @RenderSection("Logo", true)
                 <div class="clearfix"> </div>
             </div>
@@ -38,18 +48,24 @@
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
                     <li class="active"><a href="index.html" data-hover="Home">首页</a></li>
-                    <li><a href="about.html" data-hover="Beauty care">美容护理</a></li>
+                    <li><a href="about.html" data-hover="Recommend">推荐品牌</a></li>
+                    <li><a href="about.html" data-hover="Face care">面部护理</a></li>
                     <li><a href="careers.html" data-hover="Fragrance makeup">香氛彩妆</a></li>
-                    <li><a href="contact.html" data-hover="Personal care">个人护理</a></li>
+                    <li><a href="contact.html" data-hover="Hear care">洗发护发</a></li>
+                    <li><a href="about.html" data-hover="Body care">身体护理</a></li>
+                    <li><a href="about.html" data-hover="Tooth care">口腔护理</a></li>
                     <li><a href="404.html" data-hover="Boutique men">精品男士</a></li>
-                    <li><a href="register.html" data-hover="Beauty tools">美妆工具</a></li>
+                    <li><a href="register.html" data-hover="Luxery">奢品美妆</a></li>
                     <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
                     <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
+                    <li id="Out"><a href="/User/Home/LogOut" data-hover="logout">退出</a></li>
+                    <li id="CurrentUser"><a href="/User/Home/Detail" data-hover="userdata">当前用户:@ViewBag.name</a></li>
                 </ul>
                 <script type="text/javascript" src="~/Content/User/js/nav.js"></script>
             </div><!-- end h_menu4 -->
         </div>
     </div>
+    @RenderSection("slider",false)
     <div class="column_center">
         <div class="container">
             <div class="search">
@@ -63,7 +79,214 @@
             <div class="clearfix"> </div>
         </div>
     </div>
-    @RenderBody()
+    <div class="main">
+        <div class="content_top">
+            <div class="container">
+                <div class="col-md-3 sidebar_box">
+                    <div class="sidebar">
+                        <div class="menu_box">
+                            <h3 class="menu_head">商品列表</h3>
+                            <ul class="menu">
+                                <li class="item1">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />推荐品牌</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">欧 莱 雅 </a></li>
+                                        <li class="subitem2"><a href="#">雅诗兰黛 </a></li>
+                                        <li class="subitem3"><a href="#">兰   蔻 </a></li>
+                                        <li class="subitem4"><a href="#">韩   束</a></li>
+                                        <li class="subitem5"><a href="#">倩   碧</a></li>
+                                        <li class="subitem6"><a href="#">雅   顿</a></li>
+                                        <li class="subitem7"><a href="#">佰 草 集</a></li>
+                                        <li class="subitem8"><a href="#">菲诗小铺</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item2">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />面部护理</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">卸   妆</a></li>
+                                        <li class="subitem2"><a href="#">洁   面</a></li>
+                                        <li class="subitem3"><a href="#">爽 肤 水</a></li>
+                                        <li class="subitem4"><a href="#">乳液面霜</a></li>
+                                        <li class="subitem5"><a href="#">精   华</a></li>
+                                        <li class="subitem6"><a href="#">眼   霜</a></li>
+                                        <li class="subitem7"><a href="#">防   晒</a></li>
+                                        <li class="subitem8"><a href="#">面   膜</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item3">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />香氛彩妆</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">BB   霜</a></li>
+                                        <li class="subitem2"><a href="#">女士香水</a></li>
+                                        <li class="subitem3"><a href="#">底   妆</a></li>
+                                        <li class="subitem4"><a href="#">睫 毛 膏</a></li>
+                                        <li class="subitem5"><a href="#">眼   线</a></li>
+                                        <li class="subitem6"><a href="#">眼   影</a></li>
+                                        <li class="subitem7"><a href="#">唇   彩</a></li>
+                                        <li class="subitem8"><a href="#">腮   红</a></li>
+                                        <li class="subitem9"><a href="#">美   甲</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item4">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />洗发护发</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">洗   发 </a></li>
+                                        <li class="subitem2"><a href="#">护   发 </a></li>
+                                        <li class="subitem3"><a href="#">染   发</a></li>
+                                        <li class="subitem4"><a href="#">假   发</a></li>
+                                        <li class="subitem5"><a href="#">造   型</a></li>
+                                        <li class="subitem6"><a href="#">美发工具</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item5">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />身体护理</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">沐   浴</a></li>
+                                        <li class="subitem2"><a href="#">润   肤 </a></li>
+                                        <li class="subitem3"><a href="#">精   油 </a></li>
+                                        <li class="subitem4"><a href="#">颈   部</a></li>
+                                        <li class="subitem5"><a href="#">手   足</a></li>
+                                        <li class="subitem6"><a href="#">纤体塑形</a></li>
+                                        <li class="subitem7"><a href="#">美   胸</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item6">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />口腔护理</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">牙   膏/牙   粉 </a></li>
+                                        <li class="subitem2"><a href="#">牙   刷/牙   线 </a></li>
+                                        <li class="subitem3"><a href="#">漱 口 水 </a></li>
+                                    </ul>
+                                </li>
+                                <li class="item7">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />精品男士</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">洁   面 </a></li>
+                                        <li class="subitem2"><a href="#">爽 肤 水 </a></li>
+                                        <li class="subitem3"><a href="#">男   香 </a></li>
+                                        <li class="subitem4"><a href="#">乳   液</a></li>
+                                        <li class="subitem5"><a href="#">面   霜</a></li>
+                                        <li class="subitem6"><a href="#">精   华</a></li>
+                                        <li class="subitem7"><a href="#">洗   发</a></li>
+                                        <li class="subitem8"><a href="#">剃   须</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item8">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />奢品美妆</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">雅诗兰黛 </a></li>
+                                        <li class="subitem2"><a href="#">迪   奥</a></li>
+                                        <li class="subitem3"><a href="#">海蓝之谜 </a></li>
+                                        <li class="subitem4"><a href="#">希 思 黎</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                var menu_ul = $('.menu > li > ul'),
+                                       menu_a = $('.menu > li > a');
+                                menu_ul.hide();
+                                menu_a.click(function (e) {
+                                    e.preventDefault();
+                                    if (!$(this).hasClass('active')) {
+                                        menu_a.removeClass('active');
+                                        menu_ul.filter(':visible').slideUp('normal');
+                                        $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                                    } else {
+                                        $(this).removeClass('active');
+                                        $(this).next().stop(true, true).slideUp('normal');
+                                    }
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+                @* 商品展示 *@
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @* 右侧购物车 *@
+
+    <div class="mui-mbar-tabs">
+        <div class="quick_link_mian">
+            <div class="quick_links_panel">
+                <div id="quick_links" class="quick_links">
+                    <li>
+                        <a href="#" class="my_qlinks"><i class="setting"></i></a>
+                        <div class="ibar_login_box status_login">
+                            <div class="avatar_box">
+                                <p class="avatar_imgbox">
+                                    <img src="images/no-img_mid_.jpg" />
+                                </p>
+                                <ul class="user_info">
+                                    <li>用户名：sl19931003</li>
+                                    <li>级&nbsp;别：普通会员</li>
+                                </ul>
+                            </div>
+                            <div class="login_btnbox">
+                                <a href="#" class="login_order">我的订单</a> <a href="#" class="login_favorite">我的收藏</a>
+                            </div>
+                            <i class="icon_arrow_white"></i>
+                        </div>
+                    </li>
+                    <li id="shopCart">
+                        <a href="#" class="message_list">
+                            <i class="message"></i>
+                            <div class="span">
+                                购物车
+                            </div>
+                            <span class="cart_num">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="history_list"><i class="view"></i></a>
+                        <div class="mp_tooltip" style="visibility: hidden;">
+                            我的资产<i class="icon_arrow_right_black"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="mpbtn_histroy"><i class="zuji"></i></a>
+                        <div class="mp_tooltip">
+                            我的足迹<i class="icon_arrow_right_black"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="mpbtn_wdsc"><i class="wdsc"></i></a>
+                        <div class="mp_tooltip">
+                            我的收藏<i class="icon_arrow_right_black"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="mpbtn_recharge"><i class="chongzhi"></i></a>
+                        <div class="mp_tooltip">
+                            我要充值<i class="icon_arrow_right_black"></i>
+                        </div>
+                    </li>
+                </div>
+                <div class="quick_toggle">
+                    <li>
+                        <a href="#"><i class="kfzx"></i></a>
+                        <div class="mp_tooltip">
+                            客服中心<i class="icon_arrow_right_black"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#none"><i class="mpbtn_qrcode"></i></a>
+                        <div class="mp_qrcode" style="display: none;">
+                            <img src="images/weixin_code_145.png" width="148" height="175" /><i class="icon_arrow_white"></i>
+                        </div>
+                    </li>
+                    <li><a href="#top" class="return_top"><i class="top"></i></a></li>
+                </div>
+            </div>
+            <div id="quick_links_pop" class="quick_links_pop hide"></div>
+        </div>
+    </div>
+
     <div class="footer_bg">
     </div>
     <div class="footer">
@@ -106,15 +329,6 @@
     </div>
     <div class="footer_bottom">
         <div class="container">
-            @*<div class="cssmenu">
-                    <ul>
-                        <li class="active"><a href="login.html">Privacy Policy</a></li> .
-                        <li><a href="checkout.html">Terms of Service</a></li> .
-                        <li><a href="checkout.html">Creative Rights Policy</a></li> .
-                        <li><a href="login.html">Contact Us</a></li> .
-                        <li><a href="register.html">Support & FAQ</a></li>
-                    </ul>
-                </div>*@
             <div class="copy">
                 <p>Copyright &copy; 2015.Company name All rights reserved.</p>
             </div>
@@ -124,5 +338,7 @@
     <div style="display:none">
         <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
     </div>
+    <script src="~/Content/User/js/common.js"></script>
+    <script src="~/Content/User/js/quick_links.js"></script>
 </body>
 </html>		

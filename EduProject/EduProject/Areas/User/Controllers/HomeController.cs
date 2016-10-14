@@ -52,19 +52,40 @@ namespace EduProject.Areas.User.Controllers
                 //添加Cookie
                 HttpCookie cookie = new HttpCookie("myCookie");
                 DateTime dt = DateTime.Now;
-                TimeSpan ts = new TimeSpan(0, 0, 1, 0, 0);//过期时间为1分钟
+                TimeSpan ts = new TimeSpan(0, 0, 10, 0, 0);//过期时间为1分钟
                 cookie.Expires = dt.Add(ts);//设置过期时间
                 cookie.Values.Add("name", username);
                 cookie.Values.Add("pwd", pwd);
                 Response.AppendCookie(cookie);
                 ViewBag.Name = username;
             }
-            return View("IndexIn");
+            return RedirectToAction("LoginIn");
         }
+
+        public ActionResult LoginIn()
+        {
+            //查看Cookie
+            HttpCookie cookie = Request.Cookies["myCookie"];
+            if (cookie != null)
+            {
+                ViewBag.Name = cookie["name"];
+                return View();
+            }
+            else
+            {
+                string script = string.Format("<script>alert('用户未登录');location.href='{0}'</script>", Url.Action("login", "Home", "User"));
+                return Content(script, "text/html");
+            }
+        }
+
 
         //退出系统
         public ActionResult LogOut()
         {
+            //退出登陆之后清理Cookie
+            HttpCookie cookie = new HttpCookie("myCookie");
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
             return RedirectToAction("Index");
         }
 

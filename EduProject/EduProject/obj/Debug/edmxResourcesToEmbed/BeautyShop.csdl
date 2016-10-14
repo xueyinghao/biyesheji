@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BeautyShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="BeautyShopModel.OrderProduct" FromRole="Order" ToRole="Product" />
+    <NavigationProperty Name="UserInfo" Relationship="BeautyShopModel.UserInfoOrder" FromRole="Order" ToRole="UserInfo" />
+    <Property Name="UserInfoId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProdutStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="BeautyShopModel.OrderProduct" FromRole="Product" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Order" Relationship="BeautyShopModel.UserInfoOrder" FromRole="UserInfo" ToRole="Order" />
+  </EntityType>
+  <EntityContainer Name="BeautyShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Log" EntityType="Self.Log" />
+    <EntitySet Name="Order" EntityType="BeautyShopModel.Order" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="UserInfo" EntityType="BeautyShopModel.UserInfo" />
+    <AssociationSet Name="OrderProduct" Association="BeautyShopModel.OrderProduct">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoOrder" Association="BeautyShopModel.UserInfoOrder">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="OrderProduct">
+    <End Type="BeautyShopModel.Order" Role="Order" Multiplicity="*" />
+    <End Type="BeautyShopModel.Product" Role="Product" Multiplicity="*" />
+  </Association>
+  <Association Name="UserInfoOrder">
+    <End Type="BeautyShopModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="BeautyShopModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

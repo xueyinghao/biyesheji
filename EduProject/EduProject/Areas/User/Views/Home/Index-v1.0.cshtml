@@ -1,0 +1,614 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页-美妆商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Beauty mall, beauty and convenience stores around you" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/User/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <script type="text/javascript" src="~/Content/User/js/hover_pack.js"></script>
+    <style type="text/css">
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu > a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #ccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+
+            .dropdown-submenu:hover > a:after {
+                border-left-color: #fff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                    -webkit-border-radius: 6px 0 6px 6px;
+                    -moz-border-radius: 6px 0 6px 6px;
+                    border-radius: 6px 0 6px 6px;
+                }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header_top">
+            <div class="container">
+                <div class="logo">
+                    <a href="/User/Home/Index"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                </div>
+                <ul class="shopping_grid">
+                    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
+                    <a href="/User/Home/login"><li>登&nbsp;录</li></a>
+                    <a href="/User/Home/Register"><li>注&nbsp;册</li></a>
+                     <div class="clearfix"> </div>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="h_menu4">
+            <!-- start h_menu4 -->
+            <div class="container">
+                <a class="toggleMenu" href="#">Menu</a>
+                <ul class="nav">
+                    <li class="active"><a href="index.html" data-hover="Home">首页</a></li>
+                    <li><a href="about.html" data-hover="Beauty care">美容护理</a></li>
+                    <li><a href="careers.html" data-hover="Fragrance makeup">香氛彩妆</a></li>
+                    <li><a href="contact.html" data-hover="Personal care">个人护理</a></li>
+                    <li><a href="404.html" data-hover="Boutique men">精品男士</a></li>
+                    <li><a href="register.html" data-hover="Beauty tools">美妆工具</a></li>
+                    <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
+                    <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
+                </ul>
+                <script type="text/javascript" src="~/Content/User/js/nav.js"></script>
+            </div><!-- end h_menu4 -->
+        </div>
+    </div>
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+                    <img src="~/Content/User/images/banner1.jpg" class="img-responsive" alt="" />
+                    <div class="banner_desc">
+                        <h1>We Provide Worlds top fashion for less fashionpress.</h1>
+                        <h2>FashionPress the name of the of hi class fashion Web FreePsd.</h2>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/Content/User/images/banner2.jpg" class="img-responsive" alt="" />
+                    <div class="banner_desc">
+                        <h1>Duis autem vel eum iriure dolor in hendrerit.</h1>
+                        <h2>Claritas est etiam processus dynamicus, qui sequitur .</h2>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/Content/User/images/banner3.jpg" class="img-responsive" alt="" />
+                    <div class="banner_desc">
+                        <h1>Ut wisi enim ad minim veniam, quis nostrud.</h1>
+                        <h2>Mirum est notare quam littera gothica, quam nunc putamus.</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="column_center">
+        <div class="container">
+            <div class="search">
+                <div class="stay">搜索商品</div>
+                <div class="stay_right">
+                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                    <input type="submit" value="">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content_top">
+            <div class="container">
+                <div class="col-md-3 sidebar_box">
+                    <div class="sidebar">
+                        <div class="menu_box">
+                            <h3 class="menu_head">@*Products Menu*@商品列表</h3>
+                            <ul class="menu">
+                                <li class="item1">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" /> 美容护理</a>
+                                    <ul class="cute">
+                                        <li class="subitem1 dropdown-submenu">
+                                            <a tabindex="-1" href="#">Cute Kittens </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a tabindex="-1" href="#">content</a>
+                                                    <a href="#">content1</a>
+                                                    <a href="#">content2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="subitem2 dropdown-submenu">
+                                        <a tabindex="-1" href="#">Strange Stuff </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a tabindex="-1" href="#">content</a>
+                                                    <a href="#">content1</a>
+                                                    <a href="#">content2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="subitem3 dropdown-submenu">
+                                        <a tabindex="-1" href="#">Automatic Fails </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a tabindex="-1" href="#">content</a>
+                                                    <a href="#">content1</a>
+                                                    <a href="#">content2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="item2">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />香氛彩妆</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>
+                                <li class="item3">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />个人护理</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails</a></li>
+                                    </ul>
+                                </li>
+                                <li class="item4">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />精品男士</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>
+                                <li class="item5">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />美妆工具</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="item6">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Tshirt</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>
+                                <li class="item7">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Top Fashion</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>
+                                <li class="item8">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Summer Collection</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>
+                                <li class="item9">
+                                    <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />Special Offer</a>
+                                    <ul class="cute">
+                                        <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                                        <li class="subitem2"><a href="#">Strange Stuff </a></li>
+                                        <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                                    </ul>
+                                </li>*@
+                            </ul>
+                        </div>
+                        <!--initiate accordion-->
+                        <script type="text/javascript">
+                            $(function () {
+                                var menu_ul = $('.menu > li > ul'),
+                                       menu_a = $('.menu > li > a');
+                                menu_ul.hide();
+                                menu_a.click(function (e) {
+                                    e.preventDefault();
+                                    if (!$(this).hasClass('active')) {
+                                        menu_a.removeClass('active');
+                                        menu_ul.filter(':visible').slideUp('normal');
+                                        $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                                    } else {
+                                        $(this).removeClass('active');
+                                        $(this).next().stop(true, true).slideUp('normal');
+                                    }
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-md-9 content_right">
+                    <div class="top_grid1">
+                        <div class="col-md-4 box_2">
+                            <div class="grid_1">
+                                <a href="single.html">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p1.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    </a>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline btn-addCart " target="_self" title="Get It">Get It</div></li>
+                                        </ul>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                            </div>
+                            @*</a>*@
+                        </div>
+                        <div class="col-md-8 box_1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p2.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="top_grid2">
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p3.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p4.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p5.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="top_grid2">
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p6.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p7.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p8.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <h4 class="head"><span class="m_2">Popular</span> Products Now</h4>
+                    <div class="top_grid2">
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p9.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p10.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p11.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="top_grid2">
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p12.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p13.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 top_grid1-box1">
+                            <a href="single.html">
+                                <div class="grid_1">
+                                    <div class="b-link-stroke b-animate-go  thickbox">
+                                        <img src="~/Content/User/images/p14.jpg" class="img-responsive" alt="" />
+                                    </div>
+                                    <div class="grid_2">
+                                        <p>There are many variations of passages</p>
+                                        <ul class="grid_2-bottom">
+                                            <li class="grid_2-left"><p>$99<small>.33</small></p></li>
+                                            <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">Get It</div></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bg">
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 f_grid1">
+                <h3>About</h3>
+                <a href="#"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                <p>     美妆商城是中国首家第三方化妆品网络供销与品牌推广平台
+
+                    国际名品与经典国货化妆品供应商
+
+                    全新的O2O营销模式
+
+                    即将引发化妆品行业新一轮营销革命！</p>
+            </div>
+            <div class="col-md-3 f_grid1 f_grid2">
+                <h3>Follow Us</h3>
+                <ul class="social">
+                    <li><a href=""> <i class="sina"> </i><p class="m_3">新浪微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="tencent"> </i><p class="m_3">腾讯微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="renren"> </i><p class="m_3">人人网</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="douban"> </i><p class="m_3">豆瓣</p><div class="clearfix"> </div></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 f_grid3">
+                <h3>Contact Info</h3>
+                <ul class="list">
+                    <li><p>Phone : 1.800.254.5487</p></li>
+                    <li><p>Fax : 1.800.254.2548</p></li>
+                    <li><p>Email : <a href="mailto:info(at)BeautyShop.com">1286843477@qq.com</a></p></li>
+                </ul>
+                <ul class="list1">
+                    <li><p>Aliquam augue a bibendum ipsum diam, semper porttitor libero elit egestas gravida, ut quam, nunc taciti</p></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="copy">
+                <p>Copyright &copy; 2015.稻草人之恋 All rights reserved.</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+    <script>
+        //使用ajax将商品加入购物车
+        $('.btn-addCart').click(function () {
+            //获取Cookie判断用户是否登录
+            var Cookie = document.cookie.indexOf("myCookie");
+            if (Cookie == -1) {
+                alert("用户尚未登录");
+                location.href = "/User/Home/Login";
+            }
+            else {
+                alert("用户已登陆");
+            }
+          
+        })
+    </script>
+</body>
+</html>

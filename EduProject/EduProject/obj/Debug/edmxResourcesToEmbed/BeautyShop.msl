@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BeautyShopModelStoreContainer" CdmEntityContainer="BeautyShopEntities">
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="IsTypeOf(BeautyShopModel.Log)">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="IsTypeOf(BeautyShopModel.Order)">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="IsTypeOf(BeautyShopModel.Product)">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProdutStatus" ColumnName="ProdutStatus" />
+          <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(BeautyShopModel.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="OrderProduct" TypeName="BeautyShopModel.OrderProduct" StoreEntitySet="OrderProduct">
+      <EndProperty Name="Order">
+        <ScalarProperty Name="Id" ColumnName="Order_Id" />
+      </EndProperty>
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

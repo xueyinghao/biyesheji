@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BShopModelStoreContainer" CdmEntityContainer="BShopEntities">
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Order)">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="CPhone" ColumnName="CPhone" />
+          <ScalarProperty Name="CAddress" ColumnName="CAddress" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="TransportWay" ColumnName="TransportWay" />
+          <ScalarProperty Name="PayWay" ColumnName="PayWay" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserOrderDetail_Id" ColumnName="UserOrderDetail_Id" />
+          <ScalarProperty Name="UserUName" ColumnName="UserUName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Product)">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type">
+      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Type)">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UType" ColumnName="UType" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserOrderDetail">
+      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.UserOrderDetail)">
+        <MappingFragment StoreEntitySet="UserOrderDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ProductUserOrderDetail" TypeName="BShopModel.ProductUserOrderDetail" StoreEntitySet="ProductUserOrderDetail">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="UserOrderDetail">
+        <ScalarProperty Name="Id" ColumnName="UserOrderDetail_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

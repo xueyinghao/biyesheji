@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BeautyShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BeautyShopModelStoreContainer">
+    <EntitySet Name="Log" EntityType="BeautyShopModel.Store.Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Order" EntityType="BeautyShopModel.Store.Order" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="BeautyShopModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="BeautyShopModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderProduct" EntityType="BeautyShopModel.Store.OrderProduct" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_OrderProduct_Order" Association="BeautyShopModel.Store.FK_OrderProduct_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Product" Association="BeautyShopModel.Store.FK_OrderProduct_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoOrder" Association="BeautyShopModel.Store.UserInfoOrder">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderTime" Type="time" Nullable="false" Precision="7" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderDetail" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="UserInfoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ProdutStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductDetail" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Sex" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="Order_Id" />
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Order_Id" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserInfoOrder">
+    <End Role="UserInfo" Type="BeautyShopModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="Order" Type="BeautyShopModel.Store.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Order">
+    <End Role="Order" Type="BeautyShopModel.Store.Order" Multiplicity="1" />
+    <End Role="OrderProduct" Type="BeautyShopModel.Store.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Product">
+    <End Role="OrderProduct" Type="BeautyShopModel.Store.OrderProduct" Multiplicity="*" />
+    <End Role="Product" Type="BeautyShopModel.Store.Product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
