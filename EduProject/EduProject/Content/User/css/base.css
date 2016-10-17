@@ -487,8 +487,10 @@ i.ibar_recharge-arrow{
     background:-webkit-linear-gradient(top,#fa578c,#f73776);
 }
 .ibar_login_box{
-    width:267px;
-    height:185px;
+    /*个人信息显示不全更改 xue*/
+    /*width:267px;*/
+    /*height:185px;*/
+    height:192px;
     padding:10px;
     background:#fff;
     box-shadow:0 0 5px rgba(0,0,0,.4);
@@ -577,7 +579,8 @@ i.ibar_recharge-arrow{
 #plist .btns a{float:left;height:19px;padding:0 9px;border:1px solid #ddd;border-radius:2px;margin:0 8px 0 0;background:#F7F7F7;line-height:18px;line-height:19px\9;text-align:center;text-decoration:none;color:#333;background:-moz-linear-gradient(top,#f7f7f7,#f2f2f2);background:-webkit-gradient(linear,0 0,0 100%,from(#f7f7f7),to(#f2f2f2));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7f7f7", endColorstr="#f2f2f2");-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7f7f7", endColorstr="#f2f2f2")";}
 #plist.plist-n7a .p-img{height:240px;}
 
-.main{width:1000px;margin:0 auto;}
+/*此行代码注释，如果不进行注释页面的Get it会被挤到一起*/
+/*.main{width:1000px;margin:0 auto;}*/
 
 .settleup-2013{
     height:34px;

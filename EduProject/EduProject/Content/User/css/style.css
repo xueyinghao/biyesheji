@@ -31,6 +31,10 @@ html, body {
         -moz-transition: 0.5s all;
     }
 
+.user_info li {
+font-size:75%;
+}
+
 .header_top {
     background: #f7f7f7;
 }
@@ -2404,4 +2408,5 @@ p.cart {
     .page-not-found h1 {
         font: 300 90px/90px Lato, sans-serif;
     }
+
 }

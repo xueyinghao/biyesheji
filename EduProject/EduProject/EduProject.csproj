@@ -266,6 +266,7 @@
     <Content Include="Content\User\js\jquery-1.11.1.min.js" />
     <Content Include="Content\User\js\jquery.etalage.min.js" />
     <Content Include="Content\User\js\nav.js" />
+    <Content Include="Content\User\js\parabola.js" />
     <Content Include="Content\User\js\quick_links.js" />
     <Content Include="Content\User\js\responsiveslides.min.js" />
     <Content Include="Content\User\js\ShopCart.js" />
