@@ -12,7 +12,7 @@ $(".quick_links_panel li").mouseleave(function () {
         left: -121,
         queue: true
     });
-    //$(this).children(".ibar_login_box").css("display", "none");
+    $(this).children(".ibar_login_box").css("display", "none");
 });
 $(".quick_toggle li").mouseover(function () {
     $(this).children(".mp_qrcode").show();

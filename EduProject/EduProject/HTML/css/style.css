@@ -704,7 +704,7 @@ ul.user li.user_desc p a{
 	-ms-transition:all 0.5s;
 	-o-transition:all 0.5s;
 	-webkit-transition:all 0.5s;
-	visibility:hidden; /* lt-ie9 */
+	visibility:hidden; 
 }
 /* lt-ie9 */
 .b-animate-go:hover .b-animate{
