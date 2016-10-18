@@ -1988,4 +1988,8 @@ ul.about_box li.box_desc {
 .page-not-found h1 {
 	font: 300 90px/90px Lato, sans-serif;
 }
+
+    .ibar_cart_group {
+    width:292px;
+    }
 }

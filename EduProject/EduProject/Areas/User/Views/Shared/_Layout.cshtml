@@ -13,10 +13,7 @@
     <!-- Custom Theme files -->
     <!--webfont-->
     <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-
-
     <link href="~/Content/User/css/base.css" rel="stylesheet" />
-
     <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
     <script src="~/Content/User/js/responsiveslides.min.js"></script>
     <script>
@@ -47,15 +44,15 @@
             <div class="container">
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="index.html" data-hover="Home">首页</a></li>
-                    <li><a href="about.html" data-hover="Recommend">推荐品牌</a></li>
-                    <li><a href="about.html" data-hover="Face care">面部护理</a></li>
-                    <li><a href="careers.html" data-hover="Fragrance makeup">香氛彩妆</a></li>
-                    <li><a href="contact.html" data-hover="Hear care">洗发护发</a></li>
-                    <li><a href="about.html" data-hover="Body care">身体护理</a></li>
-                    <li><a href="about.html" data-hover="Tooth care">口腔护理</a></li>
-                    <li><a href="404.html" data-hover="Boutique men">精品男士</a></li>
-                    <li><a href="register.html" data-hover="Luxery">奢品美妆</a></li>
+                    <li class="active"><a href="/User/Home/" data-hover="Home">首页</a></li>
+                    <li><a href="/User/Product/Recommend" data-hover="Recommend">推荐品牌</a></li>
+                    <li><a href="/User/Product/Face" data-hover="Face care">面部护理</a></li>
+                    <li><a href="/User/Product/Fragrance" data-hover="Fragrance makeup">香氛彩妆</a></li>
+                    <li><a href="/User/Product/Hear" data-hover="Hear care">洗发护发</a></li>
+                    <li><a href="/User/Product/Body" data-hover="Body care">身体护理</a></li>
+                    <li><a href="/User/Product/Tooth" data-hover="Tooth care">口腔护理</a></li>
+                    <li><a href="/User/Product/men" data-hover="Boutique men">精品男士</a></li>
+                    <li><a href="/User/Product/Luxery" data-hover="Luxery">奢品美妆</a></li>
                     <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
                     <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
                     <li id="Out"><a href="/User/Home/LogOut" data-hover="logout">退出</a></li>
@@ -90,7 +87,7 @@
                                 <li class="item1">
                                     <a href="#"><img class="arrow-img" src="~/Content/User/images/f_menu.png" alt="" />推荐品牌</a>
                                     <ul class="cute">
-                                        <li class="subitem1"><a href="#">欧 莱 雅 </a></li>
+                                        <li class="subitem1"><a href="">欧 莱 雅 </a></li>
                                         <li class="subitem2"><a href="#">雅诗兰黛 </a></li>
                                         <li class="subitem3"><a href="#">兰   蔻 </a></li>
                                         <li class="subitem4"><a href="#">韩   束</a></li>
@@ -167,8 +164,7 @@
                                         <li class="subitem4"><a href="#">乳   液</a></li>
                                         <li class="subitem5"><a href="#">面   霜</a></li>
                                         <li class="subitem6"><a href="#">精   华</a></li>
-                                        <li class="subitem7"><a href="#">洗   发</a></li>
-                                        <li class="subitem8"><a href="#">剃   须</a></li>
+                                        <li class="subitem7"><a href="#">剃   须</a></li>
                                     </ul>
                                 </li>
                                 <li class="item8">
@@ -269,6 +265,10 @@
 
     @* 右侧购物车 *@
 
+    <div id="flyItem" class="fly_item">
+        <img src="" width="50" height="50" />
+    </div>
+
     <div class="mui-mbar-tabs">
         <div class="quick_link_mian">
             <div class="quick_links_panel">
@@ -348,7 +348,6 @@
 
 
     <script src="~/Content/User/js/hover_pack.js"></script>
-   
     <script src="~/Content/User/js/common.js"></script>
     <script src="~/Content/User/js/quick_links.js"></script>
     <script src="~/Content/User/js/parabola.js"></script>

@@ -168,6 +168,7 @@
     <Compile Include="Areas\User\Models\loginInfo.cs" />
     <Compile Include="Areas\User\Models\Register.cs" />
     <Compile Include="Areas\User\Models\user.cs" />
+    <Compile Include="Areas\User\ProductController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="BShop.Context.cs">
       <AutoGen>True</AutoGen>
@@ -395,6 +396,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\User\Views\Product\" />
+    <Folder Include="Areas\User\Views\ShopCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

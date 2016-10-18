@@ -217,8 +217,8 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
     margin:0 auto;
 }
 .ibar_closebtn{
-    width:20px;
-    height:20px;
+    width:28px;
+    height:26px;
     background-position:5px -267px;
     padding:5px;
     overflow:hidden;
@@ -252,7 +252,7 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
 .ibar_cart_group_header a:hover{text-decoration:underline;}
 .cart_item{
     padding:15px 0;
-    border-bottom:1px dotted #ddd;
+    border-bottom:10px dotted #ddd;
 }
 .cart_item_pic{
     position:relative;

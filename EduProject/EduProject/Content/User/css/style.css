@@ -23,13 +23,16 @@ html, body {
     background: #fff;
 }
 
-    body a {
+/*当前注释原因：右侧购物车的背景会在鼠标离开时闪一下
+  后期如果除了购物车之外的其余部分出现问题可在做修改 */
+    /*body a {
         transition: 0.5s all;
         -webkit-transition: 0.5s all;
         -o-transition: 0.5s all;
         -ms-transition: 0.5s all;
         -moz-transition: 0.5s all;
-    }
+    }*/
+
 
 .user_info li {
 font-size:75%;

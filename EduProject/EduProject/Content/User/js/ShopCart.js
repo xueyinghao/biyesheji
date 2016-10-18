@@ -42,8 +42,11 @@ if (eleFlyElement && eleShopCart) {
     [].slice.call(document.getElementsByClassName("btnCart")).forEach(function (button) {
         button.addEventListener("click",
         function (event) {
-            var src = $(this).parents("li").find('.p-img').find("img").attr("src");
+            var src = $(this).parents("a").find("img").attr("src");
             $("#flyItem").find("img").attr("src", src);
+
+            //var src = $(this).parents("li").find('.p-img').find("img").attr("src");
+            //$("#flyItem").find("img").attr("src", src);
             // 滚动大小 
             var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
             scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -55,4 +58,13 @@ if (eleFlyElement && eleShopCart) {
             myParabola.position().move();
         });
     });
+}
+
+
+function JoinCart() {
+    $.ajax({
+        url: '/User/Product/ShopCart',
+        type: 'POST',
+        dataType:'Json'
+    })
 }
