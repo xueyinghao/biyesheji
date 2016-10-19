@@ -12,11 +12,10 @@ namespace EduProject
     using System;
     using System.Collections.Generic;
     
-    public partial class UserOrderDetail
+    public partial class OrderDetail
     {
-        public UserOrderDetail()
+        public OrderDetail()
         {
-            this.Order = new HashSet<Order>();
             this.Product = new HashSet<Product>();
         }
     
@@ -24,7 +23,7 @@ namespace EduProject
         public int Num { get; set; }
         public decimal Price { get; set; }
     
-        public virtual ICollection<Order> Order { get; set; }
         public virtual ICollection<Product> Product { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

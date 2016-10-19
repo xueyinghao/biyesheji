@@ -23,10 +23,10 @@ namespace EduProject
         public string TransportWay { get; set; }
         public string PayWay { get; set; }
         public string Status { get; set; }
-        public int UserOrderDetail_Id { get; set; }
         public string UserUName { get; set; }
+        public System.DateTime OrderDate { get; set; }
     
-        public virtual UserOrderDetail UserOrderDetail { get; set; }
         public virtual User User { get; set; }
+        public virtual OrderDetail OrderDetail { get; set; }
     }
 }

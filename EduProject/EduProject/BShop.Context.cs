@@ -29,6 +29,7 @@ namespace EduProject
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<UserOrderDetail> UserOrderDetail { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
     }
 }
