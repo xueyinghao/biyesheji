@@ -61,10 +61,21 @@ if (eleFlyElement && eleShopCart) {
 }
 
 
-function JoinCart() {
+
+$('.grid_2-right').click(function () {
+    var msg = $(this).parents(".grid_2").find("p").text();
+    var pic = $(this).parents("a").find("img").attr("src");
+    var mag1 = msg.split("￥");
+    var name = msg1[0];
+    var price = msg1[1];
     $.ajax({
-        url: '/User/Product/ShopCart',
+        url: '/User/Product/ShopCart?pic=' + pic + '&name=' + name + '&price=' + price,
         type: 'POST',
-        dataType:'Json'
+        dataType: 'text',
+        success: function (data)
+        {
+
+        }
     })
-}
+})
+

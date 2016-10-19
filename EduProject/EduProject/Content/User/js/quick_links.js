@@ -1,4 +1,4 @@
-jQuery(function($){
+jQuery(function ($) {
 	//创建DOM
 	var 
 	quickHTML = document.querySelector("div.quick_link_mian"),
@@ -19,7 +19,7 @@ jQuery(function($){
 		//购物信息
 		message_list: {
 			title: '购物车',
-			content: '<div class="ibar_plugin_content"><div class="ibar_cart_group ibar_cart_product" style="width:292px;"><div class="ibar_cart_group_header"><span class="ibar_cart_group_title">商品信息</span><a href="#">我的购物车</a></div>  <div class="cart_item"><div class="cart_item_pic"><a href="#"><img src="images/xiez.jpg" /></a></div><div class="cart_item_desc"><a href="#" class="cart_item_name">夏季透气真皮豆豆鞋反绒男士休闲鞋韩版磨砂驾车鞋英伦船鞋男鞋子</a><div class="cart_item_sku"><span>尺码：38码（精工限量版）</span></div><div class="cart_item_price"><span class="cart_price">￥700.00</span></div></div></div></div><div class="cart_handler"><div class="cart_handler_header"><span class="cart_handler_left">共<span class="cart_price">1</span>件商品</span><span class="cart_handler_right">￥569.00</span></div><a href="#" class="cart_go_btn" target="_blank">去购物车结算</a></div></div>',
+			content: '<div class="ibar_plugin_content"><div class="ibar_cart_group ibar_cart_product" style="width:292px;"><div class="ibar_cart_group_header"><span class="ibar_cart_group_title">商品信息</span><a href="#">我的购物车</a></div>  <div class="cart_item"><div class="cart_item_pic"><a href="#"><img src="" /></a></div><div class="cart_item_desc"><a href="#" class="cart_item_name">夏季透气真皮豆豆鞋反绒男士休闲鞋韩版磨砂驾车鞋英伦船鞋男鞋子</a><div class="cart_item_sku"><span>尺码：38码（精工限量版）</span></div><div class="cart_item_price"><span class="cart_price">￥700.00</span></div></div></div></div><div class="cart_handler"><div class="cart_handler_header"><span class="cart_handler_left">共<span class="cart_price">1</span>件商品</span><span class="cart_handler_right">￥569.00</span></div><a href="#" class="cart_go_btn" target="_blank">去购物车结算</a></div></div>',
 			init:$.noop
 		},
 		

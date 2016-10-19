@@ -251,8 +251,10 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
 .ibar_cart_group_header a{float:right;color:#ed145b}
 .ibar_cart_group_header a:hover{text-decoration:underline;}
 .cart_item{
+    width:292px;
+    height:120px;
     padding:15px 0;
-    border-bottom:10px dotted #ddd;
+    border-bottom:1px dotted #ddd;
 }
 .cart_item_pic{
     position:relative;
