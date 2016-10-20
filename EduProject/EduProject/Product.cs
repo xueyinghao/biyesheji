@@ -24,6 +24,9 @@ namespace EduProject
         public decimal Price { get; set; }
         public string Detail { get; set; }
         public int TypeId { get; set; }
+        public string pic { get; set; }
+        public string mlNum { get; set; }
+        public Nullable<System.DateTime> AddTime { get; set; }
     
         public virtual Type Type { get; set; }
         public virtual ICollection<OrderDetail> UserOrderDetail { get; set; }

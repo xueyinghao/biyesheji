@@ -15,15 +15,22 @@ namespace EduProject.Areas.User.Controllers
     {
         //测试日志组件
         private ILog log = LogManager.GetLogger("MoonTest");
-        
+        BShopEntities shopEntity = new BShopEntities();
 
         //美妆商城首页
         // GET: /User/index/
         public ActionResult Index()
         {
-            return View();
+            var product = GetTopSellingProduct(4);
+            return View(product);
         }
-        
+
+        public List<Product> GetTopSellingProduct(int count)
+        {
+            return shopEntity.Product.OrderByDescending(c => c.Id).Take(count).ToList();
+        }
+
+
         //登录
         public ActionResult login()
         {
@@ -51,9 +58,7 @@ namespace EduProject.Areas.User.Controllers
             {
                 //添加Cookie
                 HttpCookie cookie = new HttpCookie("myCookie");
-                DateTime dt = DateTime.Now;
-                TimeSpan ts = new TimeSpan(0, 0, 10, 0, 0);//过期时间为1分钟
-                cookie.Expires = dt.Add(ts);//设置过期时间
+               
                 cookie.Values.Add("name", username);
                 cookie.Values.Add("pwd", pwd);
                 Response.AppendCookie(cookie);

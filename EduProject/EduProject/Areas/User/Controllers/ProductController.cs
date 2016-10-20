@@ -9,18 +9,26 @@ namespace EduProject.Areas.User.Controllers
 {
     public class ProductController : Controller
     {
-        //
+        BShopEntities shopEntity = new BShopEntities();
+      
         // GET: /User/Product/
         public ActionResult Index()
         {
             return View();
         }
-        //在ShopCart.js里面写ajax
+
+       
         [HttpPost]
-        public ActionResult AddCart(string pic,string name,decimal price)
+        public ActionResult AddCart(string pic, string name, decimal price)
         {
-            
+            var cart = ShopCart.GetCart(this.HttpContext);
+
             return View();
         }
+
+      
+
+       
+
 	}
 }

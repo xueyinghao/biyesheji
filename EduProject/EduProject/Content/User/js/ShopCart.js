@@ -65,7 +65,7 @@ if (eleFlyElement && eleShopCart) {
 $('.grid_2-right').click(function () {
     var msg = $(this).parents(".grid_2").find("p").text();
     var pic = $(this).parents("a").find("img").attr("src");
-    var mag1 = msg.split("￥");
+    var msg1 = msg.split("￥");
     var name = msg1[0];
     var price = msg1[1];
     $.ajax({
@@ -74,7 +74,7 @@ $('.grid_2-right').click(function () {
         dataType: 'text',
         success: function (data)
         {
-
+            
         }
     })
 })
