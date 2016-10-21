@@ -21,8 +21,9 @@ namespace EduProject.Areas.User.Controllers
         // GET: /User/index/
         public ActionResult Index()
         {
-            var product = GetTopSellingProduct(4);
-            return View(product);
+            var product = GetTopSellingProduct(3);
+            ViewBag.proMsg = product;
+            return View();
         }
 
         public List<Product> GetTopSellingProduct(int count)

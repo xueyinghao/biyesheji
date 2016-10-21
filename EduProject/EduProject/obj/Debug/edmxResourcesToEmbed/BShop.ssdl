@@ -41,12 +41,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Detail" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TypeId" Type="int" Nullable="false" />
     <Property Name="pic" Type="nvarchar(max)" />
     <Property Name="mlNum" Type="nchar" MaxLength="10" />
+    <Property Name="AddTime" Type="datetime" />
   </EntityType>
   <EntityType Name="ProductUserOrderDetail">
     <Key>
@@ -77,14 +78,6 @@
     <Property Name="UType" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="Age" Type="nchar" MaxLength="10" />
     <Property Name="Sex" Type="nchar" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="UserOrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Num" Type="int" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
   </EntityType>
   <Association Name="FK_OrderDetailOrder">
     <End Role="Order" Type="Self.Order" Multiplicity="1" />
@@ -154,7 +147,6 @@
     <EntitySet Name="ProductUserOrderDetail" EntityType="Self.ProductUserOrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserOrderDetail" EntityType="Self.UserOrderDetail" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_OrderDetailOrder" Association="Self.FK_OrderDetailOrder">
       <End Role="Order" EntitySet="Order" />
       <End Role="OrderDetail" EntitySet="OrderDetail" />

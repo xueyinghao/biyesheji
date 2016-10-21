@@ -17,6 +17,12 @@ namespace EduProject.Areas.User.Controllers
             return View();
         }
 
+        public ActionResult Single()
+        {
+            return View();
+        }
+
+
        
         [HttpPost]
         public ActionResult AddCart(string pic, string name, decimal price)

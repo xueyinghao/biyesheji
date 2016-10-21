@@ -72,4 +72,3 @@ F:\MySpace\biyesheji\EduProject\EduProject\bin\zh-Hans\Microsoft.Owin.Security.T
 F:\MySpace\biyesheji\EduProject\EduProject\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.dll
 F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.pdb
-F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.csprojResolveAssemblyReference.cache

@@ -23,14 +23,15 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Detail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TypeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Type" Relationship="Self.FK_TypeProduct" FromRole="Product" ToRole="Type" />
     <NavigationProperty Name="UserOrderDetail" Relationship="Self.ProductUserOrderDetail" FromRole="Product" ToRole="UserOrderDetail" />
     <Property Name="pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="mlNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Type">
     <Key>
@@ -105,7 +106,6 @@
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
     <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
-    <EntitySet Name="UserOrderDetail" EntityType="BShopModel.UserOrderDetail" />
   </EntityContainer>
   <Association Name="UserOrder">
     <End Type="BShopModel.User" Role="User" Multiplicity="1" />
@@ -133,13 +133,5 @@
     <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="PName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="UserOrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Num" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
   </EntityType>
 </Schema>

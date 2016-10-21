@@ -21,6 +21,7 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Product)">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
           <ScalarProperty Name="mlNum" ColumnName="mlNum" />
           <ScalarProperty Name="pic" ColumnName="pic" />
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -92,14 +93,5 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="UserOrderDetail">
-      <EntityTypeMapping TypeName="BShopModel.UserOrderDetail">
-        <MappingFragment StoreEntitySet="UserOrderDetail">
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Num" ColumnName="Num" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
