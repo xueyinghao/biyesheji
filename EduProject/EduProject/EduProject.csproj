@@ -169,7 +169,6 @@
     <Compile Include="Areas\User\Models\loginInfo.cs" />
     <Compile Include="Areas\User\Models\Register.cs" />
     <Compile Include="Areas\User\Models\ShopCart.cs" />
-    <Compile Include="Areas\User\ProductController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="BShop.Context.cs">
       <AutoGen>True</AutoGen>
