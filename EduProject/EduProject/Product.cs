@@ -27,6 +27,7 @@ namespace EduProject
         public string pic { get; set; }
         public string mlNum { get; set; }
         public Nullable<System.DateTime> AddTime { get; set; }
+        public string pic1 { get; set; }
     
         public virtual Type Type { get; set; }
         public virtual ICollection<OrderDetail> UserOrderDetail { get; set; }

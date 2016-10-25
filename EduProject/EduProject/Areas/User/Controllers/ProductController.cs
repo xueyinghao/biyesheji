@@ -17,20 +17,20 @@ namespace EduProject.Areas.User.Controllers
             return View();
         }
 
-        public ActionResult Single()
+        public ActionResult Single(int id)
         {
-            return View();
+            var singlePro = (shopEntity.ProductDetail.Where(c => c.Id == id).ToList())[0];
+            return View(singlePro);
         }
 
 
        
-        [HttpPost]
-        public ActionResult AddCart(string pic, string name, decimal price)
-        {
-            var cart = ShopCart.GetCart(this.HttpContext);
-
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult AddCart(string pic, string name, decimal price)
+        //{
+        //    var cart = ShopCart.GetCart(this.HttpContext);
+        //    return View();
+        //}
 
       
 

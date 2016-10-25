@@ -50,7 +50,7 @@
         @foreach (var item in @ViewBag.proMsg)
         {
              <div class="col-md-4 box_2">
-            <a href="javascript:void(0);">
+            <a href="/User/Product/Single?id=@item.Id" >
                 <div class="grid_1">
                     <div class="b-link-stroke b-animate-go  thickbox">
                         <img src=@item.pic class="img-responsive" alt="" />

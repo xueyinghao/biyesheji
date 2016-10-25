@@ -12,19 +12,19 @@ namespace EduProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Type
+    public partial class ProductDetail
     {
-        public Type()
-        {
-            this.Product = new HashSet<Product>();
-        }
-    
         public int Id { get; set; }
+        public string PName { get; set; }
+        public decimal Price { get; set; }
+        public string Detail { get; set; }
+        public int TypeId { get; set; }
+        public string pic { get; set; }
+        public string mlNum { get; set; }
+        public Nullable<System.DateTime> AddTime { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Country { get; set; }
         public string NationFlag { get; set; }
-    
-        public virtual ICollection<Product> Product { get; set; }
     }
 }

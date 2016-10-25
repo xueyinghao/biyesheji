@@ -1,0 +1,2235 @@
+/* Date: 2016-07-05T15:43:52Z Path: css/bin/detail/detail_other.css */
+.deal_detail,.deal_prefer,.detail_wrap .deal_main {
+	box-shadow: 1px 1px 4px #d3d3d3
+}
+
+
+deal_left {
+margin-left:-261px;
+}
+.app_title_tips {
+	display: inline-block;
+	float: left;
+	background: #ed145b;
+	color: #fff;
+	margin-right: 5px;
+	font-size: 12px;
+	margin-top: 2px;
+	padding: 2px 5px;
+	height: 17px;
+	font-family: Arial;
+	line-height: 18px;
+	overflow: hidden
+}
+
+.app_dialog {
+	background: #fff;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -144px;
+	margin-top: -170px;
+	padding: 24px 30px
+}
+
+.app_dialog .close {
+	color: #999;
+	font-size: 24px;
+	cursor: pointer;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	width: 24px;
+	height: 24px;
+	line-height: 1;
+	text-align: center
+}
+
+.app_dialog .content {
+	width: 226px;
+	height: 292px
+}
+
+.app_dialog .check {
+	width: 44px;
+	height: 44px;
+	position: relative;
+	background: url(http://a2.global.jmstatic.com/19d393f779141fc9/app_dialog.jpg) no-repeat;
+	margin: 0 auto
+}
+
+.app_dialog .tips {
+	color: #494949;
+	font-size: 16px;
+	margin: 19px auto 0
+}
+
+.app_dialog .qr_code {
+	width: 159px;
+	height: 159px;
+	margin: 19px auto 0;
+	background: url(http://a2.global.jmstatic.com/19d393f779141fc9/app_dialog.jpg) 0 -70px no-repeat
+}
+
+.dir_dialog {
+	width: 290px;
+	height: 220px;
+	padding: 11px 28px 18px;
+	font-size: 16px;
+	background-color: #fff;
+	display: none
+}
+
+.dir_dialog .dir_title {
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 6px;
+	color: #333
+}
+
+.dir_dialog .dir_content {
+	margin-top: 14px;
+	line-height: 1.7;
+	color: #494949
+}
+
+.dir_dialog .dir_no_remind {
+	margin-top: 30px
+}
+
+.dir_dialog .dir_no_remind .no_remind_p {
+	color: #b8b8b8;
+	float: right;
+	cursor: pointer
+}
+
+.dir_dialog .dir_no_remind .no_remind_p s {
+	width: 15px;
+	height: 15px;
+	border: 1px solid #b8b8b8;
+	display: block;
+	float: left;
+	margin-top: 3px;
+	margin-right: 2px
+}
+
+.dir_dialog .dir_no_remind em {
+	background: url(http://a3.global.jmstatic.com/58d4d9d7b0f45f40/yes.jpg) 2px 2px no-repeat;
+	height: 15px;
+	width: 15px;
+	display: none
+}
+
+.dir_dialog .selected em {
+	display: block
+}
+
+.dir_dialog .dir_btn {
+	text-align: center;
+	margin-top: 10px
+}
+
+.dir_dialog .dir_btn a {
+	text-decoration: none;
+	color: #fff;
+	background-color: #ed145b;
+	padding: 9px 16px;
+	font-size: 18px
+}
+
+.body_top_banner {
+	height: 80px;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	min-width: 960px;
+	background: #f7f7f7
+}
+
+.body_top_banner .home_foucs {
+	height: 80px;
+	border: 0
+}
+
+.home_foucs ul {
+	height: 80px;
+	overflow: hidden
+}
+
+.home_foucs ul li a {
+	height: 80px;
+	display: inline-block
+}
+
+.body_top_banner .slidearrow {
+	top: 30%
+}
+
+.hk_direct,.mc_direct {
+	width: 54px;
+	height: 53px;
+	position: absolute;
+	top: 0;
+	z-index: 2
+}
+
+.hk_direct {
+	background-image: url(http://a1.global.jmstatic.com/fef3be0659f5db06/hk_direct.png);
+	left: 0
+}
+
+.mc_direct {
+	background-image: url(http://a0.global.jmstatic.com/02b28e56514fda39/mc_direct.png);
+	right: 0
+}
+
+.deal_prefer {
+	width: 1090px;
+	margin: 20px auto;
+	background: #fff;
+	border: 1px solid #fff;
+	padding: 20px 0
+}
+
+.deal_prefer .item div,.deal_prefer .list {
+	width: 200px;
+	height: 80px
+}
+
+.deal_prefer .item div,.deal_prefer_direct .item .item_desp_0,.deal_prefer_direct .item .item_desp_1,.deal_prefer_direct .item .item_show_0,.deal_prefer_direct .item .item_show_1 {
+	background-image: url(http://a0.global.jmstatic.com/1d8316356ca51b4f/ss_5.jpg)
+}
+
+.deal_prefer .list {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	margin-left: 60px;
+	cursor: pointer
+}
+
+.deal_prefer .item {
+	position: absolute
+}
+
+.deal_prefer .item .item_show_0 {
+	background-position: 0 -220px
+}
+
+.deal_prefer .item .item_desp_0 {
+	background-position: -2px -6px
+}
+
+.deal_prefer .item .item_desp {
+	position: relative
+}
+
+.deal_prefer .item .item_desp .more {
+	display: block;
+	width: 200px;
+	height: 80px
+}
+
+.deal_prefer .item .item_show_1 {
+	background-position: -240px -220px
+}
+
+.deal_prefer .item .item_desp_1 {
+	background-position: -242px -6px
+}
+
+.deal_prefer .rightborder {
+	border-right: 1px solid #eee
+}
+
+.deal_prefer .item .item_show_2 {
+	background-position: -460px -220px
+}
+
+.deal_prefer .item .item_desp_2 {
+	background-position: -460px -6px
+}
+
+.deal_prefer .last {
+	margin-left: 15px;
+	width: 212px
+}
+
+.deal_prefer .item .item_show_3 {
+	background-position: -680px -220px
+}
+
+.deal_prefer .item .item_desp_3 {
+	background-position: -680px -6px
+}
+
+.deal_prefer .item .item_show_4 {
+	background-position: -220px -404px
+}
+
+.deal_prefer .item .item_desp_4 {
+	background-position: -690px -404px
+}
+
+.deal_prefer .item .item_show_5 {
+	background-position: 20px -404px;
+	width: 212px
+}
+
+.deal_prefer .item .item_desp_5 {
+	background-position: -450px -404px
+}
+
+.status_rate {
+	width: 983px;
+	height: 62px;
+	margin: 0 auto 28px;
+	overflow: hidden
+}
+
+.status_rate .list {
+	width: 163px;
+	height: 60px;
+	padding-left: 56px;
+	background: url(http://a1.global.jmstatic.com/c20bae466687e16e/status_rate.png) 0 -4px no-repeat #fff;
+	float: left
+}
+
+.ie6 .status_rate .list {
+	background: url(http://a0.global.jmstatic.com/4de44b86e0700dd3/status_rate_ie6.png) 0 -4px no-repeat #fff
+}
+
+.status_rate .content {
+	margin-top: 11px
+}
+
+.status_rate .content .title {
+	font-size: 14px;
+	color: #333
+}
+
+.status_rate .running .title {
+	color: #ed145b
+}
+
+.status_rate .content .con {
+	font-size: 12px;
+	color: #606060;
+	margin-top: 2px
+}
+
+.status_rate .produce {
+	background-position: 0 -64px
+}
+
+.status_rate .balance {
+	background-position: 0 -122px
+}
+
+.status_rate .balbefore .content {
+	margin-top: 2px
+}
+
+.status_rate .deliver {
+	background-position: 0 -184px
+}
+
+.status_rate .towards {
+	width: 20px;
+	height: 60px;
+	background: url(http://a1.global.jmstatic.com/c20bae466687e16e/status_rate.png) -15px -240px no-repeat #fff;
+	float: left;
+	margin-right: 12px
+}
+
+.ie6 .status_rate .towards {
+	background: url(http://a0.global.jmstatic.com/4de44b86e0700dd3/status_rate_ie6.png) -15px -240px no-repeat #fff
+}
+
+.ecope_carousel {
+	width: 960px
+}
+
+.ecope_carousel:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0
+}
+
+.ecope_carousel .cs_wrapper {
+	width: 888px;
+	height: 230px;
+	overflow: hidden;
+	position: relative;
+	float: left
+}
+
+a.s_left,a.s_left:hover,a.s_right,a.s_right:hover {
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	top: 100px
+}
+
+.ecope_carousel .cs_list {
+	list-style: none;
+	position: absolute
+}
+
+.ecope_carousel .cs_arrow,.ecope_carousel .cs_next,.ecope_carousel .cs_prev {
+	float: left
+}
+
+.silider_itme {
+	background: url(http://a2.global.jmstatic.com/ad1662091c6ba072/silider_itme.jpg) no-repeat
+}
+
+a.s_left {
+	background-position: left top;
+	left: 0;
+	z-index: 10
+}
+
+a.s_right {
+	background-position: right top;
+	right: 0
+}
+
+a.s_left:hover {
+	background-position: left bottom;
+	left: 0
+}
+
+a.s_right:hover {
+	background-position: right bottom;
+	right: 0
+}
+
+.itme li {
+	margin-top: 15px;
+	width: 112px;
+	padding-left: 18px;
+	padding-right: 18px;
+	float: left;
+	padding-bottom: 28px;
+	display: inline;
+	_padding-right: 10px
+}
+
+.itme .side_item,.pic_price {
+	font-size: 12px;
+	margin-top: 5px;
+	overflow: hidden
+}
+
+.itme .pic img {
+	width: 100px;
+	height: 100px
+}
+
+.itme .side_item {
+	color: #333;
+	height: 16px
+}
+
+.pic_price {
+	color: #666;
+	width: 120px;
+	height: 20px
+}
+
+.pic_price strong {
+	color: #e42141;
+	font-size: 16px;
+	font-weight: 700;
+	font-family: arial
+}
+
+.pic_price .pic_price_mak {
+	text-decoration: line-through
+}
+
+.pic_price span {
+	font-family: Arial,sans-serif;
+	_font-family: tahoma
+}
+
+.add_cart {
+	background-position: 0 -149px;
+	width: 90px;
+	height: 22px;
+	display: none;
+	margin-top: 10px
+}
+
+.deal_detail {
+	padding: 0;
+	margin: 20px auto;
+	width: 1090px;
+	_zoom: 1;
+	background: #fff;
+	position: relative
+}
+
+.deal_tab_nav {
+	height: 50px;
+	width: 1090px;
+	overflow: hidden
+}
+
+.deal_tab_nav .inner {
+	width: 1090px;
+	margin: 0 auto;
+	background: #f6f6f6;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	height: 52px;
+	overflow: hidden
+}
+
+.deal_tab_nav ul li {
+	float: left
+}
+
+.deal_tab_nav ul li a {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 14px;
+	color: #333;
+	border-right: 1px solid #e5e5e5;
+	margin-top: 2px
+}
+
+.deal_tab_nav .nav_fixed_pric {
+	display: none
+}
+
+.nav_bar_fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background: url(http://a1.global.jmstatic.com/f23d832664b1bc20/fixe_nav_bg_07.png) repeat-x;
+	height: 35px
+}
+
+.nav_bar_fixed .inner {
+	background: 0;
+	position: relative;
+	border-top: 0;
+	border-bottom: 0;
+	font-family: arial;
+	height: 35px
+}
+
+.nav_bar_fixed .inner ul li a {
+	color: #fff;
+	border-right: 1px solid #4b4b4b;
+	padding: 6px 25px
+}
+
+.deal_tab_nav ul li a:hover,.nav_bar_fixed .inner ul li .current,.nav_bar_fixed .inner ul li a:hover {
+	background: #fff;
+	border-top: 3px solid #e42141;
+	margin-top: -1px;
+	text-decoration: none;
+	color: #e42141
+}
+
+.nav_bar_fixed .nav_fixed_pric {
+	display: block;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	line-height: 21px;
+	color: #fff;
+	font-size: 18px
+}
+
+.nav_fprice {
+	margin-right: 10px;
+	margin-top: 8px
+}
+
+.nav_fixed_pric strong {
+	font-size: 22px;
+	font-weight: 700;
+	vertical-align: middle;
+	_vertical-align: 0
+}
+
+.nav_fprice .market_price {
+	text-decoration: line-through
+}
+
+.nav_fixed_pric .pop_btn {
+	background-image: url(http://a1.global.jmstatic.com/2104bd38e01a8675/presell.png);
+	background-repeat: no-repeat;
+	width: 170px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	display: inline-block
+}
+
+.nav_fixed_pric .pop_btn_disabled {
+	background-position: 0 -50px;
+	cursor: default
+}
+
+.fixed_add_hart,.fixed_buy_now,.fixed_sold_out {
+	width: 120px;
+	height: 35px;
+	display: inline-block;
+	line-height: 35px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	text-align: center
+}
+
+.fixed_buy_now {
+	background: #ed145b
+}
+
+.fixed_add_hart {
+	background: #f89704
+}
+
+.fixed_sold_out {
+	background: #706f6f
+}
+
+.ptb_30 .content_book {
+	padding-top: 0
+}
+
+.detail_content {
+	background: url(http://a0.global.jmstatic.com/f913a9706a7f67ef/detail_content.jpg) no-repeat
+}
+
+.consumer_box {
+	background-position: left -641px
+}
+
+.guts_box {
+	background-position: left top
+}
+
+.spxq_box {
+	background-position: left -111px
+}
+
+.syff_box {
+	background-position: left -210px
+}
+
+.spsp_box {
+	background-position: left -307px
+}
+
+.gyhwg_box {
+	background-position: left -565px
+}
+
+.lxjm_box {
+	background-position: left -476px
+}
+
+.yhkb_box {
+	background-position: left -718px
+}
+
+.jmcjwt_box {
+	background-position: left -394px
+}
+
+.cjwt_box,.consumer_box,.guts_box,.gyhwg_box,.jmcjwt_box,.lxjm_box,.my_box,.spsp_box,.spxq_box,.spxz_box,.syff_box,.yhkb_box {
+	width: 922px;
+	height: 50px;
+	margin: 0 auto
+}
+
+.content_img,.content_text {
+	margin: 20px auto 0
+}
+
+.content_text,.content_text img {
+	width: 790px
+}
+
+.content_nav_con {
+	padding-top: 50px
+}
+
+.deal_con_content {
+	width: 790px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 20px
+}
+
+.content_text .w200 {
+	width: 200px;
+	height: 200px
+}
+
+.deal_con_content table td span {
+	color: #666;
+	float: left;
+	display: block;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: left;
+	padding: 8px 0
+}
+
+.deal_con_content img {
+	display: block;
+	float: right;
+	width: 330px
+}
+
+.yhkb .content_text,.yhkb .detail_content,.yhkb_link {
+	display: none
+}
+
+.content_img {
+	width: 920px
+}
+
+.deal_detail .static_img {
+	width: 920px;
+	margin: 0 auto;
+	display: block
+}
+
+.lxjm .content_img {
+	position: relative
+}
+
+.lxjm .content_img a {
+	display: block;
+	position: absolute;
+	top: 122px;
+	font-size: 16px;
+	color: #5c4bb3;
+	text-decoration: underline
+}
+
+.lxjm .myfaq {
+	left: 370px
+}
+
+.lxjm .myticket {
+	left: 735px
+}
+
+.jmcjwt .jmcjwt_img {
+	display: none
+}
+
+.jmcjwt .btn {
+	font-size: 18px;
+	width: 200px;
+	height: 40px;
+	border: 1px solid #000;
+	line-height: 40px;
+	text-align: center;
+	margin: 40px auto 10px;
+	cursor: pointer
+}
+
+.detail_sold_out {
+	background-image: url(http://a0.global.jmstatic.com/382fcb5926644348/detail_sold_out.png);
+	width: 104px;
+	height: 104px;
+	position: absolute;
+	left: 42%;
+	top: 35%
+}
+
+.deal_left .preview_product,.deal_main .deal_left,.global_body {
+	position: relative
+}
+
+.jiathis_style {
+	margin-top: 20px;
+	float: left;
+	margin-left: 48px
+}
+
+.jiathis_style .jiathis_txt {
+	margin-right: 10px;
+	color: #949494
+}
+
+.jmcjwt .cjwt {
+	width: 920px;
+	margin: 0 auto
+}
+
+.cjwt .rightcon,.jmcjwt .cjwt .leftcon {
+	width: 460px;
+	float: left
+}
+
+.jmcjwt .question {
+	width: 416px;
+	float: left;
+	margin: 10px 20px;
+	font-family: "Hiragino Sans GB","Microsoft Yahei";
+	display: inline
+}
+
+.jmcjwt .question .title {
+	background: url(http://a0.global.jmstatic.com/5854fe2aa6038eb5/cjwt.jpg) no-repeat #564c89;
+	width: 385px;
+	height: 40px;
+	color: #fff;
+	line-height: 44px;
+	padding-left: 30px;
+	font-size: 14px
+}
+
+.jmcjwt .question .main {
+	margin: 13px 38px 0
+}
+
+.jmcjwt .question .top {
+	width: 324px;
+	height: 20px;
+	background: url(http://a0.global.jmstatic.com/5854fe2aa6038eb5/cjwt.jpg) 0 -50px no-repeat
+}
+
+.jmcjwt .question .content {
+	padding: 0 16px;
+	background: url(http://a3.global.jmstatic.com/8ea964cd541a4329/cjwt_a.jpg) repeat-y
+}
+
+.jmcjwt .question .content div {
+	float: left
+}
+
+.jmcjwt .question .left {
+	line-height: 14px;
+	font-size: 18px
+}
+
+.jmcjwt .question .right {
+	width: 254px;
+	margin-left: 6px;
+	line-height: 20px;
+	font-size: 14px
+}
+
+.jmcjwt .question .right .small {
+	font-size: 12px
+}
+
+.jmcjwt .question .bottom {
+	width: 344px;
+	height: 22px;
+	background: url(http://a0.global.jmstatic.com/5854fe2aa6038eb5/cjwt.jpg) 0 -80px no-repeat
+}
+
+.my_box {
+	background-position: left -798px
+}
+
+.detail_my_cnt {
+	width: 610px;
+	margin: 0 auto;
+	padding-top: 30px
+}
+
+.my_cnt_list {
+	margin-bottom: 20px
+}
+
+.my_cnt_list .my_list_tit {
+	color: #ff62a6;
+	font-size: 18px;
+	cursor: pointer
+}
+
+.my_cnt_list .my_list_tit span {
+	width: 0;
+	height: 0;
+	color: #fff;
+	border-width: 14px 10px 0;
+	border-style: solid;
+	border-color: #E4E4E4 transparent transparent;
+	margin-right: 5px;
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	margin-top: 5px;
+	transition: transform .4s ease;
+	-transition: transform .4s ease;
+	-webkit-transition: transform .4s ease;
+	-moz-transition: transform .4s ease;
+	-o-transition: transform .4s ease
+}
+
+.my_cnt_list .my_show span {
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg)
+}
+
+.my_list_con {
+	display: none
+}
+
+.my_cnt_list .my_list_info {
+	color: #545454;
+	font-size: 14px;
+	line-height: 24px;
+	margin-left: 20px
+}
+
+.my_cnt_list .my_list_info p {
+	text-indent: 2em
+}
+
+.my_cnt_list .my_list_img {
+	text-align: center;
+	margin-top: 20px
+}
+
+.my_cnt_list .my_list_img img {
+	width: 570px;
+	padding: 5px 0
+}
+
+.niao table {
+	border: 1px solid #444;
+	padding: 0;
+	border-collapse: collapse;
+	table-layout: fixed;
+	margin-top: 10px;
+	color: #444
+}
+
+.niao table td {
+	height: 22px;
+	border: 1px solid #444;
+	background: #fff;
+	font-size: 15px;
+	font-family: Microsoft YaHei;
+	padding: 3px 3px 3px 8px;
+	width: 160px
+}
+
+.niao table .cause {
+	width: 438px
+}
+
+.global_body .detail_wrap .show,.global_body .global_wrapper .show {
+	display: block
+}
+
+.detail_sold_out,.dis_coz {
+	display: none
+}
+
+.mr80 {
+	margin-right: 80px
+}
+
+.ptb_30 {
+	padding: 30px 0
+}
+
+.mr4 {
+	margin-right: 4px
+}
+
+.c666 {
+	color: #666
+}
+
+.no_border {
+	border: none
+}
+
+.mlr4 {
+	margin: 0 4px
+}
+
+.currency_arial {
+	font-family: arial
+}
+
+.currency_w {
+	font-family: arial,sans-serif;
+	_font-family: tahoma
+}
+
+.mlr_5 {
+	margin: 0 5px;
+	font-family: "宋体"
+}
+
+.purple {
+	color: #80479e
+}
+
+.global_body {
+	background: #f7f7f7;
+	padding-bottom: 1px;
+	zoom: 1
+}
+
+.detail_wrap {
+	width: 1090px;
+	margin: 0 auto;
+	padding-top: 20px
+}
+
+.detail_wrap .deal_main {
+	background: #fff;
+	padding-bottom: 30px;
+	border-top: none
+}
+
+.deal_main .deal_left {
+	font-family: '\5FAE\8F6F\96C5\9ED1' 'Hiragino Sans GB';
+	width: 702px;
+	float: left
+}
+
+.deal_left .deal_titles {
+	background: #f8f8f8;
+	padding: 5px 0 20px 48px
+}
+
+.deal_left .long_title,.deal_left .short_title {
+	width: 630px
+}
+
+.deal_left .short_title {
+	font-size: 12px;
+	height: 22px;
+	overflow: hidden;
+	color: #666565
+}
+
+.deal_left .long_title {
+	font-size: 18px;
+	overflow: hidden;
+	height: 107px;
+	word-wrap: break-word;
+	word-break: normal
+}
+
+.deal_left .long_title strong {
+	color: #ec2b8c
+}
+
+.price_discount {
+	font-family: arial
+}
+
+.deal_left .preview_product_id {
+	width: 700px;
+	height: 400px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	border: 1px solid #efefef
+}
+
+.preview_product_id .hk_direct {
+	left: auto;
+	right: 0
+}
+
+.detail_btn_fom,.detail_btn_fom i,.detail_btn_fom span {
+	display: inline-block
+}
+
+.deal_left .preview_product_id .ImageStd_1000 {
+	width: 1000px;
+	height: 400px;
+	margin-left: -150px
+}
+
+.deal_left .preview_product_id .ImageStd_350 {
+	width: 350px;
+	height: 350px
+}
+
+.deal_left .preview_product_id .ImageStd_400 {
+	width: 400px;
+	height: 400px
+}
+
+.deal_left .numtimer_box {
+	background: #323337;
+	position: absolute;
+	top: -13px;
+	left: 50px;
+	color: #fff;
+	font-size: 14px;
+	padding: 3px 18px;
+	z-index: 1
+}
+
+.deal_main .deal_right {
+	float: left;
+	margin-left: 30px;
+	width: 330px
+}
+
+.product_info {
+	padding: 18px 0 0 54px;
+	height: 25px
+}
+
+.product_info .product_info_list {
+	width: 450px;
+	overflow: hidden;
+	height: 25px
+}
+
+.product_info .product_info_list a {
+	display: inline-block;
+	float: left;
+	color: #5c5c5c;
+	text-decoration: none;
+	white-space: nowrap;
+	margin-right: 6px;
+	height: 23px;
+	line-height: 23px;
+	border: 1px solid #e1e0e0;
+	padding: 0 8px
+}
+
+.product_info .product_info_list a:hover {
+	background: #fe6397;
+	color: #fff
+}
+
+.product_info .jiathis_style {
+	margin-top: 0;
+	float: right;
+	margin-right: 10px
+}
+
+.detail_btn_fom {
+	margin-right: 0;
+	width: 183px;
+	height: 41px;
+	line-height: 41px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	cursor: pointer
+}
+
+.detail_btn_fom i {
+	background-image: url(http://a3.global.jmstatic.com/817b18686523ab4b/detail_icon.png);
+	background-repeat: no-repeat
+}
+
+.btn_fom_add {
+	background-color: #ed145b
+}
+
+.btn_fom_add:hover {
+	background-color: #f1185f
+}
+
+.btn_fom_wish {
+	background-color: #f89804
+}
+
+.combination_buy .btn_fom_add,.combination_buy .btn_fom_wish {
+	margin-top: 8px
+}
+
+.btn_fom_wish:hover {
+	background-color: #f99c0e
+}
+
+.btn_fom_sold {
+	width: 170px;
+	background-color: #6b6b6b;
+	cursor: default
+}
+
+.btn_fom_tip {
+	width: 147px;
+	background-color: #ed145b;
+	margin-left: 5px
+}
+
+.btn_fom_tip:hover {
+	background-color: #f1185f
+}
+
+.btn_fom_add i,.btn_fom_sold i,.btn_fom_tip i,.btn_fom_wish i {
+	width: 9px;
+	height: 14px;
+	background-position: -3px -18px;
+	overflow: hidden;
+	margin-left: 10px;
+	vertical-align: middle;
+	_vertical-align: 0
+}
+
+.btn_fom_tip .tip_icon {
+	width: 15px;
+	height: 17px;
+	margin: 0 5px 0 0;
+	background-position: -2px 0;
+	vertical-align: -2px
+}
+
+.deal_right .r_first,.deal_right .r_fourth,.deal_right .r_second,.deal_right .r_third {
+	padding: 25px 0;
+	border-bottom: 1px dotted #c5c5c5
+}
+
+.deal_right .r_first {
+	height: 80px
+}
+
+.deal_right .r_first .logo_brand {
+	width: 160px;
+	height: 80px;
+	float: left
+}
+
+.deal_right .r_first .flag_box_main {
+	color: #424242;
+	height: 42px;
+	overflow: hidden;
+	margin-top: 22px
+}
+
+.deal_right .r_first .flag_box_main .p_img_lg {
+	width: 60px;
+	height: 40px;
+	border-radius: 4px;
+	vertical-align: bottom;
+	overflow: hidden;
+	margin-right: 10px;
+	border: 1px solid #eee
+}
+
+.deal_right .r_first .flag_box_main .area_code_b,.deal_right .r_first .flag_box_main .deal_en {
+	font-size: 14px;
+	color: #666;
+	line-height: 20px;
+	width: 78px;
+	height: 20px;
+	word-break: break-all;
+	overflow: hidden;
+	font-family: "微软雅黑"
+}
+
+.deal_right .r_first .flag_box_main .area_code_b {
+	color: #8d8d8d
+}
+
+.deal_right .r_second {
+	padding-bottom: 10px
+}
+
+.deal_right .r_second .price_module {
+	padding-bottom: 20px
+}
+
+.deal_right .r_second .price_module li {
+	float: left
+}
+
+.price_module .jumei_price {
+	color: #232323;
+	font-size: 38px;
+	line-height: 1;
+	font-family: arial;
+	margin-right: 10px
+}
+
+.jumei_price .jp_cur {
+	font-size: 24px;
+	font-family: arial;
+	vertical-align: top;
+	line-height: 1.4;
+	margin-right: 5px
+}
+
+.price_module .discount {
+	padding: 0 8px;
+	color: #fff;
+	background-color: #ec165c;
+	margin-top: 8px;
+	margin-right: 10px
+}
+
+.price_module .market_price {
+	text-decoration: line-through;
+	color: #676767;
+	margin-right: 15px;
+	margin-top: 13px;
+	font-size: 14px;
+	display: none
+}
+
+.deal_right .com_rule .sh_mark,.deal_right .r_second .price_module .sh_mark {
+	margin-top: 13px;
+	position: relative;
+	_display: inline;
+	_zoom: 1;
+	z-index: 3;
+	float: right
+}
+
+.combination_buy .com_rule .sh_mark {
+	margin-top: 0
+}
+
+.sh_mark .rmb_tax {
+	color: #dedede;
+	cursor: pointer
+}
+
+.mark_hover,.mark_layer {
+	position: absolute;
+	background: #fff;
+	top: 15px;
+	right: 0;
+	width: 420px
+}
+
+.mark_layer .caret_in,.mark_layer .caret_out {
+	border-style: dashed dashed solid;
+	overflow: visible;
+	font-family: simsun;
+	width: 0;
+	height: 0;
+	_line-height: 0;
+	font-size: 0;
+	display: block;
+	position: absolute
+}
+
+.mark_layer .caret_out {
+	right: 22px;
+	top: 7px;
+	border-width: 0 7px 8px;
+	border-color: transparent transparent #bdb5cd;
+	z-index: 1
+}
+
+.mark_layer .caret_in {
+	right: 23px;
+	top: 9px;
+	border-width: 0 6px 7px;
+	border-color: transparent transparent #fff;
+	z-index: 12
+}
+
+.mark_hover {
+	border: 1px solid #bdb5cd;
+	padding: 15px;
+	line-height: 180%;
+	box-shadow: 3px 3px 8px #efefef;
+	color: #bbb
+}
+
+.mark_hover .tariff {
+	display: none
+}
+
+.mark_hover .show {
+	display: block
+}
+
+.mark_hover .price_detail {
+	border-top: 1px solid #ccc;
+	text-align: left;
+	padding: 5px 0 0
+}
+
+.mark_hover .deal_com_price,.mark_hover .deal_price,.mark_hover .details {
+	color: #333;
+	font-size: 14px
+}
+
+.mark_hover .details {
+	font-weight: 700;
+	overflow: hidden;
+	width: 355px;
+	height: 22px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: keep-all
+}
+
+.mark_hover p .price_sp,.s_arr_get .get_people,.s_red,.sh_price .s_arrivals .s_served span {
+	color: #ec2b8c
+}
+
+.mark_hover p a {
+	text-decoration: underline;
+	color: #666;
+	margin-left: 5px
+}
+
+.mark_hover .com_pri_title {
+	padding: 5px 30px
+}
+
+.mark_hover .com_deal_box {
+	border-top: 1px solid #ebebeb;
+	margin: 5px 30px;
+	padding: 10px 5px;
+	position: relative
+}
+
+.mark_hover .pro_deal_list .com_detail_price,.mark_hover .pro_deal_list .com_main_price,.mark_hover .pro_deal_list .com_vice_price {
+	color: #7e7e7e;
+	text-align: center;
+	margin: 0 8px;
+	width: 125px;
+	height: 18px;
+	overflow: hidden;
+	white-space: nowrap
+}
+
+.mark_hover .pro_deal_list {
+	float: left;
+	text-align: center;
+	margin: 10px 13px
+}
+
+.mark_hover .pro_deal_list img {
+	width: 108px;
+	height: 108px
+}
+
+.mark_hover .pro_deal_list p {
+	width: 110px;
+	overflow: hidden;
+	color: #7e7e7e;
+	margin: 5px 15px;
+	text-align: center
+}
+
+.mark_hover .pro_deal_list p:nth-child(2) {
+	height: 40px;
+	color: #7e7e7e;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word
+}
+
+.mark_hover .com_deal_box .com_pro_center_plus {
+	font-size: 40px;
+	font-weight: 700;
+	color: #d2d2d2;
+	padding: 30px 17px;
+	position: absolute;
+	left: 143px;
+	top: 35px
+}
+
+.mark_hover .com_deal_box .com_tips {
+	position: absolute;
+	right: -20px;
+	bottom: -10px
+}
+
+.r_second .other_price {
+	color: #8e8e8e;
+	font-size: 13px;
+	padding-bottom: 15px;
+	display: none
+}
+
+.r_second .r_second_policy_wrap {
+	margin-bottom: 6px;
+	height: 17px;
+	overflow: hidden
+}
+
+.r_second .r_second_policy {
+	color: #525252;
+	font-size: 13px
+}
+
+.r_second .r_second_policy a {
+	color: #525252
+}
+
+.r_second .r_second_policy em {
+	background-color: #000;
+	color: #fff;
+	padding: 1px 4px;
+	margin-right: 10px
+}
+
+.deal_right .r_third {
+	padding-top: 12px
+}
+
+.mail_policy {
+	color: #8e8e8e;
+	font-size: 13px;
+	padding-top: 13px
+}
+
+.mail_policy dd,.mail_policy dt {
+	float: left
+}
+
+.mail_policy dd {
+	width: 264px
+}
+
+.ie6 .mail_policy dd {
+	width: 254px
+}
+
+.global_mail em,.retail_global_mail em {
+	background-color: #000;
+	color: #fff;
+	padding: 1px 4px;
+	margin-right: 5px;
+	font-size: 12px
+}
+
+.global_mail a {
+	color: #525252
+}
+
+.mail_policy .global_mail .together_btn {
+	border: 1px solid #ffb442;
+	color: #ffb442;
+	padding: 0 3px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 16px
+}
+
+.global_mail span {
+	color: #fd4d87
+}
+
+.r_third .deal_sku {
+	color: #666;
+	font-size: 13px;
+	position: relative;
+	padding-top: 13px;
+	display: none
+}
+
+.deal_sku dd,.deal_sku dt {
+	float: left
+}
+
+.deal_sku .dt_relative {
+	position: relative
+}
+
+.deal_sku .r_third_spacing {
+	margin-right: 26px
+}
+
+.deal_sku .deal_sku_input {
+	width: 166px;
+	height: 20px;
+	border: 1px solid #e3e3e3;
+	margin-left: 9px;
+	padding: 0 10px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	overflow: hidden
+}
+
+.deal_sku .warning {
+	border: 1px solid #ed145b
+}
+
+.deal_sku .warningtip {
+	position: absolute;
+	top: 25px;
+	left: 166px;
+	color: #323232;
+	display: none;
+	background: url(http://a0.global.jmstatic.com/fb40f1fd99f70482/warning.jpg) no-repeat;
+	padding-left: 22px;
+	height: 16px;
+	line-height: 16px;
+	width: 76px
+}
+
+.deal_sku .warningtip span {
+	color: #ed145b;
+	border: 1px solid #ed145b;
+	border-radius: 10px;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	text-align: center;
+	line-height: 14px;
+	font-weight: 700;
+	margin-right: 5px
+}
+
+.deal_sku .sku_select {
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	display: none;
+	padding: 10px 0;
+	position: absolute;
+	top: 21px;
+	left: 9px;
+	z-index: 2;
+	min-width: 186px
+}
+
+.ie6 .deal_sku .sku_select {
+	width: 186px
+}
+
+.deal_sku .sku_select li {
+	padding: 5px 10px;
+	overflow: hidden;
+	height: 16px;
+	cursor: pointer;
+	max-width: 245px;
+	white-space: nowrap;
+	word-break: keep-all
+}
+
+.deal_sku .sku_select li a {
+	color: #666;
+	display: block
+}
+
+.deal_sku .sku_select .sku_select_hover a {
+	color: #ed145b
+}
+
+.deal_sku .sku_select .sku_select_no a {
+	color: #d8d8d8;
+	cursor: default
+}
+
+.new_detail_btn {
+	background-image: url(http://a0.global.jmstatic.com/9cb5afbd509328a4/new_detail_btn.png);
+	display: inline-block;
+	cursor: pointer
+}
+
+.account,.add_hart,.buy_now,.sold_out {
+	margin-bottom: 10px;
+	width: 167px;
+	height: 36px
+}
+
+.account {
+	background-image: url(http://a1.global.jmstatic.com/2104bd38e01a8675/presell.png);
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	line-height: 36px
+}
+
+.buy_now {
+	background-position: 0 0
+}
+
+.buy_now:hover {
+	background-position: -184px 0
+}
+
+.add_hart {
+	background-position: 0 -39px
+}
+
+.sold_out {
+	background-position: 0 -79px;
+	width: 160px;
+	float: left;
+	cursor: default
+}
+
+.remind_sell {
+	background-position: 0 -164px;
+	width: 160px;
+	height: 36px;
+	margin-left: 9px
+}
+
+.ie6 .remind_sell {
+	margin-left: 4px
+}
+
+.remind_sell:hover {
+	background-position: -350px -164px
+}
+
+.deal_sku i {
+	background-position: -192px -79px;
+	width: 12px;
+	height: 12px;
+	right: 7px;
+	position: absolute;
+	top: 4px
+}
+
+.sprite_icon {
+	background-image: url(http://a2.global.jmstatic.com/c5d332d606f71e60/sprite_icon.png);
+	display: inline-block
+}
+
+.head_content {
+	background-position: 0 0;
+	width: 14px;
+	height: 16px;
+	vertical-align: -3px;
+	margin-right: 10px
+}
+
+.review_word {
+	background-position: 0 -24px;
+	width: 17px;
+	height: 17px;
+	vertical-align: -3px;
+	margin-right: 5px
+}
+
+.deal_right .r_fourth {
+	border-bottom: none
+}
+
+.people {
+	padding: 18px 0 20px;
+	border-bottom: 1px dotted #c5c5c5;
+	color: #999
+}
+
+.combination_buy .people {
+	border-bottom: 0;
+	border-top: 1px dotted #c5c5c5;
+	padding: 12px 0
+}
+
+.deal_right .show {
+	display: block
+}
+
+.people div {
+	background-image: url(http://a0.global.jmstatic.com/ccbaed1cf2c672de/pop_icon.png);
+	background-repeat: no-repeat;
+	padding-left: 23px
+}
+
+.ie6 .people div {
+	background-image: url(http://a1.global.jmstatic.com/dca62cf9eb842e11/pop_icon_ie6.png)
+}
+
+.people .num {
+	background-position: 0 3px;
+	margin-right: 40px
+}
+
+.people .num em {
+	color: #fd4d87;
+	font-weight: 700
+}
+
+.people .comments {
+	background-position: 0 -12px;
+	display: none
+}
+
+.people .comments a {
+	color: #999
+}
+
+.people .comments a:hover {
+	color: #ea1e5c
+}
+
+.r_fifth {
+	padding: 18px 0 20px;
+	border-bottom: 1px dotted #c5c5c5
+}
+
+.r_fifth .r_fourth_content li {
+	float: left;
+	color: #666
+}
+
+.content_img textarea,.content_text textarea {
+	display: none
+}
+
+.ser_bg {
+	background: url(http://a3.global.jmstatic.com/4c6c646fbda80601/service.png) no-repeat
+}
+
+.combination_buy .title_rule {
+	margin: 12px 0 16px
+}
+
+.combination_buy .title_rule .com_title {
+	font-size: 14px;
+	color: #333
+}
+
+.combination_buy .title_rule .com_rule {
+	font-size: 12px;
+	color: #bbb
+}
+
+.combination_buy .com_pro_wrapper {
+	position: relative
+}
+
+.combination_buy .com_pro_wrapper .com_arrow {
+	background-position: -68px -193px;
+	display: inline-block;
+	width: 22px;
+	height: 12px;
+	top: -11px;
+	left: 24px;
+	position: absolute
+}
+
+.combination_buy .com_pro_center {
+	border: 1px solid #ebebeb;
+	padding: 25px 20px 30px;
+	position: relative
+}
+
+.combination_buy .com_pro_center select {
+	width: 110px;
+	height: 20px;
+	cursor: pointer
+}
+
+.combination_buy .com_pro_center .tips {
+	position: absolute;
+	bottom: 5px;
+	right: 7;
+	font-size: 5px;
+	color: #cdcdcd
+}
+
+.combination_buy .com_pro_center .com_pro_center_equal,.combination_buy .com_pro_center .com_pro_center_plus,.combination_buy_alert .com_pro_center_plus {
+	font-size: 40px;
+	font-weight: 700;
+	color: #d2d2d2;
+	padding: 30px 17px
+}
+
+.combination_buy .com_detail_price {
+	color: #7e7e7e;
+	padding-top: 5px;
+	position: absolute;
+	bottom: 7px
+}
+
+.combination_buy .com_pro_center .com_pro_center_equal {
+	margin-right: 20px
+}
+
+.combination_buy .pro_center_list,.combination_buy_alert,.pro_center_list {
+	float: left;
+	text-align: center
+}
+
+.combination_buy .pro_center_list img,.combination_buy_alert .pro_center_list img {
+	width: 108px;
+	height: 108px
+}
+
+.combination_buy_alert .pro_center_list img {
+	border: 1px solid #f4f4f4
+}
+
+.combination_buy .pro_center_list p,.combination_buy_alert .pro_center_list p {
+	width: 110px;
+	height: 36px;
+	overflow: hidden;
+	color: #7e7e7e;
+	margin: 10px 0;
+	text-align: left
+}
+
+.combination_buy .pro_center_results {
+	width: 155px;
+	float: left;
+	margin-left: 30px;
+	padding-top: 30px
+}
+
+.combination_buy .results_module dt {
+	color: #565656;
+	font-size: 13px
+}
+
+.combination_buy .results_module dd,.combination_buy_alert .alert_bottom p strong {
+	font-size: 30px;
+	color: #d81c3b;
+	line-height: 1.2
+}
+
+.combination_buy .results_module dd em {
+	font-size: 18px;
+	vertical-align: 7px;
+	margin-right: 3px
+}
+
+.combination_buy .full_delivery {
+	width: 300px;
+	margin-left: 0;
+	overflow: hidden;
+	height: 17px
+}
+
+.combination_buy .sale_promo {
+	border-top: 1px dotted #c5c5c5;
+	padding: 8px 0 10px
+}
+
+.combination_buy .mail_policy {
+	padding: 0
+}
+
+.combination_buy .mail_policy dd,.combination_buy .mail_policy dt {
+	margin-top: 6px
+}
+
+.combination_buy .policy {
+	border-top: 1px dotted #c5c5c5;
+	padding: 6px 0 14px
+}
+
+.combination_buy .price_btn {
+	padding: 16px 0
+}
+
+.combination_buy .price_sold {
+	display: none
+}
+
+.combination_buy .price_btn li {
+	line-height: 21px
+}
+
+.combination_buy .price_btn .price_title {
+	font-size: 12px;
+	color: #565656;
+	margin-bottom: 2px;
+	display: block
+}
+
+.combination_buy .price_btn .jumei_price {
+	font-size: 28px;
+	line-height: 30px;
+	color: #ed145b;
+	float: left;
+	display: inline;
+	margin-left: 0
+}
+
+.combination_buy .price_btn .jumei_price .jp_cur {
+	font-size: 17px;
+	margin-right: 0;
+	vertical-align: middle
+}
+
+.combination_buy .price_btn .fl .jumei_price {
+	margin-top: -2px
+}
+
+.combination_buy .price_btn .fl .jumei_price .jp_cur {
+	line-height: 18px
+}
+
+.combination_buy .price_btn .market_price {
+	color: #999;
+	text-decoration: line-through;
+	margin-left: 8px;
+	*margin-top: 6px;
+	float: left
+}
+
+.combination_buy .btn {
+	float: right;
+	margin-top: -15px
+}
+
+.combination_buy .new_detail_btn {
+	margin: 6px 0 0;
+	width: 152px;
+	float: right
+}
+
+.combination_buy .add_hart {
+	background-position: -9px -39px
+}
+
+.combination_buy .buy_now {
+	background-position: -9px 0
+}
+
+.combination_buy .sold_out {
+	background-position: -9px -79px;
+	cursor: default;
+	display: inline
+}
+
+.combination_buy .remind_sell {
+	display: none
+}
+
+.combination_buy .sprite_icon {
+	background-image: url(http://a3.global.jmstatic.com/7b1f03d068c35955/sprite_comb_icon.png);
+	display: inline-block
+}
+
+.combination_buy .buy_koubei {
+	margin-top: 16px
+}
+
+.combination_buy .buy_koubei .head_content {
+	width: 16px
+}
+
+.combination_buy .two_btn .jumei_price,.combination_buy .two_btn .market_price,.combination_buy .two_btn .price_title {
+	float: none
+}
+
+.combination_buy .two_btn .price_title,.combination_buy .two_btn .remind_sell {
+	display: inline
+}
+
+.combination_buy .two_btn .jumei_price {
+	margin-left: 8px
+}
+
+.combination_buy .two_btn .jumei_price .jp_cur {
+	line-height: 34px
+}
+
+.combination_buy .two_btn .btn {
+	float: none;
+	margin-top: 0
+}
+
+.combination_buy .two_btn .sold_out {
+	margin-right: 12px;
+	display: inline;
+	float: left
+}
+
+.nav_fixed_pric .nav_fprice {
+	float: left
+}
+
+.nav_fixed_pric .remind_sell {
+	width: 130px;
+	background-position: -17px -164px
+}
+
+.deal_recom {
+	display: none
+}
+
+.deal_recom .single_tit {
+	font-size: 18px;
+	margin: 0 36px;
+	border-bottom: 1px solid #eee;
+	line-height: 50px
+}
+
+.module-button span,.module-content .module-text {
+	font-family: "Heiti SC";
+	font-size: 22px
+}
+
+.deal_recom .single_tit strong {
+	color: #ed145b
+}
+
+.ecope_carousel .cs_arrow,.ecope_carousel .cs_next,.ecope_carousel .cs_prev {
+	margin-top: 44px
+}
+
+.deal_recom .silider_itme {
+	background: url(http://a0.global.jmstatic.com/9cb5afbd509328a4/new_detail_btn.png) no-repeat
+}
+
+.deal_recom .s_left {
+	background-position: -289px -78px;
+	width: 26px;
+	height: 66px
+}
+
+.deal_recom .s_right {
+	background-position: -322px -78px;
+	width: 26px;
+	height: 66px
+}
+
+.deal_recom .s_left:hover {
+	background-position: -213px -78px;
+	width: 26px;
+	height: 66px
+}
+
+.deal_recom .s_right:hover {
+	background-position: -246px -78px;
+	width: 26px;
+	height: 66px
+}
+
+.deal_recom .ecope_carousel {
+	width: 1090px
+}
+
+.deal_recom .ecope_carousel .cs_wrapper {
+	width: 1038px;
+	height: 180px
+}
+
+.deal_recom .itme li {
+	width: 131px;
+	padding: 0 21px;
+	text-align: center
+}
+
+.deal_recom .detail_btn {
+	background: url(http://a0.global.jmstatic.com/68751fcd5515a10a/detail_btn.png) 0 -149px no-repeat;
+	cursor: pointer
+}
+
+.module-dialog {
+	width: 521px;
+	height: 321px;
+	background: rgba(255,255,255,0);
+	background: url(http://images.jumei.com/pc_global/301-bg.png) no-repeat;
+	background-size: 520px 321px;
+	z-index: 16;
+	position: fixed;
+	top: 30%;
+	left: 35%
+}
+
+.module-bg {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 15;
+	background: rgba(0,0,0,.6)
+}
+
+.module-content {
+	padding-top: 140px;
+	width: 94%;
+	text-align: center
+}
+
+.module-content .module-text {
+	color: #333;
+	width: 336px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 25px;
+	min-height: 100px
+}
+
+.module-content .module-button {
+	width: 100%;
+	text-align: center;
+	cursor: pointer
+}
+
+.module-button span {
+	display: inline-block;
+	width: 250px;
+	height: 58px;
+	background: #FE4A5D;
+	line-height: 59px;
+	color: #fff;
+	margin: 0 20px
+}
+
+.module-dialog .close {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: inline-block;
+	cursor: pointer
+}
+
+.module-text input {
+	width: 200px;
+	height: 58px;
+	font-size: 20px;
+	line-height: 58px;
+	padding-left: 7px;
+	border: 1px solid #E0E0E0
+}
+
+.module-text img,.module-text input {
+	margin: 35px 10px 0
+}
+
+.module-text img {
+	min-height: 42px;
+	min-width: 85px;
+	position: relative;
+	top: -10px
+}
+
+.module-text .change {
+	font-size: 16px;
+	color: #888;
+	position: fixed;
+	text-align: right;
+	width: 308px
+}
+
+.module-tip {
+	position: absolute;
+	left: 58px;
+	font-size: 14px;
+	color: red;
+	top: 175px
+}
+
+.marketprice_pc {
+	margin: 10px 90px
+}

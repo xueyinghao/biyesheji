@@ -221,6 +221,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\User\css\base.css" />
     <Content Include="Content\User\css\etalage.css" />
+    <Content Include="Content\User\css\jumei\common.css" />
+    <Content Include="Content\User\css\jumei\detail_other.css" />
     <Content Include="Content\User\css\style.css" />
     <Content Include="Content\User\images\arrows.png" />
     <Content Include="Content\User\images\bag.png" />
@@ -266,6 +268,7 @@
     <Content Include="Content\User\js\common.js" />
     <Content Include="Content\User\js\easyResponsiveTabs.js" />
     <Content Include="Content\User\js\hover_pack.js" />
+    <Content Include="Content\User\js\IsLogin.js" />
     <Content Include="Content\User\js\jquery-1.11.1.min.js" />
     <Content Include="Content\User\js\jquery.etalage.min.js" />
     <Content Include="Content\User\js\nav.js" />
@@ -283,6 +286,7 @@
     <Content Include="HTML\css\bootstrap.css" />
     <Content Include="HTML\css\etalage.css" />
     <Content Include="HTML\css\style.css" />
+    <Content Include="HTML\HtmlPage1.html" />
     <Content Include="HTML\images\arrows.png" />
     <Content Include="HTML\images\bag.png" />
     <Content Include="HTML\images\banner1.jpg" />
