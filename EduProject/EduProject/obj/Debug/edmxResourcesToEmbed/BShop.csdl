@@ -32,6 +32,7 @@
     <Property Name="pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="mlNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <Property Name="pic1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Type">
     <Key>
@@ -41,6 +42,8 @@
     <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="Self.FK_TypeProduct" FromRole="Type" ToRole="Product" />
+    <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NationFlag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -106,6 +109,7 @@
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
     <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
+    <EntitySet Name="ProductDetail" EntityType="BShopModel.ProductDetail" />
   </EntityContainer>
   <Association Name="UserOrder">
     <End Type="BShopModel.User" Role="User" Multiplicity="1" />
@@ -133,5 +137,28 @@
     <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="PName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="PName" />
+      <PropertyRef Name="Price" />
+      <PropertyRef Name="Detail" />
+      <PropertyRef Name="TypeId" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="PName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mlNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NationFlag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

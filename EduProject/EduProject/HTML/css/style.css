@@ -38,7 +38,7 @@ ul.shopping_grid li{
 	background: #eee;
 	padding: 25px 20px 0;
 	border-right: 1px solid #f7f7f7;
-	// font: 600 15px/15px 'Lato', sans-serif;
+	/* font: 600 15px/15px 'Lato', sans-serif;*/
 	min-height: 70px;
 	color:#000;
 }
@@ -797,12 +797,12 @@ ul.grid_2-bottom li.grid_2-left p small {
 	vertical-align: text-top;
 }
 .btn.btn-primary {
-	font:700 13px/13px 'Lato', sans-serif;
+	font:700 12px/13px 'Lato', sans-serif;
 	font-style: normal;
 	text-shadow: none;
 	text-transform:uppercase;
 	color: #FFF;
-	padding:8px 30px;
+	padding:8px 15px;
 	position: relative;
 	letter-spacing: 0;
 	background: transparent;

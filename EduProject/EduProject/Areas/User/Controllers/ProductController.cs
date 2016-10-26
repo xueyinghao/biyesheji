@@ -19,7 +19,7 @@ namespace EduProject.Areas.User.Controllers
 
         public ActionResult Single(int id)
         {
-            var singlePro = (shopEntity.ProductDetail.Where(c => c.Id == id).ToList())[0];
+            var singlePro = (shopEntity.Product.Where(c => c.Id == id).ToList())[0];
             return View(singlePro);
         }
 

@@ -7,12 +7,12 @@
 }
 
 @section Logo{
-  <ul class="shopping_grid">
-    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
-    <a href="/User/Home/login"><li>登&nbsp;录</li></a>
-    <a href="/User/Home/Register"><li>注&nbsp;册</li></a>
-</ul>
-<div class="clearfix"> </div>
+    <ul class="shopping_grid">
+        <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
+        <a href="/User/Home/login"><li>登&nbsp;录</li></a>
+        <a href="/User/Home/Register"><li>注&nbsp;册</li></a>
+    </ul>
+    <div class="clearfix"> </div>
 }
 
 @section slider{
@@ -49,23 +49,26 @@
     <div class="top_grid1">
         @foreach (var item in @ViewBag.proMsg)
         {
-             <div class="col-md-4 box_2">
-            <a href="/User/Product/Single?id=@item.Id" >
+            <div class="col-md-4 box_2">
+                @*<a href="javascript:void(0);" id="@item.Id">*@
                 <div class="grid_1">
-                    <div class="b-link-stroke b-animate-go  thickbox">
-                        <img src=@item.pic class="img-responsive" alt="" />
+                    <a href="/User/Product/Single?id=@item.Id">
+                        <div class="b-link-stroke b-animate-go  thickbox">
+                            <img src=@item.pic class="img-responsive" alt="" />
+
+                        </div>
+                    </a>
+                    <div class="grid_2">
+                        <p>@item.PName</p>
+                        <ul class="grid_2-bottom">
+                            <li class="grid_2-left col-md-6"><p>￥@item.Price</p></li>
+                            <li class="grid_2-right col-md-6"><div class="btn btn-primary btn-normal btn-inline btn-addCart btnCart" id="@item.Id" target="_self" title="加入购物车">加入购物车</div></li>
+                        </ul>
+                        <div class="clearfix"> </div>
                     </div>
-                <div class="grid_2">
-                    <p>@item.PName</p>
-                    <ul class="grid_2-bottom">
-                        <li class="grid_2-left col-md-6"><p>￥@item.Price</p></li>
-                        <li class="grid_2-right col-md-6"><div class="btn btn-primary btn-normal btn-inline btn-addCart btnCart " target="_self" title="Get It" onclick="JoinCart()">Get It</div></li>
-                    </ul>
-                    <div class="clearfix"> </div>
                 </div>
+                @*</a>*@
             </div>
-            </a>
-        </div>
         }
         <div class="clearfix"> </div>
     </div>

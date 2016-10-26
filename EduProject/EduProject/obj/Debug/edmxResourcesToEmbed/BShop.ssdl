@@ -48,6 +48,7 @@
     <Property Name="pic" Type="nvarchar(max)" />
     <Property Name="mlNum" Type="nchar" MaxLength="10" />
     <Property Name="AddTime" Type="datetime" />
+    <Property Name="pic1" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="ProductUserOrderDetail">
     <Key>
@@ -64,6 +65,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="20" />
+    <Property Name="NationFlag" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -78,6 +81,31 @@
     <Property Name="UType" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="Age" Type="nchar" MaxLength="10" />
     <Property Name="Sex" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“BShop.dbo.ProductDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="PName" />
+      <PropertyRef Name="Price" />
+      <PropertyRef Name="Detail" />
+      <PropertyRef Name="TypeId" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="PName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="pic" Type="nvarchar(max)" />
+    <Property Name="mlNum" Type="nchar" MaxLength="10" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="20" />
+    <Property Name="NationFlag" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_OrderDetailOrder">
     <End Role="Order" Type="Self.Order" Multiplicity="1" />
@@ -147,6 +175,22 @@
     <EntitySet Name="ProductUserOrderDetail" EntityType="Self.ProductUserOrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ProductDetail].[Id] AS [Id], 
+    [ProductDetail].[PName] AS [PName], 
+    [ProductDetail].[Price] AS [Price], 
+    [ProductDetail].[Detail] AS [Detail], 
+    [ProductDetail].[TypeId] AS [TypeId], 
+    [ProductDetail].[pic] AS [pic], 
+    [ProductDetail].[mlNum] AS [mlNum], 
+    [ProductDetail].[AddTime] AS [AddTime], 
+    [ProductDetail].[Name] AS [Name], 
+    [ProductDetail].[Description] AS [Description], 
+    [ProductDetail].[Country] AS [Country], 
+    [ProductDetail].[NationFlag] AS [NationFlag]
+    FROM [dbo].[ProductDetail] AS [ProductDetail]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_OrderDetailOrder" Association="Self.FK_OrderDetailOrder">
       <End Role="Order" EntitySet="Order" />
       <End Role="OrderDetail" EntitySet="OrderDetail" />

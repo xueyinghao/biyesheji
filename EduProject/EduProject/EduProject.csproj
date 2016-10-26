@@ -263,6 +263,7 @@
     <Content Include="Content\User\images\ShopCart\ibar_sprites.png" />
     <Content Include="Content\User\images\ShopCart\item-pic.jpg" />
     <Content Include="Content\User\images\ShopCart\loading.gif" />
+    <Content Include="Content\User\images\ShopCart\mall_product_v4.png" />
     <Content Include="Content\User\images\ShopCart\no-img_mid_.jpg" />
     <Content Include="Content\User\images\ShopCart\wdsc.png" />
     <Content Include="Content\User\images\ShopCart\weixin_code_145.png" />

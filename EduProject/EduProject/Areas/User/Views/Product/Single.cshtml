@@ -8,6 +8,8 @@
 }
 
 @section Meta{
+
+
 <link href="~/Content/User/css/jumei/detail_other.css" rel="stylesheet" />
 <link href="~/Content/User/css/jumei/common.css" rel="stylesheet" />
     }
@@ -19,7 +21,6 @@
     </ul>
     <div class="clearfix"> </div>
 }
-
 
 <input type="hidden" id="ab_dealcart" value="0" />
 <input type="hidden" id="local" value="0" />
@@ -62,7 +63,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="r_second" style="padding:25px 0;">
+                <div class="r_second"> 
                     <ul class="price_module clearfix">
                         <!--非组合start-->
                         <li class="jumei_price"><em class="jp_cur">&yen;</em>@Model.Price</li>
@@ -78,12 +79,20 @@
                         <!--非组合end-->
                     </ul>
                 </div>
-                 <div class="people clearfix">
+                 <div class="clearfix">
 
-                 <div class="num fl">
+                 @*<div class="num fl">
                    已购买人数
                   <em>928</em>
-                 </div>
+                 </div>*@
+                     <div class="mall_detail_common mall_product_num mar_t15 ">
+                         <span class="label" style="font: 12px/1.5 'Hiragino Sans GB','微软雅黑',tahoma,arial,sans-serif">数量</span>
+                         <div class="num_detail" id="num_detail">
+                             <em title="减少" class="number_reduce fl" id="num_rduce"></em>
+                             <input type="text" value="1" id="buy_number" class="buy_number fl" maxlength="2">
+                             <em title="增加" class="number_add fl" id="num_add"></em>
+                         </div>
+                     </div>
                  <div class="comments fr"></div>
                 </div>  
                 <div class="r_third">
@@ -103,6 +112,16 @@
                             <span class="day"></span>7天拆封无理由退货
                         </dd>
                     </dl>
+                    @*<dl class="deal_sku clearfix">
+                        <dt><span class="r_third_spacing">型</span>号:</dt>
+                        <dt class="dt_relative">
+                            <div class="deal_sku_input">请选择型号</div>
+                            <i class="new_detail_btn"></i>
+                            <div class="warningtip">请选择型号</div>
+                            <ul class="sku_select" id="sku_select"></ul>
+                        </dt>
+                    </dl>*@
+                   
                 </div>
                 <div class="r_fourth">
                     <!--按钮状态start-->

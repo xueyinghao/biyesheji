@@ -63,19 +63,46 @@ if (eleFlyElement && eleShopCart) {
 
 
 $('.grid_2-right').click(function () {
-    var msg = $(this).parents(".grid_2").find("p").text();
-    var pic = $(this).parents("a").find("img").attr("src");
-    var msg1 = msg.split("￥");
-    var name = msg1[0];
-    var price = msg1[1];
-    $.ajax({
-        url: '/User/Product/ShopCart?pic=' + pic + '&name=' + name + '&price=' + price,
-        type: 'POST',
-        dataType: 'text',
-        success: function (data)
-        {
+    //var msg = $(this).parents(".grid_2").find("p").text();
+    //var pic = $(this).parents("a").find("img").attr("src");
+    //var msg1 = msg.split("￥");
+    //var name = msg1[0];
+    //var price = msg1[1];
+    //$.ajax({
+    //    url: '/User/Product/ShopCart?pic=' + pic + '&name=' + name + '&price=' + price,
+    //    type: 'POST',
+    //    dataType: 'text',
+    //    success: function (data)
+    //    {
             
-        }
-    })
+    //    }
+    //})
+    var id = $(this).find("div").attr("id");
+    
 })
 
+//商品数量增减
+
+$("#num_rduce").click(function () {
+    var n = $(this).next().val();
+    var num = parseInt(n) - 1;
+    if (num==0) {
+        return;
+    }
+    $(this).next().val(num);
+        
+})
+
+$("#num_add").click(function () {
+    var n = $(this).prev().val();
+    var num = parseInt(n) + 1;
+    if (num==0) {
+        return;
+    }
+    $(this).prev().val(num);
+})
+
+//$(".thickbox").click(function () {
+//    var id = $(this).parents("a").attr("id");
+//    location.href("/User/Product/Single?id=" + id);
+//})

@@ -1199,10 +1199,13 @@ a.s_right:hover {
 	vertical-align: -2px
 }
 
-.deal_right .r_first,.deal_right .r_fourth,.deal_right .r_second,.deal_right .r_third {
+.deal_right .r_fourth,.deal_right .r_second,.deal_right .r_third {
 	padding: 25px 0;
 	border-bottom: 1px dotted #c5c5c5
 }
+    .deal_right .r_second {
+    border-top: 1px dotted #c5c5c5
+    }
 
 .deal_right .r_first {
 	height: 80px
@@ -1251,7 +1254,7 @@ a.s_right:hover {
 }
 
 .deal_right .r_second .price_module {
-	padding-bottom: 20px
+	padding-bottom: 10px
 }
 
 .deal_right .r_second .price_module li {

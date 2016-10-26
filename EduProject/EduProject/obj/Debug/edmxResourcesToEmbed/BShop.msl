@@ -21,6 +21,7 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Product)">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="pic1" ColumnName="pic1" />
           <ScalarProperty Name="AddTime" ColumnName="AddTime" />
           <ScalarProperty Name="mlNum" ColumnName="mlNum" />
           <ScalarProperty Name="pic" ColumnName="pic" />
@@ -35,6 +36,8 @@
     <EntitySetMapping Name="Type">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Type)">
         <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="NationFlag" ColumnName="NationFlag" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -93,5 +96,23 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="ProductDetail">
+      <EntityTypeMapping TypeName="BShopModel.ProductDetail">
+        <MappingFragment StoreEntitySet="ProductDetail">
+          <ScalarProperty Name="NationFlag" ColumnName="NationFlag" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="mlNum" ColumnName="mlNum" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
