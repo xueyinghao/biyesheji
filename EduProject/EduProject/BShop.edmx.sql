@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/20/2016 10:25:18
+-- Date Created: 10/27/2016 16:37:36
 -- Generated from EDMX file: F:\MySpace\biyesheji\EduProject\EduProject\BShop.edmx
 -- --------------------------------------------------
 
@@ -20,17 +20,20 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_TypeProduct]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Product] DROP CONSTRAINT [FK_TypeProduct];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProductUserOrderDetail_Product]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProductUserOrderDetail] DROP CONSTRAINT [FK_ProductUserOrderDetail_Product];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProductUserOrderDetail_UserOrderDetail]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProductUserOrderDetail] DROP CONSTRAINT [FK_ProductUserOrderDetail_UserOrderDetail];
-GO
 IF OBJECT_ID(N'[dbo].[FK_UserOrder]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Order] DROP CONSTRAINT [FK_UserOrder];
 GO
 IF OBJECT_ID(N'[dbo].[FK_OrderDetailOrder]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[OrderDetail] DROP CONSTRAINT [FK_OrderDetailOrder];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CartUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cart] DROP CONSTRAINT [FK_CartUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductOrderDetail_Product]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProductOrderDetail] DROP CONSTRAINT [FK_ProductOrderDetail_Product];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductOrderDetail_OrderDetail]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProductOrderDetail] DROP CONSTRAINT [FK_ProductOrderDetail_OrderDetail];
 GO
 
 -- --------------------------------------------------
@@ -55,8 +58,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Cart]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Cart];
 GO
-IF OBJECT_ID(N'[dbo].[ProductUserOrderDetail]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProductUserOrderDetail];
+IF OBJECT_ID(N'[dbo].[ProductOrderDetail]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProductOrderDetail];
 GO
 
 -- --------------------------------------------------
@@ -82,10 +85,14 @@ GO
 -- Creating table 'Product'
 CREATE TABLE [dbo].[Product] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [PName] nvarchar(20)  NOT NULL,
-    [Price] decimal(18,0)  NOT NULL,
-    [Detail] nvarchar(20)  NOT NULL,
-    [TypeId] int  NOT NULL
+    [PName] nvarchar(50)  NOT NULL,
+    [Price] decimal(18,2)  NOT NULL,
+    [Detail] nvarchar(max)  NOT NULL,
+    [TypeId] int  NOT NULL,
+    [pic] nvarchar(max)  NULL,
+    [mlNum] nchar(10)  NULL,
+    [AddTime] datetime  NULL,
+    [pic1] nvarchar(max)  NULL
 );
 GO
 
@@ -93,7 +100,9 @@ GO
 CREATE TABLE [dbo].[Type] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(20)  NOT NULL,
-    [Description] nvarchar(20)  NOT NULL
+    [Description] nvarchar(20)  NOT NULL,
+    [Country] nvarchar(20)  NULL,
+    [NationFlag] nvarchar(max)  NULL
 );
 GO
 
@@ -126,14 +135,16 @@ CREATE TABLE [dbo].[Cart] (
     [CartId] nvarchar(max)  NOT NULL,
     [Count] int  NOT NULL,
     [DateCreated] datetime  NOT NULL,
-    [PName] nvarchar(max)  NOT NULL
+    [PName] nvarchar(max)  NOT NULL,
+    [ProductId] int  NOT NULL,
+    [User_UName] nvarchar(20)  NOT NULL
 );
 GO
 
--- Creating table 'ProductUserOrderDetail'
-CREATE TABLE [dbo].[ProductUserOrderDetail] (
+-- Creating table 'ProductOrderDetail'
+CREATE TABLE [dbo].[ProductOrderDetail] (
     [Product_Id] int  NOT NULL,
-    [UserOrderDetail_Id] int  NOT NULL
+    [OrderDetail_Id] int  NOT NULL
 );
 GO
 
@@ -177,10 +188,10 @@ ADD CONSTRAINT [PK_Cart]
     PRIMARY KEY CLUSTERED ([RecordId] ASC);
 GO
 
--- Creating primary key on [Product_Id], [UserOrderDetail_Id] in table 'ProductUserOrderDetail'
-ALTER TABLE [dbo].[ProductUserOrderDetail]
-ADD CONSTRAINT [PK_ProductUserOrderDetail]
-    PRIMARY KEY CLUSTERED ([Product_Id], [UserOrderDetail_Id] ASC);
+-- Creating primary key on [Product_Id], [OrderDetail_Id] in table 'ProductOrderDetail'
+ALTER TABLE [dbo].[ProductOrderDetail]
+ADD CONSTRAINT [PK_ProductOrderDetail]
+    PRIMARY KEY CLUSTERED ([Product_Id], [OrderDetail_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -199,29 +210,6 @@ ADD CONSTRAINT [FK_TypeProduct]
 CREATE INDEX [IX_FK_TypeProduct]
 ON [dbo].[Product]
     ([TypeId]);
-GO
-
--- Creating foreign key on [Product_Id] in table 'ProductUserOrderDetail'
-ALTER TABLE [dbo].[ProductUserOrderDetail]
-ADD CONSTRAINT [FK_ProductUserOrderDetail_Product]
-    FOREIGN KEY ([Product_Id])
-    REFERENCES [dbo].[Product]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [UserOrderDetail_Id] in table 'ProductUserOrderDetail'
-ALTER TABLE [dbo].[ProductUserOrderDetail]
-ADD CONSTRAINT [FK_ProductUserOrderDetail_UserOrderDetail]
-    FOREIGN KEY ([UserOrderDetail_Id])
-    REFERENCES [dbo].[OrderDetail]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProductUserOrderDetail_UserOrderDetail'
-CREATE INDEX [IX_FK_ProductUserOrderDetail_UserOrderDetail]
-ON [dbo].[ProductUserOrderDetail]
-    ([UserOrderDetail_Id]);
 GO
 
 -- Creating foreign key on [UserUName] in table 'Order'
@@ -250,6 +238,43 @@ ADD CONSTRAINT [FK_OrderDetailOrder]
 CREATE INDEX [IX_FK_OrderDetailOrder]
 ON [dbo].[OrderDetail]
     ([Order_Id]);
+GO
+
+-- Creating foreign key on [User_UName] in table 'Cart'
+ALTER TABLE [dbo].[Cart]
+ADD CONSTRAINT [FK_CartUser]
+    FOREIGN KEY ([User_UName])
+    REFERENCES [dbo].[User]
+        ([UName])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CartUser'
+CREATE INDEX [IX_FK_CartUser]
+ON [dbo].[Cart]
+    ([User_UName]);
+GO
+
+-- Creating foreign key on [Product_Id] in table 'ProductOrderDetail'
+ALTER TABLE [dbo].[ProductOrderDetail]
+ADD CONSTRAINT [FK_ProductOrderDetail_Product]
+    FOREIGN KEY ([Product_Id])
+    REFERENCES [dbo].[Product]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [OrderDetail_Id] in table 'ProductOrderDetail'
+ALTER TABLE [dbo].[ProductOrderDetail]
+ADD CONSTRAINT [FK_ProductOrderDetail_OrderDetail]
+    FOREIGN KEY ([OrderDetail_Id])
+    REFERENCES [dbo].[OrderDetail]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProductOrderDetail_OrderDetail'
+CREATE INDEX [IX_FK_ProductOrderDetail_OrderDetail]
+ON [dbo].[ProductOrderDetail]
+    ([OrderDetail_Id]);
 GO
 
 -- --------------------------------------------------

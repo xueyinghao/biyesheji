@@ -49,26 +49,26 @@
     <div class="top_grid1">
         @foreach (var item in @ViewBag.proMsg)
         {
-            <div class="col-md-4 box_2">
-                @*<a href="javascript:void(0);" id="@item.Id">*@
-                <div class="grid_1">
-                    <a href="/User/Product/Single?id=@item.Id">
-                        <div class="b-link-stroke b-animate-go  thickbox">
-                            <img src=@item.pic class="img-responsive" alt="" />
-
+            <div class="col-md-4 top_grid1-box1">
+              
+                    <div class="grid_1">
+                        <a href="/User/Product/Single?id=@item.Id">
+                            <div class="b-link-stroke b-animate-go  thickbox">
+                                <img src=@item.pic class="img-responsive" alt="" />
+                            </div>
+                        </a>
+                        <div class="grid_2">
+                            <p>@item.PName</p>
+                            <ul class="grid_2-bottom">
+                                <li class="grid_2-left"><p>￥@item.Price</p></li>
+                                <li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline btnCart " id="@item.Id" target="_self" title="加入购物车">加入购物车</div></li>
+                            </ul>
+                            <div class="clearfix"> </div>
                         </div>
-                    </a>
-                    <div class="grid_2">
-                        <p>@item.PName</p>
-                        <ul class="grid_2-bottom">
-                            <li class="grid_2-left col-md-6"><p>￥@item.Price</p></li>
-                            <li class="grid_2-right col-md-6"><div class="btn btn-primary btn-normal btn-inline btn-addCart btnCart" id="@item.Id" target="_self" title="加入购物车">加入购物车</div></li>
-                        </ul>
-                        <div class="clearfix"> </div>
                     </div>
-                </div>
-                @*</a>*@
-            </div>
+                <img src="~/Content/User/images/p1.jpg" />
+                  
+</div>
         }
         <div class="clearfix"> </div>
     </div>

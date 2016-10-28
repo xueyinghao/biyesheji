@@ -21,26 +21,26 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Product)">
         <MappingFragment StoreEntitySet="Product">
-          <ScalarProperty Name="pic1" ColumnName="pic1" />
-          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-          <ScalarProperty Name="mlNum" ColumnName="mlNum" />
-          <ScalarProperty Name="pic" ColumnName="pic" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="PName" ColumnName="PName" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Detail" ColumnName="Detail" />
           <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="mlNum" ColumnName="mlNum" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="pic1" ColumnName="pic1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Type">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Type)">
         <MappingFragment StoreEntitySet="Type">
-          <ScalarProperty Name="NationFlag" ColumnName="NationFlag" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="NationFlag" ColumnName="NationFlag" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -71,23 +71,15 @@
     <EntitySetMapping Name="Cart">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Cart)">
         <MappingFragment StoreEntitySet="Cart">
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="RecordId" ColumnName="RecordId" />
           <ScalarProperty Name="CartId" ColumnName="CartId" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
           <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ProductUserOrderDetail" TypeName="BShopModel.ProductUserOrderDetail" StoreEntitySet="ProductUserOrderDetail">
-      <EndProperty Name="Product">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="UserOrderDetail">
-        <ScalarProperty Name="Id" ColumnName="UserOrderDetail_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="OrderDetailOrder" TypeName="BShopModel.OrderDetailOrder" StoreEntitySet="OrderDetail">
       <EndProperty Name="Order">
         <ScalarProperty Name="Id" ColumnName="Order_Id" />
@@ -96,23 +88,21 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="ProductDetail">
-      <EntityTypeMapping TypeName="BShopModel.ProductDetail">
-        <MappingFragment StoreEntitySet="ProductDetail">
-          <ScalarProperty Name="NationFlag" ColumnName="NationFlag" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
-          <ScalarProperty Name="mlNum" ColumnName="mlNum" />
-          <ScalarProperty Name="pic" ColumnName="pic" />
-          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-          <ScalarProperty Name="Detail" ColumnName="Detail" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="PName" ColumnName="PName" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+    <AssociationSetMapping Name="CartUser" TypeName="BShopModel.CartUser" StoreEntitySet="Cart">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UName" ColumnName="User_UName" />
+      </EndProperty>
+      <EndProperty Name="Cart">
+        <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductOrderDetail" TypeName="BShopModel.ProductOrderDetail" StoreEntitySet="ProductOrderDetail">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="OrderDetail">
+        <ScalarProperty Name="Id" ColumnName="OrderDetail_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

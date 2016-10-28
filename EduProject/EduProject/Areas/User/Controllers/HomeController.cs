@@ -19,9 +19,8 @@ namespace EduProject.Areas.User.Controllers
 
         //美妆商城首页
         // GET: /User/index/
-        public ActionResult Index()
-        {
-            
+        public ActionResult Index()    
+        {            
             var product = GetTopSellingProduct(3);
             ViewBag.proMsg = product;
             return View();
@@ -49,7 +48,6 @@ namespace EduProject.Areas.User.Controllers
             {
                 string script = string.Format("<script>alert('用户名和密码不一致！');location.href='{0}'</script>", Url.Action("Login", "Home", "User"));
                 return Content(script, "text/html");
-                
             }
             else if (userData.Count() > 1)
             {
@@ -60,9 +58,10 @@ namespace EduProject.Areas.User.Controllers
             {
                 //添加Cookie
                 HttpCookie cookie = new HttpCookie("myCookie");
-               
+                
                 cookie.Values.Add("name", username);
                 cookie.Values.Add("pwd", pwd);
+                cookie.Values.Add("ID", userData.First().Id.ToString());
                 Response.AppendCookie(cookie);
                 ViewBag.Name = username;
             }

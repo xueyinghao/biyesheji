@@ -11,11 +11,11 @@
         <EntityTypeShape EntityType="BShopModel.User" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BShopModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="BShopModel.FK_TypeProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="BShopModel.ProductUserOrderDetail" ManuallyRouted="false" />
         <AssociationConnector Association="BShopModel.UserOrder" />
         <AssociationConnector Association="BShopModel.OrderDetailOrder" />
-        <EntityTypeShape EntityType="BShopModel.Cart" Width="1.5" PointX="0.875" PointY="4.375" />
-        <EntityTypeShape EntityType="BShopModel.ProductDetail" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="BShopModel.Cart" Width="1.5" PointX="3" PointY="5.25" />
+        <AssociationConnector Association="BShopModel.CartUser" />
+        <AssociationConnector Association="BShopModel.ProductOrderDetail" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

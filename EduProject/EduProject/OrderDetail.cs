@@ -23,7 +23,7 @@ namespace EduProject
         public int Num { get; set; }
         public decimal Price { get; set; }
     
-        public virtual ICollection<Product> Product { get; set; }
         public virtual Order Order { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

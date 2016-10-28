@@ -28,11 +28,11 @@
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TypeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Type" Relationship="Self.FK_TypeProduct" FromRole="Product" ToRole="Type" />
-    <NavigationProperty Name="UserOrderDetail" Relationship="Self.ProductUserOrderDetail" FromRole="Product" ToRole="UserOrderDetail" />
     <Property Name="pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="mlNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="AddTime" Type="DateTime" Precision="3" />
     <Property Name="pic1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OrderDetail" Relationship="BShopModel.ProductOrderDetail" FromRole="Product" ToRole="OrderDetail" />
   </EntityType>
   <EntityType Name="Type">
     <Key>
@@ -59,6 +59,7 @@
     <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Order" Relationship="BShopModel.UserOrder" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="Cart" Relationship="BShopModel.CartUser" FromRole="User" ToRole="Cart" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
@@ -67,8 +68,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Num" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <NavigationProperty Name="Product" Relationship="Self.ProductUserOrderDetail" FromRole="UserOrderDetail" ToRole="Product" />
     <NavigationProperty Name="Order" Relationship="BShopModel.OrderDetailOrder" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="BShopModel.ProductOrderDetail" FromRole="OrderDetail" ToRole="Product" />
   </EntityType>
   <Association Name="FK_TypeProduct">
     <End Role="Type" Type="Self.Type" Multiplicity="1" />
@@ -82,10 +83,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ProductUserOrderDetail">
-    <End Role="Product" Type="Self.Product" Multiplicity="*" />
-    <End Role="UserOrderDetail" Type="BShopModel.OrderDetail" Multiplicity="*" />
-  </Association>
   <EntityContainer Name="BShopEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Order" EntityType="Self.Order" />
     <EntitySet Name="Product" EntityType="Self.Product" />
@@ -96,10 +93,6 @@
       <End Role="Type" EntitySet="Type" />
       <End Role="Product" EntitySet="Product" />
     </AssociationSet>
-    <AssociationSet Name="ProductUserOrderDetail" Association="Self.ProductUserOrderDetail">
-      <End Role="Product" EntitySet="Product" />
-      <End Role="UserOrderDetail" EntitySet="OrderDetail" />
-    </AssociationSet>
     <AssociationSet Name="UserOrder" Association="BShopModel.UserOrder">
       <End Role="User" EntitySet="User" />
       <End Role="Order" EntitySet="Order" />
@@ -109,7 +102,14 @@
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
     <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
-    <EntitySet Name="ProductDetail" EntityType="BShopModel.ProductDetail" />
+    <AssociationSet Name="CartUser" Association="BShopModel.CartUser">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="ProductOrderDetail" Association="BShopModel.ProductOrderDetail">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="UserOrder">
     <End Type="BShopModel.User" Role="User" Multiplicity="1" />
@@ -137,28 +137,14 @@
     <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="PName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="BShopModel.CartUser" FromRole="Cart" ToRole="User" />
   </EntityType>
-  <EntityType Name="ProductDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-      <PropertyRef Name="PName" />
-      <PropertyRef Name="Price" />
-      <PropertyRef Name="Detail" />
-      <PropertyRef Name="TypeId" />
-      <PropertyRef Name="Name" />
-      <PropertyRef Name="Description" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="PName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="TypeId" Type="Int32" Nullable="false" />
-    <Property Name="pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="mlNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="AddTime" Type="DateTime" Precision="3" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="NationFlag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
+  <Association Name="CartUser">
+    <End Type="BShopModel.Cart" Role="Cart" Multiplicity="1" />
+    <End Type="BShopModel.User" Role="User" Multiplicity="1" />
+  </Association>
+  <Association Name="ProductOrderDetail">
+    <End Type="BShopModel.Product" Role="Product" Multiplicity="*" />
+    <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+  </Association>
 </Schema>

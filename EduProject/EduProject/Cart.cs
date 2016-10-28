@@ -20,5 +20,7 @@ namespace EduProject
         public System.DateTime DateCreated { get; set; }
         public string PName { get; set; }
         public int ProductId { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

@@ -1,5 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BShopModelStoreContainer">
+    <EntitySet Name="Order" EntityType="BShopModel.Store.Order" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="BShopModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Type" EntityType="BShopModel.Store.Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="BShopModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderDetail" EntityType="BShopModel.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cart" EntityType="BShopModel.Store.Cart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductOrderDetail" EntityType="BShopModel.Store.ProductOrderDetail" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TypeProduct" Association="BShopModel.Store.FK_TypeProduct">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="UserOrder" Association="BShopModel.Store.UserOrder">
+      <End Role="User" EntitySet="User" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="OrderDetailOrder" Association="BShopModel.Store.OrderDetailOrder">
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="CartUser" Association="BShopModel.Store.CartUser">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOrderDetail_Product" Association="BShopModel.Store.FK_ProductOrderDetail_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOrderDetail_OrderDetail" Association="BShopModel.Store.FK_ProductOrderDetail_OrderDetail">
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STime" Type="datetime" Nullable="false" />
+    <Property Name="CName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CPhone" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="CAddress" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PostCode" Type="nvarchar" Nullable="false" MaxLength="6" />
+    <Property Name="TransportWay" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="PayWay" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="UserUName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="pic" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="mlNum" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="AddTime" Type="datetime" Nullable="true" />
+    <Property Name="pic1" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Country" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="NationFlag" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UName" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UType" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="Age" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Sex" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Num" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Order_Id" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Cart">
     <Key>
       <PropertyRef Name="RecordId" />
@@ -10,142 +106,19 @@
     <Property Name="DateCreated" Type="datetime" Nullable="false" />
     <Property Name="PName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="User_UName" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
-  <EntityType Name="Order">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="STime" Type="datetime" Nullable="false" />
-    <Property Name="CName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="CPhone" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="CAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="PostCode" Type="nvarchar" MaxLength="6" Nullable="false" />
-    <Property Name="TransportWay" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="PayWay" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Status" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="UserUName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="OrderDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Num" Type="int" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Order_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Product">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TypeId" Type="int" Nullable="false" />
-    <Property Name="pic" Type="nvarchar(max)" />
-    <Property Name="mlNum" Type="nchar" MaxLength="10" />
-    <Property Name="AddTime" Type="datetime" />
-    <Property Name="pic1" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="ProductUserOrderDetail">
+  <EntityType Name="ProductOrderDetail">
     <Key>
       <PropertyRef Name="Product_Id" />
-      <PropertyRef Name="UserOrderDetail_Id" />
+      <PropertyRef Name="OrderDetail_Id" />
     </Key>
     <Property Name="Product_Id" Type="int" Nullable="false" />
-    <Property Name="UserOrderDetail_Id" Type="int" Nullable="false" />
+    <Property Name="OrderDetail_Id" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Type">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Country" Type="nvarchar" MaxLength="20" />
-    <Property Name="NationFlag" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="UName" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="UType" Type="nvarchar" MaxLength="2" Nullable="false" />
-    <Property Name="Age" Type="nchar" MaxLength="10" />
-    <Property Name="Sex" Type="nchar" MaxLength="10" />
-  </EntityType>
-  <!--生成过程中发现错误:
-警告 6002: 表/视图“BShop.dbo.ProductDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
-  <EntityType Name="ProductDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-      <PropertyRef Name="PName" />
-      <PropertyRef Name="Price" />
-      <PropertyRef Name="Detail" />
-      <PropertyRef Name="TypeId" />
-      <PropertyRef Name="Name" />
-      <PropertyRef Name="Description" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="PName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TypeId" Type="int" Nullable="false" />
-    <Property Name="pic" Type="nvarchar(max)" />
-    <Property Name="mlNum" Type="nchar" MaxLength="10" />
-    <Property Name="AddTime" Type="datetime" />
-    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Country" Type="nvarchar" MaxLength="20" />
-    <Property Name="NationFlag" Type="nvarchar(max)" />
-  </EntityType>
-  <Association Name="FK_OrderDetailOrder">
-    <End Role="Order" Type="Self.Order" Multiplicity="1" />
-    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="OrderDetail">
-        <PropertyRef Name="Order_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProductUserOrderDetail_Product">
-    <End Role="Product" Type="Self.Product" Multiplicity="1" />
-    <End Role="ProductUserOrderDetail" Type="Self.ProductUserOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProductUserOrderDetail">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProductUserOrderDetail_UserOrderDetail">
-    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
-    <End Role="ProductUserOrderDetail" Type="Self.ProductUserOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OrderDetail">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProductUserOrderDetail">
-        <PropertyRef Name="UserOrderDetail_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TypeProduct">
-    <End Role="Type" Type="Self.Type" Multiplicity="1" />
-    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <End Role="Type" Type="BShopModel.Store.Type" Multiplicity="1" />
+    <End Role="Product" Type="BShopModel.Store.Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Type">
         <PropertyRef Name="Id" />
@@ -155,9 +128,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserOrder">
-    <End Role="User" Type="Self.User" Multiplicity="1" />
-    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+  <Association Name="UserOrder">
+    <End Role="User" Type="BShopModel.Store.User" Multiplicity="1" />
+    <End Role="Order" Type="BShopModel.Store.Order" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="User">
         <PropertyRef Name="UName" />
@@ -167,49 +140,52 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BShopModelStoreContainer">
-    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ProductUserOrderDetail" EntityType="Self.ProductUserOrderDetail" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ProductDetail].[Id] AS [Id], 
-    [ProductDetail].[PName] AS [PName], 
-    [ProductDetail].[Price] AS [Price], 
-    [ProductDetail].[Detail] AS [Detail], 
-    [ProductDetail].[TypeId] AS [TypeId], 
-    [ProductDetail].[pic] AS [pic], 
-    [ProductDetail].[mlNum] AS [mlNum], 
-    [ProductDetail].[AddTime] AS [AddTime], 
-    [ProductDetail].[Name] AS [Name], 
-    [ProductDetail].[Description] AS [Description], 
-    [ProductDetail].[Country] AS [Country], 
-    [ProductDetail].[NationFlag] AS [NationFlag]
-    FROM [dbo].[ProductDetail] AS [ProductDetail]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK_OrderDetailOrder" Association="Self.FK_OrderDetailOrder">
-      <End Role="Order" EntitySet="Order" />
-      <End Role="OrderDetail" EntitySet="OrderDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProductUserOrderDetail_Product" Association="Self.FK_ProductUserOrderDetail_Product">
-      <End Role="Product" EntitySet="Product" />
-      <End Role="ProductUserOrderDetail" EntitySet="ProductUserOrderDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProductUserOrderDetail_UserOrderDetail" Association="Self.FK_ProductUserOrderDetail_UserOrderDetail">
-      <End Role="OrderDetail" EntitySet="OrderDetail" />
-      <End Role="ProductUserOrderDetail" EntitySet="ProductUserOrderDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TypeProduct" Association="Self.FK_TypeProduct">
-      <End Role="Type" EntitySet="Type" />
-      <End Role="Product" EntitySet="Product" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserOrder" Association="Self.FK_UserOrder">
-      <End Role="User" EntitySet="User" />
-      <End Role="Order" EntitySet="Order" />
-    </AssociationSet>
-  </EntityContainer>
+  <Association Name="OrderDetailOrder">
+    <End Role="OrderDetail" Type="BShopModel.Store.OrderDetail" Multiplicity="*" />
+    <End Role="Order" Type="BShopModel.Store.Order" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CartUser">
+    <End Role="Cart" Type="BShopModel.Store.Cart" Multiplicity="*" />
+    <End Role="User" Type="BShopModel.Store.User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UName" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="User_UName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOrderDetail_Product">
+    <End Role="Product" Type="BShopModel.Store.Product" Multiplicity="1" />
+    <End Role="ProductOrderDetail" Type="BShopModel.Store.ProductOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductOrderDetail">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOrderDetail_OrderDetail">
+    <End Role="ProductOrderDetail" Type="BShopModel.Store.ProductOrderDetail" Multiplicity="*" />
+    <End Role="OrderDetail" Type="BShopModel.Store.OrderDetail" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductOrderDetail">
+        <PropertyRef Name="OrderDetail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
