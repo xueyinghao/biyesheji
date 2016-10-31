@@ -30,6 +30,5 @@ namespace EduProject
         public string Sex { get; set; }
     
         public virtual ICollection<Order> Order { get; set; }
-        public virtual Cart Cart { get; set; }
     }
 }

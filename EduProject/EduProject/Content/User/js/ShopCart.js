@@ -78,7 +78,18 @@ $('.grid_2-right').click(function () {
     //    }
     //})
     var id = $(this).find("div").attr("id");
-    
+    var TotalCount = $('#buy_number').val();
+    var PName=$(this).parents(".grid_2").find("p").first().text();
+    if (TotalCount==null) {
+        TotalCount = 1;
+    }
+    alert("jiajiajia");
+    $.ajax({
+        url: '/User/Product/AddCart?id=' + id + '&count=' + TotalCount+'&name='+PName,
+        type: 'POST',
+        success: function () {
+        }
+    })
 })
 
 //商品数量增减

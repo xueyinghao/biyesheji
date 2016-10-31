@@ -168,7 +168,6 @@
     <Compile Include="Areas\User\Controllers\ProductController.cs" />
     <Compile Include="Areas\User\Models\loginInfo.cs" />
     <Compile Include="Areas\User\Models\Register.cs" />
-    <Compile Include="Areas\User\Models\ShopCart.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="BShop.Context.cs">
       <AutoGen>True</AutoGen>
@@ -188,6 +187,7 @@
     <Compile Include="Cart.cs">
       <DependentUpon>BShop.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\CookIeUser.cs" />
     <Compile Include="Database\LogFactory.cs" />
     <Compile Include="Database\loginData.cs" />
     <Compile Include="Database\LogHelper.cs" />

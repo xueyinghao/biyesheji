@@ -71,8 +71,8 @@
     <EntitySetMapping Name="Cart">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Cart)">
         <MappingFragment StoreEntitySet="Cart">
-          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
           <ScalarProperty Name="CartId" ColumnName="CartId" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
           <ScalarProperty Name="PName" ColumnName="PName" />
@@ -86,14 +86,6 @@
       </EndProperty>
       <EndProperty Name="OrderDetail">
         <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="CartUser" TypeName="BShopModel.CartUser" StoreEntitySet="Cart">
-      <EndProperty Name="User">
-        <ScalarProperty Name="UName" ColumnName="User_UName" />
-      </EndProperty>
-      <EndProperty Name="Cart">
-        <ScalarProperty Name="RecordId" ColumnName="RecordId" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="ProductOrderDetail" TypeName="BShopModel.ProductOrderDetail" StoreEntitySet="ProductOrderDetail">

@@ -59,7 +59,6 @@
     <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Order" Relationship="BShopModel.UserOrder" FromRole="User" ToRole="Order" />
-    <NavigationProperty Name="Cart" Relationship="BShopModel.CartUser" FromRole="User" ToRole="Cart" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
@@ -102,10 +101,6 @@
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
     <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
-    <AssociationSet Name="CartUser" Association="BShopModel.CartUser">
-      <End Role="Cart" EntitySet="Cart" />
-      <End Role="User" EntitySet="User" />
-    </AssociationSet>
     <AssociationSet Name="ProductOrderDetail" Association="BShopModel.ProductOrderDetail">
       <End Role="Product" EntitySet="Product" />
       <End Role="OrderDetail" EntitySet="OrderDetail" />
@@ -129,20 +124,15 @@
   </Association>
   <EntityType Name="Cart">
     <Key>
-      <PropertyRef Name="RecordId" />
+      <PropertyRef Name="CartId" />
     </Key>
-    <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CartId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="Count" Type="Int32" Nullable="false" />
-    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="BShopModel.CartUser" FromRole="Cart" ToRole="User" />
+    <Property Name="CartId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="RecordId" Nullable="false" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Count" Nullable="false" Type="Int32" />
+    <Property Name="DateCreated" Nullable="false" Precision="3" Type="DateTime" />
+    <Property Name="PName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="ProductId" Nullable="false" Type="Int32" />
   </EntityType>
-  <Association Name="CartUser">
-    <End Type="BShopModel.Cart" Role="Cart" Multiplicity="1" />
-    <End Type="BShopModel.User" Role="User" Multiplicity="1" />
-  </Association>
   <Association Name="ProductOrderDetail">
     <End Type="BShopModel.Product" Role="Product" Multiplicity="*" />
     <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />

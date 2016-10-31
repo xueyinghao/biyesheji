@@ -8,9 +8,9 @@ jQuery(function ($) {
 	quickShell.appendTo('.mui-mbar-tabs');
 	
     //去后台请求加入购物车的数据
-	$.ajax({
-        URL：'/User/Product/'
-	})
+	//$.ajax({
+    //    URL：'/User/Product/AddCart'
+	//})
 
 	//具体数据操作 
 	var 

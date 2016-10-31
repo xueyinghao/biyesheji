@@ -13,8 +13,7 @@
         <AssociationConnector Association="BShopModel.FK_TypeProduct" ManuallyRouted="false" />
         <AssociationConnector Association="BShopModel.UserOrder" />
         <AssociationConnector Association="BShopModel.OrderDetailOrder" />
-        <EntityTypeShape EntityType="BShopModel.Cart" Width="1.5" PointX="3" PointY="5.25" />
-        <AssociationConnector Association="BShopModel.CartUser" />
+        <EntityTypeShape EntityType="BShopModel.Cart" PointX="2.125" PointY="5.625" Width="1.5" />
         <AssociationConnector Association="BShopModel.ProductOrderDetail" />
       </Diagram>
     </edmx:Diagrams>

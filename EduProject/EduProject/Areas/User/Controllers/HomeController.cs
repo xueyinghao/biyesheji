@@ -16,6 +16,7 @@ namespace EduProject.Areas.User.Controllers
         //测试日志组件
         private ILog log = LogManager.GetLogger("MoonTest");
         BShopEntities shopEntity = new BShopEntities();
+        public HttpCookie cookie = new HttpCookie("myCookie");
 
         //美妆商城首页
         // GET: /User/index/
@@ -57,11 +58,10 @@ namespace EduProject.Areas.User.Controllers
             else
             {
                 //添加Cookie
-                HttpCookie cookie = new HttpCookie("myCookie");
-                
+                HttpCookie cookie = new HttpCookie("myCookie");                
                 cookie.Values.Add("name", username);
                 cookie.Values.Add("pwd", pwd);
-                cookie.Values.Add("ID", userData.First().Id.ToString());
+                cookie.Values.Add("UserId", userData.First().Id.ToString());
                 Response.AppendCookie(cookie);
                 ViewBag.Name = username;
             }

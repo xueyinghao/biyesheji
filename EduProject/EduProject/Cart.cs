@@ -14,13 +14,11 @@ namespace EduProject
     
     public partial class Cart
     {
-        public int RecordId { get; set; }
-        public string CartId { get; set; }
+        public int CartId { get; set; }
+        public string RecordId { get; set; }
         public int Count { get; set; }
         public System.DateTime DateCreated { get; set; }
         public string PName { get; set; }
         public int ProductId { get; set; }
-    
-        public virtual User User { get; set; }
     }
 }

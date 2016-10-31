@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EduProject.Areas.User.Models;
+using EduProject.Database;
 
 namespace EduProject.Areas.User.Controllers
 {
@@ -25,25 +26,61 @@ namespace EduProject.Areas.User.Controllers
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">加入购物车的商品ID</param>
+        /// <param name="count">加入购物车的商品数量</param>
+        /// 用户未登录RecordId字段存储为用户分配唯一的GUID，用户已经登录则存UserId
+        /// 在后期测试一下在将GUID加入到Cookie之后在进行用户登录时是不是把Cookie重新生成了(记得测试一下)
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult AddCart(int id,int count)
+        public void AddCart(int id,int count,string name)
         {
-            var addPro = shopEntity.Product.Where(c => c.Id == id).ToList();
-            HttpCookie cookie = Request.Cookies["myCookie"];
-            if (cookie == null)
+            var cartItem = shopEntity.Cart.SingleOrDefault(c => c.ProductId == id);
+            if (cartItem == null)
             {
-                //如果用户未登录则使用GUID对该用户进行表示
-                cart.RecordId = Convert.ToInt32(Guid.NewGuid());
-                cookie.Values.Add("name", Guid.NewGuid().ToString());
+                cartItem = new Cart
+                {
+                    Count = count,
+                    ProductId = id,
+                    PName = name,
+                    DateCreated = DateTime.Now
+                };
+                shopEntity.Cart.Add(cart);
             }
             else
             {
-                cart.RecordId = Convert.ToInt32(cookie["UserId"]);
+                cartItem.Count++;
             }
-            cart.Count = count;
-            
-            return View();
+            shopEntity.SaveChanges();
+
+            //HttpCookie cookie = Request.Cookies["myCookie"];
+            //if (cookie == null)        
+            //{
+            //    //如果用户未登录则使用GUID对该用户进行表示
+            //    cart.RecordId =Guid.NewGuid().ToString();
+            //    //用户标记
+            //    Session["UserMark"] = Guid.NewGuid().ToString();
+            //    cookie.Values.Add("sessionId", Session.SessionID.ToString());
+            //}
+            //else
+            //{
+            //    cart.RecordId = cookie["UserId"];
+            //}
+            //cart.Count = count;
+            //cart.ProductId = id;
+            //cart.PName = Pname;
+            //cart.DateCreated = DateTime.Now;
+            //shopEntity.Cart.Add(cart);
+            //shopEntity.SaveChanges();
+            //return cart.CartId;
+            //return View();
+        }
+
+        public void RemoveFromCart(int id)
+        {
+            //var cartItem=shopEntity.Cart.Single(c=>c.)
         }
 
       
