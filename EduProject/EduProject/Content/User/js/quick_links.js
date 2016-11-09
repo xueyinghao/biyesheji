@@ -6,12 +6,34 @@ jQuery(function ($) {
 	quickLinks = quickShell.find('.quick_links');
 	quickPanel = quickLinks.next();
 	quickShell.appendTo('.mui-mbar-tabs');
+	imageAdde = "";
+	ProName = "";
+	mlNum = "";
+	price = "";
+	totalPrice = "";
+	Procount = "";
 	
-    //去后台请求加入购物车的数据
+	
+    ////去后台请求加入购物车的数据
 	//$.ajax({
-    //    URL：'/User/Product/AddCart'
-	//})
-
+	//    url: 'http://localhost:11957/User/Product/getFromCart',
+	//    type: 'POST',
+    //    dataType:'jsonp',
+	//    success: function (data) {
+	//        alert(data);
+	//        alert("xueyinghao");
+	//    }
+    //})
+	$.post('Product/getFromCart', function (data)
+	{
+	    if (data!="") {
+	        var json = eval('(' + data + ')');
+	        totalPrice = json.TotalPrice;
+            imageAdde=json.rows[0]
+	    }
+	    //alert(data)
+	});
+	
 	//具体数据操作 
 	var 
 	quickPopXHR,

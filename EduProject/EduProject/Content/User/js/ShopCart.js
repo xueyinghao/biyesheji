@@ -83,7 +83,7 @@ $('.grid_2-right').click(function () {
     if (TotalCount==null) {
         TotalCount = 1;
     }
-    alert("jiajiajia");
+   
     $.ajax({
         url: '/User/Product/AddCart?id=' + id + '&count=' + TotalCount+'&name='+PName,
         type: 'POST',

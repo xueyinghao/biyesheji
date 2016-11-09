@@ -7,14 +7,16 @@
     <Schema Namespace="BShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
-            <PropertyRef Name="CartId" />
+            <PropertyRef Name="RecordId" />
           </Key>
-          <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RecordId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CartId" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Count" Type="int" Nullable="false" />
           <Property Name="DateCreated" Type="datetime" Nullable="false" />
           <Property Name="PName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -280,11 +282,11 @@
             <End Role="OrderDetail" EntitySet="OrderDetail" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
           <AssociationSet Name="ProductOrderDetail" Association="BShopModel.ProductOrderDetail">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
+          <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
         </EntityContainer>
         <Association Name="UserOrder">
           <End Type="BShopModel.User" Role="User" Multiplicity="1" />
@@ -302,21 +304,23 @@
           <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="1" />
           <End Type="BShopModel.Order" Role="Order" Multiplicity="1" />
         </Association>
-        <EntityType Name="Cart">
-          <Key>
-            <PropertyRef Name="CartId" />
-          </Key>
-          <Property Name="CartId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-          <Property Name="RecordId" Nullable="false" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Count" Nullable="false" Type="Int32" />
-          <Property Name="DateCreated" Nullable="false" Precision="3" Type="DateTime" />
-          <Property Name="PName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-          <Property Name="ProductId" Nullable="false" Type="Int32" />
-        </EntityType>
         <Association Name="ProductOrderDetail">
           <End Type="BShopModel.Product" Role="Product" Multiplicity="*" />
           <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
         </Association>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CartId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -390,18 +394,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cart">
-      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.Cart)">
-        <MappingFragment StoreEntitySet="Cart">
-          <ScalarProperty Name="CartId" ColumnName="CartId" />
-          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
-          <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="PName" ColumnName="PName" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="OrderDetailOrder" TypeName="BShopModel.OrderDetailOrder" StoreEntitySet="OrderDetail">
       <EndProperty Name="Order">
         <ScalarProperty Name="Id" ColumnName="Order_Id" />
@@ -418,6 +410,20 @@
         <ScalarProperty Name="Id" ColumnName="OrderDetail_Id" />
       </EndProperty>
     </AssociationSetMapping>
+          <EntitySetMapping Name="Cart">
+            <EntityTypeMapping TypeName="BShopModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

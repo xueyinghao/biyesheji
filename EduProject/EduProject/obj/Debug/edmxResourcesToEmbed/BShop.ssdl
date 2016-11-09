@@ -2,14 +2,16 @@
 <Schema Namespace="BShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Cart">
     <Key>
-      <PropertyRef Name="CartId" />
+      <PropertyRef Name="RecordId" />
     </Key>
-    <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RecordId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartId" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Count" Type="int" Nullable="false" />
     <Property Name="DateCreated" Type="datetime" Nullable="false" />
     <Property Name="PName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="image" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Order">
     <Key>

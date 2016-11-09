@@ -6,14 +6,19 @@ using System.Web.Mvc;
 
 namespace EduProject.Areas.User.Models
 {
-    public  class ShopCart
+    public class ShopCart
     {
+        /// <summary>
+        /// Cart表中CartId为购物车ID,未登录使用GUID，登录使用用户名
+        /// ProductId为商品ID
+        /// </summary>
+
         BShopEntities shopEntity = new BShopEntities();
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
-        
+
         //对于未登陆的用户，需要为他们创建一个临时的唯一标识，使用GUID
-      
+
 
 
         public static ShopCart GetCart(HttpContextBase context)
@@ -27,17 +32,21 @@ namespace EduProject.Areas.User.Models
             return GetCart(controller.HttpContext);
         }
 
-        public void AddToCart(Product product)
+        //购物车添加商品
+        public void AddToCart(Product addPro,int count)
         {
-            var cartItem = shopEntity.Cart.SingleOrDefault(c=>c.CartId==ShoppingCartId && c.ProductId==product.Id);
+            var cartItem = shopEntity.Cart.SingleOrDefault(c => c.ProductId ==addPro.Id && c.CartId==ShoppingCartId);
             if (cartItem == null)
             {
                 cartItem = new Cart
                 {
-                    ProductId = product.Id,
-                    CartId = ShoppingCartId,
-                    Count = 1,
-                    DateCreated = DateTime.Now
+                   CartId=ShoppingCartId,
+                   Count=count,
+                   ProductId=addPro.Id,
+                   PName=addPro.PName,
+                   DateCreated = DateTime.Now,
+                   Price=addPro.Price,
+                   image=addPro.pic
                 };
                 shopEntity.Cart.Add(cartItem);
             }
@@ -49,9 +58,10 @@ namespace EduProject.Areas.User.Models
 
         }
 
+        //将商品从购物车删除，同时返回当前商品剩余数量
         public int RemoveFromCart(int id)
         {
-            var cartItem = shopEntity.Cart.Single(c => c.CartId == ShoppingCartId && c.RecordId == id);
+            var cartItem = shopEntity.Cart.SingleOrDefault(c=>c.ProductId==id&&c.CartId==ShoppingCartId);
             int itemCount = 0;
             if (cartItem != null)
             {
@@ -71,7 +81,7 @@ namespace EduProject.Areas.User.Models
 
         public void EmptyCart()
         {
-            var cartItems = shopEntity.Cart.Where(c => c.CartId == ShoppingCartId);
+            var cartItems = shopEntity.Cart.Where(c => c.CartId==ShoppingCartId);
             foreach (var cartItem in cartItems)
             {
                 shopEntity.Cart.Remove(cartItem);
@@ -81,7 +91,7 @@ namespace EduProject.Areas.User.Models
 
         public List<Cart> GetCartItems()
         {
-            return shopEntity.Cart.Where(c => c.CartId == ShoppingCartId).ToList();
+            return shopEntity.Cart.Where(c => c.CartId == "df73abfb-6938-4c89-a03e-5e5209490f44").ToList();
         }
 
         public int GetCount()
@@ -92,12 +102,13 @@ namespace EduProject.Areas.User.Models
             return count ?? 0;
         }
 
-        //public decimal getTotal()
-        //{
-        //    decimal? total=(from cartItems in shopEntity.Cart
-        //                        where cartItems.CartId==ShoppingCartId
-        //                        select (int?)cartItems.Count*cartItems.)
-        //}
+        public decimal getTotal()
+        {
+            decimal? total = (from cartItems in shopEntity.Cart
+                              where cartItems.CartId == "df73abfb-6938-4c89-a03e-5e5209490f44"
+                              select (int?)cartItems.Count * cartItems.Price).Sum();
+            return total??decimal.Zero;
+        }
 
         public string GetCartId(HttpContextBase context)
         {

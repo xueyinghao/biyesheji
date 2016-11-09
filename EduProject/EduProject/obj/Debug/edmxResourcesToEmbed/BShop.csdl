@@ -100,11 +100,11 @@
       <End Role="OrderDetail" EntitySet="OrderDetail" />
       <End Role="Order" EntitySet="Order" />
     </AssociationSet>
-    <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
     <AssociationSet Name="ProductOrderDetail" Association="BShopModel.ProductOrderDetail">
       <End Role="Product" EntitySet="Product" />
       <End Role="OrderDetail" EntitySet="OrderDetail" />
     </AssociationSet>
+    <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
   </EntityContainer>
   <Association Name="UserOrder">
     <End Type="BShopModel.User" Role="User" Multiplicity="1" />
@@ -122,19 +122,21 @@
     <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="1" />
     <End Type="BShopModel.Order" Role="Order" Multiplicity="1" />
   </Association>
-  <EntityType Name="Cart">
-    <Key>
-      <PropertyRef Name="CartId" />
-    </Key>
-    <Property Name="CartId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="RecordId" Nullable="false" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Count" Nullable="false" Type="Int32" />
-    <Property Name="DateCreated" Nullable="false" Precision="3" Type="DateTime" />
-    <Property Name="PName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-    <Property Name="ProductId" Nullable="false" Type="Int32" />
-  </EntityType>
   <Association Name="ProductOrderDetail">
     <End Type="BShopModel.Product" Role="Product" Multiplicity="*" />
     <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
   </Association>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -5,19 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 using EduProject.Areas.User.Models;
 using EduProject.Database;
+using Newtonsoft.Json;
 
 namespace EduProject.Areas.User.Controllers
 {
     public class ProductController : Controller
     {
         BShopEntities shopEntity = new BShopEntities();
-        Cart cart = new Cart();
+        //public const string CartSessionKey = "CartId";
+        //Cart cart = new Cart();
       
         // GET: /User/Product/
         public ActionResult Index()
         {
             return View();
         }
+
 
         public ActionResult Single(int id)
         {
@@ -37,24 +40,10 @@ namespace EduProject.Areas.User.Controllers
         [HttpPost]
         public void AddCart(int id,int count,string name)
         {
-            var cartItem = shopEntity.Cart.SingleOrDefault(c => c.ProductId == id);
-            if (cartItem == null)
-            {
-                cartItem = new Cart
-                {
-                    Count = count,
-                    ProductId = id,
-                    PName = name,
-                    DateCreated = DateTime.Now
-                };
-                shopEntity.Cart.Add(cart);
-            }
-            else
-            {
-                cartItem.Count++;
-            }
-            shopEntity.SaveChanges();
-
+            var addedProduct = shopEntity.Product.Single(Product => Product.Id == id && Product.PName == name);
+            var cart = ShopCart.GetCart(this.HttpContext);
+            cart.AddToCart(addedProduct,count);
+            #region   注释内容
             //HttpCookie cookie = Request.Cookies["myCookie"];
             //if (cookie == null)        
             //{
@@ -76,11 +65,17 @@ namespace EduProject.Areas.User.Controllers
             //shopEntity.SaveChanges();
             //return cart.CartId;
             //return View();
+            #endregion
         }
 
-        public void RemoveFromCart(int id)
-        {
-            //var cartItem=shopEntity.Cart.Single(c=>c.)
+        [HttpPost]
+        public string getFromCart()
+       {
+            var carts = ShopCart.GetCart(this.HttpContext);
+            decimal totalPrice=carts.getTotal();
+            string json = JsonConvert.SerializeObject(carts.GetCartItems());
+            string s= "{TotalPrice:" + totalPrice + ",rows:" + json + "}";
+            return s;
         }
 
       
