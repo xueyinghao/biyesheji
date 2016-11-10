@@ -146,7 +146,7 @@ namespace EduProject.Areas.User.Controllers
 
         }
         [HttpPost]
-        public int GetProCount(HttpContext context)
+        public int GetProCount()
         {
             var cart = ShopCart.GetCart(this.HttpContext);
             return cart.GetCount();
