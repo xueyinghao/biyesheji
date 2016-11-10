@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using EduProject.Areas.User.Models;
 using EduProject.Database;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace EduProject.Areas.User.Controllers
 {
@@ -71,11 +72,25 @@ namespace EduProject.Areas.User.Controllers
         [HttpPost]
         public string getFromCart()
        {
+            StringBuilder sb = new StringBuilder();
             var carts = ShopCart.GetCart(this.HttpContext);
+            int totalCount = carts.GetCount();
             decimal totalPrice=carts.getTotal();
-            string json = JsonConvert.SerializeObject(carts.GetCartItems());
-            string s= "{TotalPrice:" + totalPrice + ",rows:" + json + "}";
-            return s;
+            List<Cart> list = carts.GetCartItems();
+            sb.Append("<div class=\"ibar_plugin_content\"><div class=\"ibar_cart_group ibar_cart_product\" style=\"width:292px;\"><div class=\"ibar_cart_group_header\"><span class=\"ibar_cart_group_title\">商品信息</span><a href=\"\">我的购物车</a></div>");
+            if (list.Count == 0)
+            {
+                sb.AppendLine("<div class=\"cart_item\"></div>");
+            }
+            else
+            {
+                foreach (var item in list)
+                {
+                    sb.AppendLine("<div class=\"cart_item\"><div class=\"cart_item_pic\"><a href=\"/User/Product/Single?id=" + item.ProductId + "\"><img src=\"" + item.image + "\"/></a></div><div class=\"cart_item_desc\"><a href=\"/User/Product/Single?id=" + item.ProductId + "\" class=\"cart_item_name\">" + item.PName + "</a><div class=\"cart_item_sku\"><span>型号:" + item.mlNum + "</span></div><div class=\"cart_item_price\"><span class=\"cart_price\">￥" + item.Price + "×" + item.Count + "</span></div></div></div>");
+                }
+            }
+            sb.Append("</div><div class=\"cart_handler\"><div class=\"cart_handler_header\"><span class=\"cart_handler_left\">共<span class=\"cart_price\">"+totalCount+"</span>件商品</span><span class=\"cart_handler_right\">￥"+totalPrice+"</span></div><a href=\"#\" class=\"cart_go_btn\" target=\"_blank\">去购物车结算</a></div></div>");
+            return sb.ToString();
         }
 
       

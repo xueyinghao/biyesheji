@@ -17,6 +17,7 @@
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="image" Type="nvarchar(max)" />
+          <Property Name="mlNum" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -320,6 +321,7 @@
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mlNum" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -413,6 +415,7 @@
           <EntitySetMapping Name="Cart">
             <EntityTypeMapping TypeName="BShopModel.Cart">
               <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="mlNum" ColumnName="mlNum" />
                 <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />

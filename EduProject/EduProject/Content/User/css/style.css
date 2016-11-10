@@ -9,6 +9,10 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
+
+.ibar_cart_empty{background:url(http://a4.jmstatic.com/daf3e7fd00ae46fd/cart_empty_bg.jpg) 50% 20px no-repeat}
+
+
 ul, ol {
     margin: 0;
 }

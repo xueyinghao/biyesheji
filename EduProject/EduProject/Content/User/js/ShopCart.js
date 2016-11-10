@@ -1,4 +1,5 @@
-﻿$(".quick_links_panel li").mouseenter(function () {
+﻿
+$(".quick_links_panel li").mouseenter(function () {
     $(this).children(".mp_tooltip").animate({
         left: -92,
         queue: true
@@ -88,6 +89,7 @@ $('.grid_2-right').click(function () {
         url: '/User/Product/AddCart?id=' + id + '&count=' + TotalCount+'&name='+PName,
         type: 'POST',
         success: function () {
+            $('#pop_panel').removeClass("ibar_cart_empty");
         }
     })
 })
@@ -113,6 +115,22 @@ $("#num_add").click(function () {
     $(this).prev().val(num);
 })
 
+$('#shopCart').click(function () {
+    $.post('Product/getFromCart', function (data) {
+        var code = $("<code></code>").append($(data));
+        var html = $(".cart_item", code).html();
+
+        if (html == "") {
+            //$("#pop_panel").attr('style', 'background:url(http://a4.jmstatic.com/daf3e7fd00ae46fd/cart_empty_bg.jpg)  50% 20px no-repeat');
+            $("#pop_panel").addClass('ibar_cart_empty');
+        }
+        else {
+            $("#pop_panel").html(data);
+        }
+
+    });
+
+})
 //$(".thickbox").click(function () {
 //    var id = $(this).parents("a").attr("id");
 //    location.href("/User/Product/Single?id=" + id);

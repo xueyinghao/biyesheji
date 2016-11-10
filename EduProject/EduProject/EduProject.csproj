@@ -335,6 +335,7 @@
     <Content Include="HTML\single.html" />
     <Content Include="HTML\wishlist.html" />
     <Content Include="HTML\说明.htm" />
+    <Content Include="HTML\购物车.html" />
     <Content Include="log4net.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

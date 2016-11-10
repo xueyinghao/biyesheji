@@ -6,17 +6,15 @@ jQuery(function ($) {
 	quickLinks = quickShell.find('.quick_links');
 	quickPanel = quickLinks.next();
 	quickShell.appendTo('.mui-mbar-tabs');
-	imageAdde = "";
-	ProName = "";
-	mlNum = "";
-	price = "";
-	totalPrice = "";
-	Procount = "";
-	
+	CartMessage = "";
+    var 
+	quickPopXHR,
+	loadingTmpl = '<div class="loading" style="padding:30px 80px"><i></i><span>Loading...</span></div>',
+	popTmpl = '<a href="javascript:;" class="ibar_closebtn" title="关闭"></a><div class="ibar_plugin_title"><h3 style="font-size:17px;line-height:2.4;"><%=title%></h3></div><div class="pop_panel" id="pop_panel"><%=content%></div><div class="arrow"><i></i></div><div class="fix_bg"></div>';
 	
     ////去后台请求加入购物车的数据
 	//$.ajax({
-	//    url: 'http://localhost:11957/User/Product/getFromCart',
+	//    url: '/Product/getFromCart',
 	//    type: 'POST',
     //    dataType:'jsonp',
 	//    success: function (data) {
@@ -24,21 +22,29 @@ jQuery(function ($) {
 	//        alert("xueyinghao");
 	//    }
     //})
-	$.post('Product/getFromCart', function (data)
-	{
-	    if (data!="") {
-	        var json = eval('(' + data + ')');
-	        totalPrice = json.TotalPrice;
-            imageAdde=json.rows[0]
-	    }
-	    //alert(data)
-	});
-	
+
+	//alert(111);
+	//$.post('Product/getFromCart', function (data) {
+	//    alert(data);
+	//    var code = $("<code></code>").append($(data));
+	   
+	//    var html = $(".cart_item", code).html();
+	//    if (html == "") {
+	//        //$('#pop_panel').addClass('');
+	//        console.log("111");
+	//        $("#pop_panel").attr('style', 'background:url(http://a4.jmstatic.com/daf3e7fd00ae46fd/cart_empty_bg.jpg)  50% 20px no-repeat');
+	//        console.log("2222");
+	//    }
+	//    else {
+	//        CartMessage = data;
+	//    }
+
+
+	//});
+    //alert(222)
+
 	//具体数据操作 
 	var 
-	quickPopXHR,
-	loadingTmpl = '<div class="loading" style="padding:30px 80px"><i></i><span>Loading...</span></div>',
-	popTmpl = '<a href="javascript:;" class="ibar_closebtn" title="关闭"></a><div class="ibar_plugin_title"><h3 style="font-size:17px;line-height:2.4;"><%=title%></h3></div><div class="pop_panel"><%=content%></div><div class="arrow"><i></i></div><div class="fix_bg"></div>',
 	historyListTmpl = '<ul><%for(var i=0,len=items.length; i<5&&i<len; i++){%><li><a href="<%=items[i].productUrl%>" target="_blank" class="pic"><img alt="<%=items[i].productName%>" src="<%=items[i].productImage%>" width="60" height="60"/></a><a href="<%=items[i].productUrl%>" title="<%=items[i].productName%>" target="_blank" class="tit"><%=items[i].productName%></a><div class="price" title="单价"><em>&yen;<%=items[i].productPrice%></em></div></li><%}%></ul>',
 	newMsgTmpl = '<ul><li><a href="#"><span class="tips">新回复<em class="num"><b><%=items.commentNewReply%></b></em></span>商品评价/晒单</a></li><li><a href="#"><span class="tips">新回复<em class="num"><b><%=items.consultNewReply%></b></em></span>商品咨询</a></li><li><a href="#"><span class="tips">新回复<em class="num"><b><%=items.messageNewReply%></b></em></span>我的留言</a></li><li><a href="#"><span class="tips">新通知<em class="num"><b><%=items.arrivalNewNotice%></b></em></span>到货通知</a></li><li><a href="#"><span class="tips">新通知<em class="num"><b><%=items.reduceNewNotice%></b></em></span>降价提醒</a></li></ul>',
 	quickPop = quickShell.find('#quick_links_pop'),
@@ -46,7 +52,7 @@ jQuery(function ($) {
 		//购物信息
 		message_list: {
 			title: '购物车',
-			content: '<div class="ibar_plugin_content"><div class="ibar_cart_group ibar_cart_product" style="width:292px;"><div class="ibar_cart_group_header"><span class="ibar_cart_group_title">商品信息</span><a href="#">我的购物车</a></div>  <div class="cart_item"><div class="cart_item_pic"><a href="#"><img src="" /></a></div><div class="cart_item_desc"><a href="#" class="cart_item_name">夏季透气真皮豆豆鞋反绒男士休闲鞋韩版磨砂驾车鞋英伦船鞋男鞋子</a><div class="cart_item_sku"><span>尺码：38码（精工限量版）</span></div><div class="cart_item_price"><span class="cart_price">￥700.00</span></div></div></div></div><div class="cart_handler"><div class="cart_handler_header"><span class="cart_handler_left">共<span class="cart_price">1</span>件商品</span><span class="cart_handler_right">￥569.00</span></div><a href="#" class="cart_go_btn" target="_blank">去购物车结算</a></div></div>',
+			content: CartMessage,
 			init:$.noop
 		},
 		

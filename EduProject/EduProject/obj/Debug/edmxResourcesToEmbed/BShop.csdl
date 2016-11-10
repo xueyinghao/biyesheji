@@ -138,5 +138,6 @@
     <Property Name="ProductId" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mlNum" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

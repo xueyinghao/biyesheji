@@ -145,5 +145,12 @@ namespace EduProject.Areas.User.Controllers
             return View("Register");
 
         }
+        [HttpPost]
+        public int GetProCount(HttpContext context)
+        {
+            var cart = ShopCart.GetCart(this.HttpContext);
+            return cart.GetCount();
+        }
+
 	}
 }

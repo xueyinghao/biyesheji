@@ -22,5 +22,6 @@ namespace EduProject
         public int ProductId { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string image { get; set; }
+        public string mlNum { get; set; }
     }
 }

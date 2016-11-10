@@ -13,6 +13,7 @@ html, body{
    font-size: 100%;
    background:#fff; 
 }
+
 body a{
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;

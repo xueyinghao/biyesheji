@@ -46,7 +46,8 @@ namespace EduProject.Areas.User.Models
                    PName=addPro.PName,
                    DateCreated = DateTime.Now,
                    Price=addPro.Price,
-                   image=addPro.pic
+                   image=addPro.pic,
+                   mlNum=addPro.mlNum
                 };
                 shopEntity.Cart.Add(cartItem);
             }
@@ -91,13 +92,13 @@ namespace EduProject.Areas.User.Models
 
         public List<Cart> GetCartItems()
         {
-            return shopEntity.Cart.Where(c => c.CartId == "df73abfb-6938-4c89-a03e-5e5209490f44").ToList();
+            return shopEntity.Cart.Where(c => c.CartId == ShoppingCartId).ToList();
         }
 
         public int GetCount()
         {
             int? count = (from cartItems in shopEntity.Cart
-                          where cartItems.CartId == ShoppingCartId
+                          where cartItems.CartId == ShoppingCartId//"df73abfb-6938-4c89-a03e-5e5209490f44"
                           select (int?)cartItems.Count).Sum();
             return count ?? 0;
         }
@@ -105,7 +106,7 @@ namespace EduProject.Areas.User.Models
         public decimal getTotal()
         {
             decimal? total = (from cartItems in shopEntity.Cart
-                              where cartItems.CartId == "df73abfb-6938-4c89-a03e-5e5209490f44"
+                              where cartItems.CartId == ShoppingCartId
                               select (int?)cartItems.Count * cartItems.Price).Sum();
             return total??decimal.Zero;
         }

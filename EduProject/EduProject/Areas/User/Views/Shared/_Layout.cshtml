@@ -27,6 +27,16 @@
                 namespace: "callbacks",
                 pager: true,
             });
+
+            $(function () {
+                $.ajax({
+                    url: '/User/Home/GetProCount',
+                    type: 'POST',
+                    success: function (data) {
+                        $("#cart_num").html(data);
+                    }
+                })
+            })
         });
     </script>
 </head>
@@ -299,7 +309,7 @@
                             <div class="span">
                                 购物车
                             </div>
-                            <span class="cart_num">0</span>
+                            <span class="cart_num" id="cart_num">0</span>
                         </a>
                     </li>
                     <li>
@@ -354,5 +364,6 @@
     <script src="~/Content/User/js/quick_links.js"></script>
     <script src="~/Content/User/js/parabola.js"></script>
     <script src="~/Content/User/js/ShopCart.js"></script>
+   
 </body>
 </html>		

@@ -12,6 +12,7 @@
     <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
     <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="mlNum" Type="nchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
