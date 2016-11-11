@@ -145,6 +145,7 @@ namespace EduProject.Areas.User.Controllers
             return View("Register");
 
         }
+
         [HttpPost]
         public int GetProCount()
         {

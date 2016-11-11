@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="qc:admins" content="56207406376255516375" />
+    <title>购物车 - 聚美优品</title>
+
+<script type="text/javascript">
+with(window) {
+    RM_SITE_MAIN_WEBBASEURL='http://www.jumei.com/';
+RM_SITE_MAIN_TOPLEVELDOMAINNAME='jumei.com';
+RM_SERVER_TIME=1478831730;
+RM_IMGDIR='http://p0.jmstatic.com/templates/jumei/images';
+RM_SITE_MAIN_PASSPORTURL='http://passport.jumei.com/';
+RM_SITE_MAIN_ORDERLISTURL='http://i.jumei.com/';
+RM_SITE='bj';
+RM_CURRENT_SITE_MAIN_WEBBASEURL='http://bj.jumei.com';
+RM_RECOMMEND_GLOBAL_SITE_DOMAIN='www.jumeiglobal.com';
+RM_RECOMMEND_MEDIA_SITE_DOMAIN='www.jumei.com';
+RM_RECOMMEND_PRODUCT_SITE_DOMAIN='www.jumei.com';
+RM_CURRENT_SITE_DOMAIN='cart.jumei.com';
+RM_GLOBAL_CART_SITE_DOMAIN='cart.jumeiglobal.com';
+RM_JUMEI_CART_SITE_DOMAIN='cart.jumei.com';
+RM_CONTROL='Cart';
+RM_ACTION='show';
+    RM_CLIENT_TIME = parseInt((new Date()).getTime() / 1000);
+            GA_ACCOUNT = "UA-10208510-1";
+    }
+var screen_wide = document.documentElement.clientWidth > 1200 ? true : false ;
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+        return (arr[2]);
+    else
+        return null;
+}
+RM_UID = getCookie('uid');
+RM_NICKNAME = null;
+if ( getCookie('nickname') != null ){
+    RM_NICKNAME = decodeURIComponent(getCookie('nickname'));
+}
+var is_semwinner = false;
+</script>
+</head>
+<body>
+<style type="text/css">
+.cart_header{
+    width: 960px;
+    margin: 0 auto;
+}
+.cart_header_box{
+    border-bottom: 2px solid #e5e5e5;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+}
+.cart_header .logo_box{
+    float: left;
+}
+.cart_header .order_path{
+    float: right;
+    width: 377px;
+    height: 48px;
+}
+.cart_header .order_path_1{
+    background: url(http://f0.jmstatic.com/static_cart/dist/20161021_2/images/order_path.png) no-repeat;
+    background-position: -2px -2px;
+}
+.cart_header .order_path_2{
+    background: url(http://f0.jmstatic.com/static_cart/dist/20161021_2/images/order_path.png) no-repeat;
+    background-position: -2px -54px;
+}
+.cart_header .order_path_3{
+    background: url(http://f0.jmstatic.com/static_cart/dist/20161021_2/images/order_path.png) no-repeat;
+    background-position: -2px -106px;
+}
+.cart_header .order_path_4{
+    background: url(http://f0.jmstatic.com/static_cart/dist/20161021_2/images/order_path.png) no-repeat;
+    background-position: -2px -158px;
+}
+.cart_top{
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    color: #999999;
+    width: 960px;
+    margin: 0 auto;
+}
+.cart_top .user_box{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.cart_top .user_box .tips{
+    font-style: normal;
+    color: #dddddd;
+    padding: 0 5px;
+}
+.cart_top .user_box .out,.cart_top .user_box .query{
+    color: #999999;
+}
+.cart_top .user_box a:hover{text-decoration: none;color: #ed145b;}
+</style>
+
+<div style="background: white;">
+
+    <div class="cart_top">
+        <div class="user_box" id="JS_user_box"><div>美妆商城欢迎您，<a href="http://passport.jumei.com/i/account/login">登录</a><i class="tips">|</i><a href="http://passport.jumei.com/i/account/signup">免费注册</a></div></div>
+    </div>
+
+    <div class="cart_header_box">
+        <div class="cart_header clearfix">
+            <h1 class="logo_box">
+                <a href="#" target="_blank" id="home">
+                    <img src="./logo.png" alt="美妆商城">
+                </a>
+            </h1>
+            <div class="order_path order_path_1"></div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+(function () {
+    var html = '';
+    if (RM_NICKNAME !== null) {
+        html = '<div>欢迎您，<a href="'+RM_SITE_MAIN_ORDERLISTURL+'/i/order/list">'+RM_NICKNAME+'</a>&nbsp;<a href="'+RM_SITE_MAIN_PASSPORTURL+'i/account/logout" class="out">[退出]</a><i class="tips">|</i><a href="'+RM_SITE_MAIN_ORDERLISTURL+'/i/order/list" class="query">订单查询</a></div>';
+        document.getElementById('JS_user_box').innerHTML = html;
+    }
+})()
+</script>
+
+<div id="container" style="width: auto;">
+<script type="text/javascript">
+window.GLOBAL =  {
+    "initData": {
+        "total_amount": 2497, 
+        "quantity": 11, 
+        "isEmpty": false, 
+        "product": {
+            "items": [
+                {
+                    "sku_no": "1080153", 
+                    "deal_hash_id": "d161108p2561696zc", 
+                    "product_id": "2561696", 
+                    "quantity": "1", 
+                    "item_price": "165", 
+                    "original_price": "232", 
+                    "item_discount_price": "165", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "姬芮裸透多效修颜6件组", 
+                    "show_category": "special", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p1.jmstatic.com/product/002/561/2561696_std/2561696_60_60.jpg", 
+                    "image_100": "http://p1.jmstatic.com/product/002/561/2561696_std/2561696_100_100.jpg", 
+                    "item_category": "product", 
+                    
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "37", 
+                    "category_v3_2": "3", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p2561696zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1080153_d161108p2561696zc", 
+                    "product_type": "product"
+                }, 
+                {
+                    "sku_no": "1084746", 
+                    "deal_hash_id": "d161108p3048461zc", 
+                    "product_id": "3048461", 
+                    "quantity": "1", 
+                    "item_price": "156", 
+                    "original_price": "244", 
+                    "item_discount_price": "156", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "Za净透洁面6件组", 
+                    "show_category": "special", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p1.jmstatic.com/product/003/048/3048461_std/3048461_60_60.jpg", 
+                    "image_100": "http://p1.jmstatic.com/product/003/048/3048461_std/3048461_100_100.jpg", 
+                    "add_cart_time": 1478831722, 
+                    "item_category": "product", 
+                    
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "23", 
+                    "category_v3_2": "1", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p3048461zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "套", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1084746_d161108p3048461zc", 
+                    "product_type": "product"
+                }, 
+                {
+                    "sku_no": "1085088", 
+                    "deal_hash_id": "d161108p3072766zc", 
+                    "product_id": "3072766", 
+                    "quantity": "1", 
+                    "item_price": "150", 
+                    "original_price": "225", 
+                    "item_discount_price": "150", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "Za姬芮净颜清洁特惠5件组", 
+                    "show_category": "special", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p1.jmstatic.com/product/003/072/3072766_std/3072766_60_60.jpg", 
+                    "image_100": "http://p1.jmstatic.com/product/003/072/3072766_std/3072766_100_100.jpg", 
+                    "add_cart_time": 1478831718, 
+                    "item_category": "product", 
+                    
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "23", 
+                    "category_v3_2": "1", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p3072766zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "套", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1085088_d161108p3072766zc", 
+                    "product_type": "product"
+                }, 
+                {
+                    "sku_no": "1085084", 
+                    "deal_hash_id": "d161108p3072764zc", 
+                    "product_id": "3072764", 
+                    "quantity": 2, 
+                    "item_price": "156", 
+                    "original_price": "216", 
+                    "item_discount_price": "156", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "Za姬芮亮白定制隔离5件组", 
+                    "show_category": "deal", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p4.jmstatic.com/product/003/072/3072764_std/3072764_60_60.jpg", 
+                    "image_100": "http://p4.jmstatic.com/product/003/072/3072764_std/3072764_100_100.jpg", 
+                    "add_cart_time": 1478831713, 
+                    "item_category": "product", 
+                    
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "23", 
+                    "category_v3_2": "1", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p3072764zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "套", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1085084_d161108p3072764zc", 
+                    "product_type": "product"
+                }, 
+                {
+                    "sku_no": "1077244", 
+                    "deal_hash_id": "d161108p2249434zc", 
+                    "product_id": "2249434", 
+                    "quantity": 2, 
+                    "item_price": "265", 
+                    "original_price": "330", 
+                    "item_discount_price": "265", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "Za多元水润滋养护肤5件组", 
+                    "show_category": "special", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p4.jmstatic.com/product/002/249/2249434_std/2249434_60_60.jpg", 
+                    "image_100": "http://p4.jmstatic.com/product/002/249/2249434_std/2249434_100_100.jpg", 
+                    "add_cart_time": 1478831705, 
+                    "item_category": "product", 
+                    
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "23", 
+                    "category_v3_2": "1", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p2249434zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1077244_d161108p2249434zc", 
+                    "product_type": "product"
+                }, 
+                {
+                    "sku_no": "1074874", 
+                    "deal_hash_id": "d161108p1970018zc", 
+                    "product_id": "1970018", 
+                    "quantity": 2, 
+                    "item_price": "296", 
+                    "original_price": 0, 
+                    "item_discount_price": "296", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "Za新焕美白2件组", 
+                    "show_category": "special", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p3.jmstatic.com/product/001/970/1970018_std/1970018_60_60.jpg", 
+                    "image_100": "http://p3.jmstatic.com/product/001/970/1970018_std/1970018_100_100.jpg", 
+                    "add_cart_time": 1478831695, 
+                    "item_category": "product", 
+                   
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "23", 
+                    "category_v3_2": "1", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p1970018zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1074874_d161108p1970018zc", 
+                    "product_type": "product"
+                }, 
+                {
+                    "sku_no": "1085666", 
+                    "deal_hash_id": "d161108p3056383zc", 
+                    "product_id": "3056383", 
+                    "quantity": 2, 
+                    "item_price": "296", 
+                    "original_price": 0, 
+                    "item_discount_price": "296", 
+                    "site": "", 
+                    "platform": "all", 
+                    "end_time": "1478879999", 
+                    "short_name": "Za恒润娇养保湿裸透护肤5件组", 
+                    "show_category": "special", 
+                    "shipping_system_id": "0", 
+                    "shipping_system_name": "", 
+                    "image_60": "http://p3.jmstatic.com/product/003/056/3056383_std/3056383_60_60.jpg", 
+                    "image_100": "http://p3.jmstatic.com/product/003/056/3056383_std/3056383_100_100.jpg", 
+                    "add_cart_time": 1478831688, 
+                    "item_category": "product", 
+                    
+                    "low_inventory": 0, 
+                    "user_purchase_limit": 0, 
+                    "brand_id": "679", 
+                    "category_v3_3": "23", 
+                    "category_v3_2": "1", 
+                    "category_v3_1": "107", 
+                    "url": "http://bj.jumei.com/i/deal/d161108p3056383zc.html", 
+                    "sale_status": "", 
+                    "discount": "", 
+                    "attribute": "套", 
+                    "capacity": "", 
+                    "selected": 1, 
+                    "is_cb": 0, 
+                    "is_vcb": 0, 
+                    "item_key": "1085666_d161108p3056383zc", 
+                    "product_type": "product"
+                }
+            ], 
+            "group_total_amount": 2497, 
+            "quantity": 11
+        }, 
+        "global_confirm_url": "http://cart.jumeiglobal.com/cart/confirmation/?from=add_to_confirmation_new&rich=1478831730493", 
+        "jumei_confirm_url": "http://cart.jumei.com/confirm/show?from=add_to_confirmation_new&rich=1478831730496",
+        "confirm_version": 1, 
+        "error_msg": "", 
+        "item_limit": 10, 
+        "recommend": true, 
+        "recommend_query_str": "pids=3056383,1970018,2249434,3072764,3072766,3048461,2561696", 
+        "marketPriceShow": true
+    }
+}
+</script>
+
+<link rel="stylesheet" href="./show.css"/>
+<!-- http://f0.jmstatic.com/static_cart/dist/20161021_2/css/show/show.css -->
+<script type="text/javascript" src="./website.min.js"></script>
+<!-- http://f0.jmstatic.com/static_lib/dist/20150412/website.min.js -->
+<script type="text/javascript" src="./boot.js"></script>
+<!-- http://f0.jmstatic.com/static_cart/dist/20161021_2/js/boot.js -->
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+
+    seajs.use("views/show/index", function(Index){
+        var index = Index.init({
+            data : GLOBAL.initData,
+            container : $("#container")
+        });
+    });
+$("")
+</script>
+</div>
+<div id="footer_container">
+    <div id="footer_textarea">
+        <div class="footer_con" id="footer_copyright">
+        </div>
+    </div>
+</div>
+</body>
+</html>
