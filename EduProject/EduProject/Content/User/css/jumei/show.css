@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 html {
 	filter: expression(document.execCommand("BackgroundImageCache",false,true));
@@ -931,15 +931,9 @@ body {
 	display:none;
 }
 
-.cart_timer_text{
+.cart_timer_text {
 	color: #ed145b
 }
-
-
-.content_header .arrow_t_1 {
-	left: 6px
-}
-
 
 .content_footer .pop_box {
 	left: -301px
@@ -949,21 +943,6 @@ body {
 	left: auto;
 	right: 4px
 }
-
-
-
-// .common_shippment {
-// 	padding-top: 5px;
-// 	color: #fa8801;
-// 	clear: both
-// }
-
-// .common_shippment i {
-// 	width: 35px;
-// 	padding-left: 5px;
-// 	background: url(./icons.png) no-repeat;
-// 	background-position: -2px -86px
-// }
 
 .common_handler {
 	width: 958px;
@@ -1008,6 +987,9 @@ body {
 	float: right;
 	height: 100%
 }
+.left_handler {
+    padding-top:1px;
+}
 
 .total_amount,.ship_price,.total_price {
 	color: #ed145b;
@@ -1036,6 +1018,9 @@ body {
 .content_footer .cart_timer_wrapper {
 	float: right
 }
+
+
+
 .hide,.hidden {
 	display: none;
 	visibility: hidden
@@ -1067,9 +1052,10 @@ body {
 	margin-right: 2px;
 	_margin-top: 7px;
 	line-height: 20px;
-	background: url(./icons.png) no-repeat;
+	background: url(~/Content/User/images/ShopCart/icons.png) no-repeat;
 	background-position: -36px -2px
 }
+
 .cart_group_item {
 	width: 100%;
 	margin: 10px 0 0;
@@ -1115,7 +1101,6 @@ body {
 	font-size: 14px;
 	font-family: "Microsoft YaHei","Microsoft JhengHei",STHeiti,MingLiu
 }
-
 .cart_item {
 	border-collapse: collapse;
 	border-bottom: 1px dotted #ddd;
@@ -1264,7 +1249,7 @@ body {
 .cart_item_desc .sale_tag .icon_small {
 	width: 8px;
 	height: 8px;
-	background: url(./icons.png) no-repeat -2px -108px
+	background: url(~/Content/User/images/ShopCart/icons.png) no-repeat -2px -108px
 }
 
 .cart_item_desc .sale_tag.gift {
@@ -1350,12 +1335,14 @@ body {
 	border-color: #e0e0e0
 }
 
+
 .jumei_price {
 	margin-bottom: 3px;
 	font-weight: 700;
 	font-family: Arial,Helvetica;
 	padding-top: 20px;
 }
+
 .item_total_price {
 	margin-bottom: 3px;
 	color: #ed145b;
@@ -1365,16 +1352,17 @@ body {
 }
 
 .delete_item {
-	background: url(./del1.png) no-repeat;
+	background: url(~/Content/User/images/ShopCart/del1.png) no-repeat;
 	//background-position: -7px -27px;
 	cursor: pointer;
 	margin-top: 20px;
 }
 
 .delete_item:hover {
-	background: url(./del2.png) no-repeat;
+	background: url(~/Content/User/images/ShopCart/del2.png) no-repeat;
 	//background-position: -36px -27px
 }
+
 .cart_item_link {
     padding-left: 20px;
     padding-top: 9px;

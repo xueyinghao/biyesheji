@@ -125,7 +125,7 @@
                 </div>
                 <div class="r_fourth">
                     <!--按钮状态start-->
-                    <a href="javascript:;" class="detail_btn_fom btn_fom_add buy_local btnCart" id="shop_cart"><span>加入购物车</span><i></i></a>
+                    <a href="javascript:;" class="detail_btn_fom btn_fom_add buy_local btnCart" id="cart_add"><span>加入购物车</span><i></i></a>
                     <!--按钮状态end-->
                 </div>
             </div>
@@ -193,7 +193,8 @@
                                 <tbody>
                                     <tr>
                                         <td width="85" align="left"><b>商品名称：</b></td>
-                                        <td width="500"><span>@Model.PName</span></td>
+                                        <td style="display:none" id="ProId">@ViewBag.Id</td>
+                                        <td width="500" id="pName"><span>@Model.PName</span></td>
                                         <td rowspan="7" style="padding-right:0;">
                                             <img src="http://p1.global.jmstatic.com/product/002/419/2419270_std/2419270_200_200.jpg" class="w200">
                                         </td>

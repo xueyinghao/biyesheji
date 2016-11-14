@@ -26,9 +26,20 @@ namespace EduProject.Areas.User.Controllers
         public ActionResult Single(int id)
         {
             var singlePro = (shopEntity.Product.Where(c => c.Id == id).ToList())[0];
+            ViewBag.Id=id;
             return View(singlePro);
         }
 
+
+        public ActionResult MyCart()
+        {
+            StringBuilder sb = new StringBuilder();
+            var cart = ShopCart.GetCart(this.HttpContext);
+            List<Cart> allList = cart.GetCartItems();
+            ViewBag.TotalCount = cart.GetCount();
+            ViewBag.TotalPrice = cart.getTotal();
+            return View(allList);
+        }
 
         /// <summary>
         /// 
@@ -89,13 +100,11 @@ namespace EduProject.Areas.User.Controllers
                     sb.AppendLine("<div class=\"cart_item\"><div class=\"cart_item_pic\"><a href=\"/User/Product/Single?id=" + item.ProductId + "\"><img src=\"" + item.image + "\"/></a></div><div class=\"cart_item_desc\"><a href=\"/User/Product/Single?id=" + item.ProductId + "\" class=\"cart_item_name\">" + item.PName + "</a><div class=\"cart_item_sku\"><span>型号:" + item.mlNum + "</span></div><div class=\"cart_item_price\"><span class=\"cart_price\">￥" + item.Price + "×" + item.Count + "</span></div></div></div>");
                 }
             }
-            sb.Append("</div><div class=\"cart_handler\"><div class=\"cart_handler_header\"><span class=\"cart_handler_left\">共<span class=\"cart_price\">"+totalCount+"</span>件商品</span><span class=\"cart_handler_right\">￥"+totalPrice+"</span></div><a href=\"#\" class=\"cart_go_btn\" target=\"_blank\">去购物车结算</a></div></div>");
+            sb.Append("</div><div class=\"cart_handler\"><div class=\"cart_handler_header\"><span class=\"cart_handler_left\">共<span class=\"cart_price\">" + totalCount + "</span>件商品</span><span class=\"cart_handler_right\">￥" + totalPrice + "</span></div><a href=\"/User/Product/MyCart\" class=\"cart_go_btn\">去购物车结算</a></div></div>");
             return sb.ToString();
         }
 
-       
-
-       
+        
 
 	}
 }

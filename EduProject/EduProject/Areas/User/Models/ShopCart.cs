@@ -53,7 +53,7 @@ namespace EduProject.Areas.User.Models
             }
             else
             {
-                cartItem.Count++;
+                cartItem.Count+=count;
             }
             shopEntity.SaveChanges();
 

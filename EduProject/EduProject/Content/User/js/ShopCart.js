@@ -25,6 +25,10 @@ $(".quick_toggle li").mouseleave(function () {
 // 元素以及其他一些变量 
 var eleFlyElement = document.querySelector("#flyItem"),
 eleShopCart = document.querySelector("#shopCart");
+//var numberItem = $('#buy_number').val();
+//if (numberItem==null) {
+
+//}
 var numberItem = 0;
 // 抛物线运动 
 var myParabola = funParabola(eleFlyElement, eleShopCart, {
@@ -34,7 +38,7 @@ var myParabola = funParabola(eleFlyElement, eleShopCart, {
     //控制抛物线弧度 
     complete: function () {
         eleFlyElement.style.visibility = "hidden";
-        eleShopCart.querySelector("span").innerHTML = ++numberItem;
+        //eleShopCart.querySelector("span").innerHTML = ++numberItem;
     }
 });
 // 绑定点击事件 
@@ -79,12 +83,13 @@ $('.grid_2-right').click(function () {
     //    }
     //})
     var id = $(this).find("div").attr("id");
+    var PName = $(this).parents(".grid_2").find("p").first().text();
     var TotalCount = $('#buy_number').val();
-    var PName=$(this).parents(".grid_2").find("p").first().text();
-    if (TotalCount==null) {
+    if (TotalCount==undefined) {
         TotalCount = 1;
     }
-   
+    var TotalCartNum = parseInt($('#cart_num').html()) + parseInt(TotalCount);
+    $('#cart_num').html(TotalCartNum);
     $.ajax({
         url: '/User/Product/AddCart?id=' + id + '&count=' + TotalCount+'&name='+PName,
         type: 'POST',
@@ -93,6 +98,25 @@ $('.grid_2-right').click(function () {
         }
     })
 })
+
+$('#cart_add').click(function () {
+    var id = $('#ProId').html();
+    var PName = $('#pName>span').html();
+    var TotalCount = $('#buy_number').val();
+    var TotalCartNum = parseInt($('#cart_num').html()) + parseInt(TotalCount);
+    $('#cart_num').html(TotalCartNum);
+    
+    $.ajax({
+        url: '/User/Product/AddCart?id=' + id + '&count=' + TotalCount + '&name=' + PName,
+        type: 'POST',
+        success: function () {
+            $('#pop_panel').removeClass("ibar_cart_empty");
+        }
+    })
+})
+
+
+
 
 //商品数量增减
 
@@ -116,10 +140,9 @@ $("#num_add").click(function () {
 })
 
 $('#shopCart').click(function () {
-    $.post('Product/getFromCart', function (data) {
+    $.post('/User/Product/getFromCart', function (data) {
         var code = $("<code></code>").append($(data));
         var html = $(".cart_item", code).html();
-
         if (html == "") {
             //$("#pop_panel").attr('style', 'background:url(http://a4.jmstatic.com/daf3e7fd00ae46fd/cart_empty_bg.jpg)  50% 20px no-repeat');
             $("#pop_panel").addClass('ibar_cart_empty');
@@ -131,6 +154,7 @@ $('#shopCart').click(function () {
     });
 
 })
+
 //$(".thickbox").click(function () {
 //    var id = $(this).parents("a").attr("id");
 //    location.href("/User/Product/Single?id=" + id);

@@ -6,7 +6,7 @@ jQuery(function ($) {
 	quickLinks = quickShell.find('.quick_links');
 	quickPanel = quickLinks.next();
 	quickShell.appendTo('.mui-mbar-tabs');
-	CartMessage = "";
+	//CartMessage = "";
     var 
 	quickPopXHR,
 	loadingTmpl = '<div class="loading" style="padding:30px 80px"><i></i><span>Loading...</span></div>',
@@ -52,7 +52,7 @@ jQuery(function ($) {
 		//购物信息
 		message_list: {
 			title: '购物车',
-			content: CartMessage,
+			content: "",
 			init:$.noop
 		},
 		
