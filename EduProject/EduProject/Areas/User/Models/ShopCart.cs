@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data;
+using log4net;
 
 namespace EduProject.Areas.User.Models
 {
@@ -12,7 +14,7 @@ namespace EduProject.Areas.User.Models
         /// Cart表中CartId为购物车ID,未登录使用GUID，登录使用用户名
         /// ProductId为商品ID
         /// </summary>
-
+       
         BShopEntities shopEntity = new BShopEntities();
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
@@ -140,8 +142,28 @@ namespace EduProject.Areas.User.Models
             shopEntity.SaveChanges();
         }
 
+        public bool ChangeNum(int id, int num)
+        {
+            bool flag = false;
+            try
+            {
+                var shoppingcart = shopEntity.Cart.Where(c => c.ProductId == id && c.CartId == ShoppingCartId).SingleOrDefault();
+                if (shoppingcart != null)
+                {
+                    shoppingcart.Count = num;
+                }
+                shopEntity.SaveChanges();
+                flag=true;
+            }
+            catch (Exception ex)
+            {
+                LogManager.GetLogger(ex.ToString());
+                flag = false;
+            }
+            return flag;
+        }
 
 
 
     }
-}
+}   

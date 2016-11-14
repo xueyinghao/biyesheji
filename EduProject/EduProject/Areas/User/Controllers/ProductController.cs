@@ -7,11 +7,13 @@ using EduProject.Areas.User.Models;
 using EduProject.Database;
 using Newtonsoft.Json;
 using System.Text;
+using log4net;
 
 namespace EduProject.Areas.User.Controllers
 {
     public class ProductController : Controller
     {
+        private ILog log ;
         BShopEntities shopEntity = new BShopEntities();
         //public const string CartSessionKey = "CartId";
         //Cart cart = new Cart();
@@ -36,9 +38,10 @@ namespace EduProject.Areas.User.Controllers
             StringBuilder sb = new StringBuilder();
             var cart = ShopCart.GetCart(this.HttpContext);
             List<Cart> allList = cart.GetCartItems();
+            ViewBag.ModelData = allList;
             ViewBag.TotalCount = cart.GetCount();
             ViewBag.TotalPrice = cart.getTotal();
-            return View(allList);
+            return View();
         }
 
         /// <summary>
@@ -103,7 +106,22 @@ namespace EduProject.Areas.User.Controllers
             sb.Append("</div><div class=\"cart_handler\"><div class=\"cart_handler_header\"><span class=\"cart_handler_left\">共<span class=\"cart_price\">" + totalCount + "</span>件商品</span><span class=\"cart_handler_right\">￥" + totalPrice + "</span></div><a href=\"/User/Product/MyCart\" class=\"cart_go_btn\">去购物车结算</a></div></div>");
             return sb.ToString();
         }
-
+        [HttpPost]
+        public string ChangeNum(int id, int num)
+        {
+            string json = "";
+            var carts = ShopCart.GetCart(this.HttpContext);
+            bool res=carts.ChangeNum(id, num);
+            if (res == true)
+            {
+                json = "true";
+            }
+            else
+            {
+                json = "false";
+            }
+            return json;
+        }
         
 
 	}

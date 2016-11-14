@@ -93,7 +93,7 @@
         <div class="cart_header_box">
             <div class="cart_header clearfix">
                 <h1 class="logo_box">
-                    <a href="#" target="_blank" id="home">
+                    <a href="/User/Home/Index" id="home">
                         <img src="~/Content/User/images/ShopCart/Logo.png" alt="美妆商城">
                     </a>
                 </h1>
@@ -106,15 +106,16 @@
     <script type="text/javascript">
         (function () {
             var html = '';
-            if (RM_NICKNAME !== null) {
-                html = '<div>欢迎您，<a href="' + RM_SITE_MAIN_ORDERLISTURL + '/i/order/list">' + RM_NICKNAME + '</a>&nbsp;<a href="' + RM_SITE_MAIN_PASSPORTURL + 'i/account/logout" class="out">[退出]</a><i class="tips">|</i><a href="' + RM_SITE_MAIN_ORDERLISTURL + '/i/order/list" class="query">订单查询</a></div>';
-                document.getElementById('JS_user_box').innerHTML = html;
-            }
+            //if (RM_NICKNAME !== null) {
+            //    html = '<div>欢迎您，<a href="' + RM_SITE_MAIN_ORDERLISTURL + '/i/order/list">' + RM_NICKNAME + '</a>&nbsp;<a href="' + RM_SITE_MAIN_PASSPORTURL + 'i/account/logout" class="out">[退出]</a><i class="tips">|</i><a href="' + RM_SITE_MAIN_ORDERLISTURL + '/i/order/list" class="query">订单查询</a></div>';
+            //    document.getElementById('JS_user_box').innerHTML = html;
+            //}
         })()
     </script>
 
     <div id="container" style="width: auto;">
         <link rel="stylesheet" href="~/Content/User/css/jumei/show.css" />
+        <script src="~/Content/User/js/jquery-1.11.1.min.js"></script>
         @*<script type="text/javascript" src="./website.min.js"></script>
         <script type="text/javascript" src="./boot.js"></script>*@
 
@@ -144,14 +145,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="cart_item " hashid="d161108p2561696zc" id="1080153_d161108p2561696zc" product_id="2561696" item_price="165.00" category_v3_3="37" brand_id="679" product_type="product" vcb="false">
+                            @foreach (var item in @ViewBag.ModelData)
+                            {
+                                 <tr class="cart_item " hashid="d161108p2561696zc" id="1080153_d161108p2561696zc" product_id="2561696" item_price="165.00" category_v3_3="37" brand_id="679" product_type="product" vcb="false">
                                 <td valign="top">
                                     <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1080153_d161108p2561696zc" data-app="all" checked="'checked'/" type="checkbox" />
+                                        <input class="js_item_selector cart_item_selector" data-item-key="1080153_d161108p2561696zc" data-app="all" checked="checked" type="checkbox" />
                                         <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p2561696zc.html" target="_blank"> <img src="http://p1.jmstatic.com/product/002/561/2561696_std/2561696_60_60.jpg" alt="姬芮裸透多效修颜6件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="姬芮裸透多效修颜6件组" href="http://bj.jumei.com/i/deal/d161108p2561696zc.html" target="_blank">姬芮裸透多效修颜6件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
+                                            <a class="cart_item_pic" href="/User/Product/Single?id=@item.ProductId" target="_blank"> <img src=@item.image alt=@item.PName /> <span class="sold_out_pic png"></span> </a>
+                                            <a class="cart_item_link" title=@item.PName href="/User/Product/Single?id=@item.ProductId" target="_blank">@item.PName</a>
+                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">@item.Count&nbsp;套</span>&nbsp; </p>
                                             <p class="sku_info"> </p>
                                             <div class="sale_info clearfix">
                                             </div>
@@ -160,15 +163,15 @@
                                 </td>
                                 <td>
                                     <div class="cart_item_price">
-                                        <p class="jumei_price">165.00</p>
+                                        <p class="jumei_price">@item.Price</p>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="cart_item_num ">
                                         <div class="item_quantity_editer clearfix" data-item-key="1080153_d161108p2561696zc">
-                                            <span class="decrease_one disabled ">-</span>
-                                            <input class="item_quantity" value="1" type="text" />
-                                            <span class="increase_one ">+</span>
+                                            <span class="decrease_one">-</span>
+                                            <input class="item_quantity" value=@item.Count type="text" id=@item.ProductId>
+                                            <span class="increase_one">+</span>
                                         </div>
                                         <div class="item_shortage_tip">
                                         </div>
@@ -176,7 +179,7 @@
                                 </td>
                                 <td>
                                     <div class="cart_item_total">
-                                        <p class="item_total_price">165.00</p>
+                                        <p class="item_total_price">@item.Price</p>
                                     </div>
                                 </td>
                                 <td>
@@ -185,260 +188,11 @@
                                     </div>
                                 </td>
                             </tr>
-                            @*<tr class="cart_item " hashid="d161108p3048461zc" id="1084746_d161108p3048461zc" product_id="3048461" item_price="156.00" category_v3_3="23" brand_id="679" product_type="product" vcb="false">
-                                <td valign="top">
-                                    <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1084746_d161108p3048461zc" data-app="all" checked="'checked'/" type="checkbox" />
-                                        <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p3048461zc.html" target="_blank"> <img src="http://p1.jmstatic.com/product/003/048/3048461_std/3048461_60_60.jpg" alt="Za净透洁面6件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="Za净透洁面6件组" href="http://bj.jumei.com/i/deal/d161108p3048461zc.html" target="_blank">Za净透洁面6件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
-                                            <div class="sale_info clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_price">
-                                        <p class="jumei_price">156.00</p>
-                                        <!-- <p class="market_price ">244.00</p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_num ">
-                                        <div class="item_quantity_editer clearfix" data-item-key="1084746_d161108p3048461zc">
-                                            <span class="decrease_one disabled ">-</span>
-                                            <input class="item_quantity" value="1" type="text" />
-                                            <span class="increase_one ">+</span>
-                                        </div>
-                                        <div class="item_shortage_tip">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_total">
-                                        <p class="item_total_price">156.00</p>
-                                        <!--  <p>省 <span class="item_saved_price">88.00</span></p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_option">
-                                        <a class="icon_small delete_item png" data-item-key="1084746_d161108p3048461zc" href="javascript:void(0)" title="删除"></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="cart_item " hashid="d161108p3072766zc" id="1085088_d161108p3072766zc" product_id="3072766" item_price="150.00" category_v3_3="23" brand_id="679" product_type="product" vcb="false">
-                                <td valign="top">
-                                    <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1085088_d161108p3072766zc" data-app="all" checked="'checked'/" type="checkbox" />
-                                        <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p3072766zc.html" target="_blank"> <img src="http://p1.jmstatic.com/product/003/072/3072766_std/3072766_60_60.jpg" alt="Za姬芮净颜清洁特惠5件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="Za姬芮净颜清洁特惠5件组" href="http://bj.jumei.com/i/deal/d161108p3072766zc.html" target="_blank">Za姬芮净颜清洁特惠5件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
-                                            <div class="sale_info clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_price">
-                                        <p class="jumei_price">150.00</p>
-                                        <!-- <p class="market_price ">225.00</p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_num ">
-                                        <div class="item_quantity_editer clearfix" data-item-key="1085088_d161108p3072766zc">
-                                            <span class="decrease_one disabled ">-</span>
-                                            <input class="item_quantity" value="1" type="text" />
-                                            <span class="increase_one ">+</span>
-                                        </div>
-                                        <div class="item_shortage_tip">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_total">
-                                        <p class="item_total_price">150.00</p>
-                                        <!-- <p>省 <span class="item_saved_price">75.00</span></p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_option">
-                                        <a class="icon_small delete_item png" data-item-key="1085088_d161108p3072766zc" href="javascript:void(0)" title="删除"></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="cart_item " hashid="d161108p3072764zc" id="1085084_d161108p3072764zc" product_id="3072764" item_price="156.00" category_v3_3="23" brand_id="679" product_type="product" vcb="false">
-                                <td valign="top">
-                                    <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1085084_d161108p3072764zc" data-app="all" checked="'checked'/" type="checkbox" />
-                                        <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p3072764zc.html" target="_blank"> <img src="http://p4.jmstatic.com/product/003/072/3072764_std/3072764_60_60.jpg" alt="Za姬芮亮白定制隔离5件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="Za姬芮亮白定制隔离5件组" href="http://bj.jumei.com/i/deal/d161108p3072764zc.html" target="_blank">Za姬芮亮白定制隔离5件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
-                                            <div class="sale_info clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_price">
-                                        <p class="jumei_price">156.00</p>
-                                        <!-- <p class="market_price ">216.00</p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_num ">
-                                        <div class="item_quantity_editer clearfix" data-item-key="1085084_d161108p3072764zc">
-                                            <span class="decrease_one ">-</span>
-                                            <input class="item_quantity" value="2" type="text" />
-                                            <span class="increase_one ">+</span>
-                                        </div>
-                                        <div class="item_shortage_tip">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_total">
-                                        <p class="item_total_price">312.00</p>
-                                        <!-- <p>省 <span class="item_saved_price">120.00</span></p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_option">
-                                        <a class="icon_small delete_item png" data-item-key="1085084_d161108p3072764zc" href="javascript:void(0)" title="删除"></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="cart_item " hashid="d161108p2249434zc" id="1077244_d161108p2249434zc" product_id="2249434" item_price="265.00" category_v3_3="23" brand_id="679" product_type="product" vcb="false">
-                                <td valign="top">
-                                    <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1077244_d161108p2249434zc" data-app="all" checked="'checked'/" type="checkbox" />
-                                        <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p2249434zc.html" target="_blank"> <img src="http://p4.jmstatic.com/product/002/249/2249434_std/2249434_60_60.jpg" alt="Za多元水润滋养护肤5件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="Za多元水润滋养护肤5件组" href="http://bj.jumei.com/i/deal/d161108p2249434zc.html" target="_blank">Za多元水润滋养护肤5件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
-                                            <p class="sku_info"> </p>
-                                            <div class="sale_info clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_price">
-                                        <p class="jumei_price">265.00</p>
-                                        <!-- <p class="market_price ">330.00</p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_num ">
-                                        <div class="item_quantity_editer clearfix" data-item-key="1077244_d161108p2249434zc">
-                                            <span class="decrease_one ">-</span>
-                                            <input class="item_quantity" value="2" type="text" />
-                                            <span class="increase_one ">+</span>
-                                        </div>
-                                        <div class="item_shortage_tip">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_total">
-                                        <p class="item_total_price">530.00</p>
-                                        <!--  <p>省 <span class="item_saved_price">130.00</span></p>  -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_option">
-                                        <a class="icon_small delete_item png" data-item-key="1077244_d161108p2249434zc" href="javascript:void(0)" title="删除"></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="cart_item " hashid="d161108p1970018zc" id="1074874_d161108p1970018zc" product_id="1970018" item_price="296.00" category_v3_3="23" brand_id="679" product_type="product" vcb="false">
-                                <td valign="top">
-                                    <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1074874_d161108p1970018zc" data-app="all" checked="'checked'/" type="checkbox" />
-                                        <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p1970018zc.html" target="_blank"> <img src="http://p3.jmstatic.com/product/001/970/1970018_std/1970018_60_60.jpg" alt="Za新焕美白2件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="Za新焕美白2件组" href="http://bj.jumei.com/i/deal/d161108p1970018zc.html" target="_blank">Za新焕美白2件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
-                                            <p class="sku_info"> </p>
-                                            <div class="sale_info clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_price">
-                                        <p class="jumei_price">296.00</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_num ">
-                                        <div class="item_quantity_editer clearfix" data-item-key="1074874_d161108p1970018zc">
-                                            <span class="decrease_one ">-</span>
-                                            <input class="item_quantity" value="2" type="text" />
-                                            <span class="increase_one ">+</span>
-                                        </div>
-                                        <div class="item_shortage_tip">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_total">
-                                        <p class="item_total_price">592.00</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_option">
-                                        <a class="icon_small delete_item png" data-item-key="1074874_d161108p1970018zc" href="javascript:void(0)" title="删除"></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="cart_item " hashid="d161108p3056383zc" id="1085666_d161108p3056383zc" product_id="3056383" item_price="296.00" category_v3_3="23" brand_id="679" product_type="product" vcb="false">
-                                <td valign="top">
-                                    <div class="cart_item_desc clearfix">
-                                        <input class="js_item_selector cart_item_selector" data-item-key="1085666_d161108p3056383zc" data-app="all" checked="'checked'/" type="checkbox" />
-                                        <div class="cart_item_desc_wrapper">
-                                            <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d161108p3056383zc.html" target="_blank"> <img src="http://p3.jmstatic.com/product/003/056/3056383_std/3056383_60_60.jpg" alt="Za恒润娇养保湿裸透护肤5件组" /> <span class="sold_out_pic png"></span> </a>
-                                            <a class="cart_item_link" title="Za恒润娇养保湿裸透护肤5件组" href="http://bj.jumei.com/i/deal/d161108p3056383zc.html" target="_blank">Za恒润娇养保湿裸透护肤5件组</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">套</span>&nbsp; </p>
-                                            <div class="sale_info clearfix">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_price">
-                                        <p class="jumei_price">296.00</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_num ">
-                                        <div class="item_quantity_editer clearfix" data-item-key="1085666_d161108p3056383zc">
-                                            <span class="decrease_one ">-</span>
-                                            <input class="item_quantity" value="2" type="text" />
-                                            <span class="increase_one ">+</span>
-                                        </div>
-                                        <div class="item_shortage_tip">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_total">
-                                        <p class="item_total_price">592.00</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart_item_option">
-                                        <a class="icon_small delete_item png" data-item-key="1085666_d161108p3056383zc" href="javascript:void(0)" title="删除"></a>
-                                    </div>
-                                </td>
-                            </tr>*@
+                            }
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="5"> 商品金额： <span class="group_total_price">&yen;2497.00</span> </td>
+                                <td colspan="5"> 商品金额： <span class="group_total_price">&yen;@ViewBag.TotalPrice</span> </td>
                             </tr>
                         </tfoot>
                     </table>
@@ -447,8 +201,8 @@
                 <div class="common_handler common_handler_fixed">
                     <div class="right_handler">
                         共
-                        <span class="total_amount"> 11 </span> &nbsp;件商品 &nbsp;&nbsp; 商品应付总额：
-                        <span class="total_price">&yen;2497.00</span>
+                        <span class="total_amount"> @ViewBag.TotalCount </span> &nbsp;件商品 &nbsp;&nbsp; 商品应付总额：
+                        <span class="total_price">&yen;@ViewBag.TotalPrice</span>
                         <a id="go_to_order" class="btn" href="javascript:;">去结算</a>
                     </div>
                     <div class="left_handler">
@@ -476,5 +230,6 @@
             </div>
         </div>
     </div>
+    <script src="~/Content/User/js/NumAdd.js"></script>
 </body>
 </html>
