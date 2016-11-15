@@ -1311,7 +1311,7 @@ body {
 	color: #666;
 	border: 1px solid #e0e0e0;
 	cursor: pointer;
-	background: url(../../images/show/cart_num_editer_bg.jpg) repeat-x 0 0 transparent;
+	/*background: url(../../images/show/cart_num_editer_bg.jpg) repeat-x 0 0 transparent;*/
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none
@@ -1352,15 +1352,15 @@ body {
 }
 
 .delete_item {
-	background: url(~/Content/User/images/ShopCart/del1.png) no-repeat;
-	//background-position: -7px -27px;
+	background: url(../../images/ShopCart/del1.png) no-repeat;
+	/*//background-position: -7px -27px;*/
 	cursor: pointer;
 	margin-top: 20px;
 }
 
 .delete_item:hover {
-	background: url(~/Content/User/images/ShopCart/del2.png) no-repeat;
-	//background-position: -36px -27px
+	background: url(../../images/ShopCart/del2.png) no-repeat;
+	/*//background-position: -36px -27px*/
 }
 
 .cart_item_link {

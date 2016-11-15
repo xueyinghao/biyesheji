@@ -107,11 +107,11 @@ namespace EduProject.Areas.User.Controllers
             return sb.ToString();
         }
         [HttpPost]
-        public string ChangeNum(int id, int num)
+        public string ChangeNum(int id, int count)
         {
             string json = "";
             var carts = ShopCart.GetCart(this.HttpContext);
-            bool res=carts.ChangeNum(id, num);
+            bool res = carts.ChangeNum(id, count);
             if (res == true)
             {
                 json = "true";

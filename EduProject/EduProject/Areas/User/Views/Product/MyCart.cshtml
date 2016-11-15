@@ -147,14 +147,14 @@
                         <tbody>
                             @foreach (var item in @ViewBag.ModelData)
                             {
-                                 <tr class="cart_item " hashid="d161108p2561696zc" id="1080153_d161108p2561696zc" product_id="2561696" item_price="165.00" category_v3_3="37" brand_id="679" product_type="product" vcb="false">
+                                <tr class="cart_item" id=@item.ProductId product_id=@item.ProductId item_price=@item.Price category_v3_3="37" brand_id="679" product_type="product" vcb="false">
                                 <td valign="top">
                                     <div class="cart_item_desc clearfix">
                                         <input class="js_item_selector cart_item_selector" data-item-key="1080153_d161108p2561696zc" data-app="all" checked="checked" type="checkbox" />
                                         <div class="cart_item_desc_wrapper">
                                             <a class="cart_item_pic" href="/User/Product/Single?id=@item.ProductId" target="_blank"> <img src=@item.image alt=@item.PName /> <span class="sold_out_pic png"></span> </a>
                                             <a class="cart_item_link" title=@item.PName href="/User/Product/Single?id=@item.ProductId" target="_blank">@item.PName</a>
-                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">@item.Count&nbsp;套</span>&nbsp; </p>
+                                            <p class="sku_info"> 型号：<span class="cart_item_attribute">@item.mlNum&nbsp;</span>&nbsp; </p>
                                             <p class="sku_info"> </p>
                                             <div class="sale_info clearfix">
                                             </div>
@@ -179,7 +179,11 @@
                                 </td>
                                 <td>
                                     <div class="cart_item_total">
-                                        <p class="item_total_price">@item.Price</p>
+                                        <p class="item_total_price">
+                                            @{
+                                                 @: @(@item.Price*@item.Count)
+                                            }
+                                        </p>
                                     </div>
                                 </td>
                                 <td>
@@ -188,6 +192,7 @@
                                     </div>
                                 </td>
                             </tr>
+                               
                             }
                         </tbody>
                         <tfoot>
@@ -231,5 +236,14 @@
         </div>
     </div>
     <script src="~/Content/User/js/NumAdd.js"></script>
+    <script type="text/javascript">
+        
+        function Calcul(price, num)
+        {
+            var LittlePrice = price * parseFloat(num);
+            $('.item_total_price').html(LittlePrice.toFixed(2));
+        }
+       
+    </script>
 </body>
 </html>
