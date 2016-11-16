@@ -122,6 +122,13 @@ namespace EduProject.Areas.User.Controllers
             }
             return json;
         }
+        [HttpPost]
+        public string DeleteProduct(int id)
+        {
+            var cart = ShopCart.GetCart(this.HttpContext);
+            bool result = cart.DeleteProduct(id);
+            return result.ToString();
+        }
         
 
 	}

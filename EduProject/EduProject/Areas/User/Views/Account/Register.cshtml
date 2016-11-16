@@ -1,0 +1,191 @@
+﻿@{
+    Layout = null;
+}
+@model EduProject.Areas.User.Models.Register
+<!DOCTYPE html>
+<html>
+<head>
+    <title>注册-美妆商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Beauty mall, beauty and convenience stores around you" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header_top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                </div>
+                <ul class="shopping_grid">
+                    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
+                    <a href="/User/Account/login"><li>登&nbsp;录</li></a>
+                    <a href="/User/Account/Register"><li>注&nbsp;册</li></a>
+                    <div class="clearfix"> </div>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="h_menu4">
+            <!-- start h_menu4 -->
+            <div class="container">
+                <a class="toggleMenu" href="/User/Home/Index">Menu</a>
+                <ul class="nav">
+                    <li class="/User/Home/Index"><a href="index.html" data-hover="Home">首页</a></li>
+                    <li><a href="about.html" data-hover="Beauty care">美容护理</a></li>
+                    <li><a href="careers.html" data-hover="Fragrance makeup">香氛彩妆</a></li>
+                    <li><a href="contact.html" data-hover="Personal care">个人护理</a></li>
+                    <li><a href="404.html" data-hover="Boutique men">精品男士</a></li>
+                    <li><a href="register.html" data-hover="Beauty tools">美妆工具</a></li>
+                    <li><a href="register.html" data-hover="Beauty information">美妆资讯</a></li>
+                    <li><a href="wishlist.html" data-hover="Wish List">心愿单</a></li>
+                </ul>
+                <script type="text/javascript" src="~/Content/User/js/nav.js"></script>
+            </div><!-- end h_menu4 -->
+        </div>
+    </div>
+    <div class="column_center">
+        <div class="container">
+            <div class="search">
+                <div class="stay">搜索商品</div>
+                <div class="stay_right">
+                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+                    <input type="submit" value="">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="about">
+        <div class="container">
+            <div class="register">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                { 
+                      <div class="register-top-grid">
+                        <h3>个人信息</h3>
+                        <div>
+                            <span>姓名<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(model => model.UName)
+                            @Html.ValidationMessageFor(model => model.UName)
+                        </div>
+                        <div>
+                            <span>性别<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(model=>model.Sex)
+                            @Html.ValidationMessageFor(model=>model.Sex)
+                        </div>
+                        <div>
+                            <span>年龄<label>*</label></span>
+                              @*<input type="text">*@
+                            @Html.TextBoxFor(model => model.Age)
+                            @Html.ValidationMessageFor(model=>model.Age)
+                        </div>
+                        <div>
+                            <span>手机<label>*</label></span>
+                              @*<input type="text">*@
+                            @Html.TextBoxFor(model => model.Phone)
+                            @Html.ValidationMessageFor(model=>model.Phone)
+                        </div>
+                        <div>
+                            <span>邮箱<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(model => model.Email)
+                            @Html.ValidationMessageFor(model=>model.Email)
+                        </div>
+                        <div class="clearfix"> </div>
+                        <a class="news-letter" href="#">
+                            @*<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>*@
+                        </a>
+                    </div>
+                    <div class="register-bottom-grid">
+                        <h3>登录信息</h3>
+                        <div>
+                            <span>密码<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(model => model.Password)
+                            @Html.ValidationMessageFor(model=>model.Password)
+                        </div>
+                        <div>
+                            <span>确认密码<label>*</label></span>
+                            @*<input type="text">*@
+                            @Html.TextBoxFor(model => model.ConfirmPassword)
+                            @Html.ValidationMessageFor(model=>model.ConfirmPassword)
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                <div class="register-but">
+                    <form>
+                        <input type="submit" value="注   册" id="regSubmit">
+                        <div class="clearfix"> </div>
+                    </form>
+                </div>
+                }
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer_bg">
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 f_grid1">
+                <h3>About</h3>
+                <a href="#"><img src="~/Content/User/images/logo.png" alt="" /></a>
+                <p>
+                    美妆商城是中国首家第三方化妆品网络供销与品牌推广平台
+
+                    国际名品与经典国货化妆品供应商
+
+                    全新的O2O营销模式
+
+                    即将引发化妆品行业新一轮营销革命！
+                </p>
+            </div>
+            <div class="col-md-3 f_grid1 f_grid2">
+                <h3>Follow Us</h3>
+                <ul class="social">
+                    <li><a href=""> <i class="sina"> </i><p class="m_3">新浪微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="tencent"> </i><p class="m_3">腾讯微博</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="renren"> </i><p class="m_3">人人网</p><div class="clearfix"> </div></a></li>
+                    <li><a href=""><i class="douban"> </i><p class="m_3">豆瓣</p><div class="clearfix"> </div></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 f_grid3">
+                <h3>Contact Info</h3>
+                <ul class="list">
+                    <li><p>Phone : 1.800.254.5487</p></li>
+                    <li><p>Fax : 1.800.254.2548</p></li>
+                    <li><p>Email : <a href="mailto:info(at)BeautyShop.com">1286843477@qq.com</a></p></li>
+                </ul>
+                <ul class="list1">
+                    <li><p>Aliquam augue a bibendum ipsum diam, semper porttitor libero elit egestas gravida, ut quam, nunc taciti</p></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="copy">
+                <p>Copyright &copy; 2015.稻草人之恋 All rights reserved.</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+</body>
+</html>		

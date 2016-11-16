@@ -163,6 +163,22 @@ namespace EduProject.Areas.User.Models
             return flag;
         }
 
+        public bool DeleteProduct(int id)
+        {
+            bool flag = false;
+            var shoppingcart = shopEntity.Cart.Where(c => c.CartId == ShoppingCartId && c.ProductId == id).SingleOrDefault();
+            if (shoppingcart != null)
+            {
+                shopEntity.Cart.Remove(shoppingcart);
+                shopEntity.SaveChanges();
+                flag = true;
+            }
+            else 
+            {
+                flag = false;
+            }
+            return flag;
+        }
 
 
     }

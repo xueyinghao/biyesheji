@@ -164,6 +164,7 @@
     <Compile Include="App_Start\log4netRegister.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\User\Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\Controllers\ProductController.cs" />
     <Compile Include="Areas\User\Models\loginInfo.cs" />
@@ -365,8 +366,6 @@
     <Content Include="HTML\images\img-sprite.psd" />
     <Content Include="Content\User\images\img-sprite.psd" />
     <Content Include="Areas\User\Views\Home\Index-v1.0.cshtml" />
-    <Content Include="Areas\User\Views\Home\login.cshtml" />
-    <Content Include="Areas\User\Views\Home\Register.cshtml" />
     <EntityDeploy Include="BShop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BShop.Designer.cs</LastGenOutput>
@@ -384,10 +383,12 @@
       <DependentUpon>BShop.edmx</DependentUpon>
       <LastGenOutput>BShop.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\User\Views\Home\LoginIn.cshtml" />
     <Content Include="Areas\User\Views\Home\Index.cshtml" />
     <Content Include="Areas\User\Views\Product\Single.cshtml" />
     <Content Include="Areas\User\Views\Product\MyCart.cshtml" />
+    <Content Include="Areas\User\Views\Account\login.cshtml" />
+    <Content Include="Areas\User\Views\Account\LoginIn.cshtml" />
+    <Content Include="Areas\User\Views\Account\Register.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

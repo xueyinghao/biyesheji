@@ -20,7 +20,7 @@
 
     //总金额的变化
     var changePrice = (parseFloat(thisPrice) * parseFloat(n - num));
-    var group_total_price = $('.group_total_price').html();
+    var group_total_price = $('.group_total_price').html().replace("¥", "");
     var LastTotalPrice = parseFloat(group_total_price) - parseFloat(changePrice);
     $('.group_total_price').html(LastTotalPrice.toFixed(2));
     $('.total_price').html(LastTotalPrice.toFixed(2));
@@ -69,6 +69,37 @@ function ChangeNum(id,num) {
     })
 }
 
+//删除商品
+$('.delete_item').click(function () {
+    //价钱
+    var thisPrice = $(this).parents(".cart_item").find(".item_total_price").html();
+    var totalPrice = parseFloat($('.group_total_price').html().replace("¥", ""));
+    var LeftPeice = totalPrice - thisPrice;
+    //$('.group_total_price').html(LeftPeice.toFixed(2));
+    //$('.total_price').html(LeftPeice.toFixed(2));
+    //数量
+   
+    var thisCount =parseInt($(this).parents(".cart_item").find(".item_quantity").val());
+    var TotalCount = parseInt($(".total_amount").html());
+    var leftCount = TotalCount - thisCount;
+    var htmlData = $(this).parents(".cart_item");
+    var id =parseInt(htmlData.attr("id"));
+    $.ajax({
+        url: '/User/Product/DeleteProduct?id=' + id,
+        type: 'POST',
+        success: function (data) {
+            if (data == "False") {
+                alert("删除数据失败");
+            }
+            else {
+                $('.group_total_price').html(LeftPeice.toFixed(2));
+                $('.total_price').html(LeftPeice.toFixed(2));
+                $('.total_amount').html(leftCount);
+                htmlData.html("");
+            }
+        }
+    })
+})
 
-//计算数量增减之后的价钱
-$('.item_total_price').html()
+
+//单选框,全选框
