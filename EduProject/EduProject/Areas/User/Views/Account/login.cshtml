@@ -16,7 +16,7 @@
     <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <!--webfont-->
-    <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    @*<link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>*@
     <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
@@ -27,8 +27,8 @@
                     <a href="index.html"><img src="~/Content/User/images/logo.png" alt="" /></a>
                 </div>
                 <ul class="shopping_grid">
-                    <a href="#"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
-                    <a href="#"><li>注&nbsp;册</li></a>
+                    <a href="/User/Product/MyCart"><li><span class="m_1">购&nbsp;物&nbsp;车</span>&nbsp;&nbsp;(0) &nbsp;<img src="~/Content/User/images/bag.png" alt="" /></li></a>
+                    <a href="/User/Account/Register"><li>注&nbsp;册</li></a>
                     <div class="clearfix"> </div>
                 </ul>
                 <div class="clearfix"> </div>
@@ -76,9 +76,9 @@
                 <div class="col-md-6 login-right">
                     <h3>用户登录</h3>
                     <p>已有账号?请登录</p>
-                    <form>
-                    @*@using (Html.BeginForm("login", "Account", FormMethod.Post))
-                    {*@
+                    @*<form>*@
+                    @using (Html.BeginForm("login", "Account", FormMethod.Post))
+                    {
                         <div>
                             <span>用户名：<label>*</label></span>
                             @*<input type="text">*@
@@ -92,9 +92,9 @@
                         <a class="forgot" href="#">忘记密码?</a>
 
                         <input type="submit" value="登录">
-                    @*}*@
+                    }
 
-                    </form>
+                    @*</form>*@
                 </div>
                 <div class="clearfix"> </div>
             </div>

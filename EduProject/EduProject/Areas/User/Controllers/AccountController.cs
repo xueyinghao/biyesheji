@@ -13,6 +13,7 @@ namespace EduProject.Areas.User.Controllers
 {
     public class AccountController : Controller
     {
+        ProductInfo NewProduct = new ProductInfo();
         //
         // GET: /User/Account/
         public ActionResult Index()
@@ -28,71 +29,90 @@ namespace EduProject.Areas.User.Controllers
         [HttpPost]
         public ActionResult login(loginInfo info, string returnUrl)
         {
-            if (ModelState.IsValid)
-            {
-                string username = HttpUtility.HtmlEncode(info.username);
-                string pwd = HttpUtility.HtmlEncode(info.password);
-                loginData logData = new loginData();
-                var userData = logData.getLoginData(username, pwd);
-                if (userData.Count() <= 0)
-                {
-                    string script = string.Format("<script>alert('用户名和密码不一致！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
-                    return Content(script, "text/html");
-                }
-                else if (userData.Count() > 1)
-                {
-                    string script = string.Format("<script>alert('账户信息出错,有重复信息出现！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
-                    return Content(script, "text/html");
-                }
-                else
-                {
-                    MigrateShoppingCart(info.username);
-                    FormsAuthentication.SetAuthCookie(info.username, true);
-                    if (Url.IsLocalUrl(returnUrl))
-                    {
-                        
-                    }
-
-                }
-                
-            }
-
-            //string username = HttpUtility.HtmlEncode(form["username"]);
-            //string pwd = HttpUtility.HtmlEncode(form["passWord"]);
-            //loginData logData = new loginData();
-            //var userData = logData.getLoginData(username, pwd);
-            //if (userData.Count() <= 0)
+            #region
+            //if (ModelState.IsValid)
             //{
-            //    string script = string.Format("<script>alert('用户名和密码不一致！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
-            //    return Content(script, "text/html");
-            //}
-            //else if (userData.Count() > 1)
-            //{
-            //    string script = string.Format("<script>alert('账户信息出错,有重复信息出现！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
-            //    return Content(script, "text/html");
+            //    string username = HttpUtility.HtmlEncode(info.username);
+            //    string pwd = HttpUtility.HtmlEncode(info.password);
+            //    loginData logData = new loginData();
+            //    var userData = logData.getLoginData(username, pwd);
+            //    if (userData.Count() <= 0)
+            //    {
+            //        string script = string.Format("<script>alert('用户名和密码不一致！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
+            //        return Content(script, "text/html");
+            //    }
+            //    else if (userData.Count() > 1)
+            //    {
+            //        string script = string.Format("<script>alert('账户信息出错,有重复信息出现！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
+            //        return Content(script, "text/html");
+            //    }
+            //    else
+            //    {
+            //        MigrateShoppingCart(info.username);
+            //        FormsAuthentication.SetAuthCookie(info.username, true);
+            //        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+            //        {
+            //            return Redirect(returnUrl);
+            //        }
+            //        else
+            //        {
+            //            return RedirectToAction("LoginIn", "Account");
+            //        }
+
+            //    }
+
             //}
             //else
             //{
-            //    //添加Cookie
-            //    HttpCookie cookie = new HttpCookie("myCookie");
-            //    cookie.Values.Add("name", username);
-            //    cookie.Values.Add("pwd", pwd);
-            //    cookie.Values.Add("UserId", userData.First().Id.ToString());
-            //    Response.AppendCookie(cookie);
-            //    ViewBag.Name = username;
-
+            //    ModelState.AddModelError("", "用户名或密码不正确");
             //}
-            //return RedirectToAction("LoginIn");
+            //return View();
+            #endregion
+            string username = HttpUtility.HtmlEncode(info.username);
+            string pwd = HttpUtility.HtmlEncode(info.password);
+            loginData logData = new loginData();
+            var userData = logData.getLoginData(username, pwd);
+            if (userData.Count() <= 0)
+            {
+                string script = string.Format("<script>alert('用户名和密码不一致！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
+                return Content(script, "text/html");
+            }
+            else if (userData.Count() > 1)
+            {
+                string script = string.Format("<script>alert('账户信息出错,有重复信息出现！');location.href='{0}'</script>", Url.Action("Login", "Account", "User"));
+                return Content(script, "text/html");
+            }
+            else
+            {
+                //添加Cookie
+                //HttpCookie cookie = new HttpCookie("myCookie");
+                //cookie.Values.Add("name", username);
+                //cookie.Values.Add("pwd", pwd);
+                //cookie.Values.Add("UserId", userData.First().Id.ToString());
+                //Response.AppendCookie(cookie);
+                Session["UserId"] = userData.First().Id.ToString();
+                Session["UserName"] = username;
+                Session["PassWord"] = pwd;
+                ViewBag.Name = username;
+
+            }
+            return RedirectToAction("LoginIn");
         }
 
         public ActionResult LoginIn()
         {
             //查看Cookie
-            HttpCookie cookie = Request.Cookies["myCookie"];
-            if (cookie != null)
+            //HttpCookie cookie = Request.Cookies["myCookie"];
+            //if (cookie != null)
+            //{
+            //    ViewBag.Name = cookie["name"];
+            //    return View();
+            //}
+            if (Session["UserName"]!=null)
             {
-                ViewBag.Name = cookie["name"];
-                return View();
+                ViewBag.Name = Session["UserName"];
+                var product=NewProduct.GetTopSellingProduct(3);
+                return View(product);
             }
             else
             {
@@ -106,10 +126,11 @@ namespace EduProject.Areas.User.Controllers
         public ActionResult LogOut()
         {
             //退出登陆之后清理Cookie
-            HttpCookie cookie = new HttpCookie("myCookie");
-            cookie.Expires = DateTime.Now.AddDays(-1);
-            Response.Cookies.Add(cookie);
-            return RedirectToAction("Index");
+            //HttpCookie cookie = new HttpCookie("myCookie");
+            //cookie.Expires = DateTime.Now.AddDays(-1);
+            //Response.Cookies.Add(cookie);
+            Session.Clear();
+            return RedirectToAction("Index","home");
         }
 
         //用户注册

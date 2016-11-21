@@ -91,7 +91,7 @@ namespace EduProject.Areas.User.Controllers
             int totalCount = carts.GetCount();
             decimal totalPrice=carts.getTotal();
             List<Cart> list = carts.GetCartItems();
-            sb.Append("<div class=\"ibar_plugin_content\"><div class=\"ibar_cart_group ibar_cart_product\" style=\"width:292px;\"><div class=\"ibar_cart_group_header\"><span class=\"ibar_cart_group_title\">商品信息</span><a href=\"\">我的购物车</a></div>");
+            sb.Append("<div class=\"ibar_plugin_content\"><div class=\"ibar_cart_group ibar_cart_product\" style=\"width:292px;\"><div class=\"ibar_cart_group_header\"><span class=\"ibar_cart_group_title\">商品信息</span><a href=\"/User/Product/MyCart\">我的购物车</a></div>");
             if (list.Count == 0)
             {
                 sb.AppendLine("<div class=\"cart_item\"></div>");

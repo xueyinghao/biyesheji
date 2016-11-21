@@ -19,7 +19,7 @@ namespace EduProject
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 
             );
-
+          
             routes.MapRoute(
                 name: "User",
                 url: "User/{controller}/{action}/{id}",

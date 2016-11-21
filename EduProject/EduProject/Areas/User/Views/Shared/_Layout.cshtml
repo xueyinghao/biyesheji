@@ -14,7 +14,7 @@
     <link href="~/Content/User/css/style.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <!--webfont-->
-    <link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    @*<link href='http://fonts.useso.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>*@
     <link href="~/Content/User/css/base.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Content/User/js/jquery-1.11.1.min.js"></script>
     <script src="~/Content/User/js/responsiveslides.min.js"></script>
@@ -219,8 +219,16 @@
 
    
 
-    <div class="footer_bg">
+    @*<div class="footer_bg">
+    </div>*@
+
+
+    @* 加入购物车是图片飞入特效块 *@
+    <div id="flyItem" class="fly_item">
+        <img src="" width="50" height="50" />
     </div>
+    @* 加入购物车是图片飞入特效块 *@
+
     <div class="footer">
         <div class="container">
             <div class="col-md-3 f_grid1">
@@ -277,12 +285,10 @@
 
     @* 右侧购物车 *@
 
-    <div id="flyItem" class="fly_item">
-        <img src="" width="50" height="50" />
-    </div>
+   
 
-    <div class="mui-mbar-tabs">
-        <div class="quick_link_mian">
+    <div class="mui-mbar-tabs" >
+        <div class="quick_link_mian" >
             <div class="quick_links_panel">
                 <div id="quick_links" class="quick_links">
                     <li>

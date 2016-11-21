@@ -193,6 +193,7 @@
     <Compile Include="Database\LogFactory.cs" />
     <Compile Include="Database\loginData.cs" />
     <Compile Include="Database\LogHelper.cs" />
+    <Compile Include="Database\ProductInfo.cs" />
     <Compile Include="Database\UserRegist.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

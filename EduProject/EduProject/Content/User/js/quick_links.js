@@ -122,11 +122,15 @@ jQuery(function ($) {
 	});
 	quickPop.delegate('a.ibar_closebtn','click',function(){
 		quickPop.hide();
-		quickPop.animate({left:280,queue:true});
+		quickPop.animate({ left: 280, queue: true });
 		if(prevTrigger){
 			prevTrigger.removeClass('current');
 		}
+        //点击购物车详情页关闭按钮,width值设置为0,保证注册按钮不被覆盖
+		$('.quick_links_wrap').css({ width: '0px' });
 	});
+
+	
 
 	//通用事件处理
 	var 

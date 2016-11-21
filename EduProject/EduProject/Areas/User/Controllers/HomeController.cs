@@ -16,24 +16,28 @@ namespace EduProject.Areas.User.Controllers
         //测试日志组件
         private ILog log = LogManager.GetLogger("MoonTest");
         BShopEntities shopEntity = new BShopEntities();
-        public HttpCookie cookie = new HttpCookie("myCookie");
+        ProductInfo NewProduct = new ProductInfo();
+        //public HttpCookie cookie = new HttpCookie("myCookie");
 
         //美妆商城首页
         // GET: /User/index/
-        public ActionResult Index()    
-        {            
-            var product = GetTopSellingProduct(3);
-            ViewBag.proMsg = product;
-            return View();
-        }
-
-        public List<Product> GetTopSellingProduct(int count)
+        public ActionResult Index()
         {
-            return shopEntity.Product.OrderByDescending(c => c.Id).Take(count).ToList();
+            var product = NewProduct.GetTopSellingProduct(3);
+            if (Session["UserName"] == null)
+            {
+               // ViewBag.proMsg = product;
+                return View(product);
+            }
+            else
+            {
+                return RedirectToAction("LoginIn", "Account");
+            }
+           
+            //return View();
         }
 
-
-        
+       
 
         [HttpPost]
         public int GetProCount()
