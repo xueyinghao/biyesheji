@@ -89,6 +89,7 @@
           <Property Name="UType" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="Age" Type="nchar" MaxLength="10" />
           <Property Name="Sex" Type="nchar" MaxLength="10" />
+          <Property Name="Image" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_OrderDetailOrder">
           <End Role="Order" Type="Self.Order" Multiplicity="1" />
@@ -242,6 +243,7 @@
           <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Order" Relationship="BShopModel.UserOrder" FromRole="User" ToRole="Order" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -375,7 +377,8 @@
     <EntitySetMapping Name="User">
       <EntityTypeMapping TypeName="IsTypeOf(BShopModel.User)">
         <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="UName" ColumnName="UName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />

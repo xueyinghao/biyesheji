@@ -273,6 +273,8 @@
     <Content Include="Content\User\images\ShopCart\wdsc.png" />
     <Content Include="Content\User\images\ShopCart\weixin_code_145.png" />
     <Content Include="Content\User\images\tick1.png" />
+    <Content Include="Content\User\images\UserInfo\man.png" />
+    <Content Include="Content\User\images\UserInfo\woman.png" />
     <Content Include="Content\User\images\wishlist.png" />
     <Content Include="Content\User\js\Cart\boot.js" />
     <Content Include="Content\User\js\Cart\website.min.js" />

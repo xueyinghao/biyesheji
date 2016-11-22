@@ -59,6 +59,7 @@
     <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Order" Relationship="BShopModel.UserOrder" FromRole="User" ToRole="Order" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>

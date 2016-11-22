@@ -19,7 +19,11 @@ namespace EduProject.Database
                     
         }
         
-        //登录获取个人信息
-        //public 
+        //登录用户个人信息
+        public IEnumerable<User> GetUserInfo(string userName)
+        {
+            var UserInfoDetail = shopEntity.User.Where(c => c.UName == userName).ToList();
+            return UserInfoDetail;
+        }
     }
 }

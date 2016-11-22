@@ -72,7 +72,6 @@ F:\MySpace\biyesheji\EduProject\EduProject\bin\zh-Hans\Microsoft.Owin.Security.T
 F:\MySpace\biyesheji\EduProject\EduProject\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.dll
 F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.pdb
-F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.csprojResolveAssemblyReference.cache
 G:\MySpace\biyesheji\EduProject\EduProject\bin\EduProject.dll.config
 G:\MySpace\biyesheji\EduProject\EduProject\bin\EduProject.dll
 G:\MySpace\biyesheji\EduProject\EduProject\bin\EduProject.pdb
@@ -148,3 +147,4 @@ G:\MySpace\biyesheji\EduProject\EduProject\bin\zh-Hans\Microsoft.Owin.Security.M
 G:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.csprojResolveAssemblyReference.cache
 G:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.dll
 G:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.pdb
+F:\MySpace\biyesheji\EduProject\EduProject\obj\Debug\EduProject.csprojResolveAssemblyReference.cache

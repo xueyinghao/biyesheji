@@ -35,6 +35,10 @@ namespace EduProject.Areas.User.Controllers
 
         public ActionResult MyCart()
         {
+            if (Session["UserName"] != null)
+            {
+                ViewBag.userName = Session["UserName"];
+            }
             StringBuilder sb = new StringBuilder();
             var cart = ShopCart.GetCart(this.HttpContext);
             List<Cart> allList = cart.GetCartItems();

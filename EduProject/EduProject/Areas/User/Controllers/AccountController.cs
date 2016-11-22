@@ -8,12 +8,15 @@ using EduProject.Areas.User.Models;
 using log4net;
 using System.Data;
 using System.Web.Security;
+using EduProject.Models;
 
 namespace EduProject.Areas.User.Controllers
 {
     public class AccountController : Controller
     {
         ProductInfo NewProduct = new ProductInfo();
+        loginData logData = new loginData();
+        BShopEntities shopEntity = new BShopEntities();
         //
         // GET: /User/Account/
         public ActionResult Index()
@@ -27,7 +30,7 @@ namespace EduProject.Areas.User.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult login(loginInfo info, string returnUrl)
+        public ActionResult login(loginInfo info)
         {
             #region
             //if (ModelState.IsValid)
@@ -70,7 +73,7 @@ namespace EduProject.Areas.User.Controllers
             #endregion
             string username = HttpUtility.HtmlEncode(info.username);
             string pwd = HttpUtility.HtmlEncode(info.password);
-            loginData logData = new loginData();
+           
             var userData = logData.getLoginData(username, pwd);
             if (userData.Count() <= 0)
             {
@@ -93,9 +96,13 @@ namespace EduProject.Areas.User.Controllers
                 Session["UserId"] = userData.First().Id.ToString();
                 Session["UserName"] = username;
                 Session["PassWord"] = pwd;
+               
                 ViewBag.Name = username;
 
             }
+            //当用户登录时将该用户名与购物车的信息关联起来
+            MigrateShoppingCart(username);
+
             return RedirectToAction("LoginIn");
         }
 
@@ -191,6 +198,18 @@ namespace EduProject.Areas.User.Controllers
             Session[ShopCart.CartSessionKey] = UserName;
         }
 
+        
+        public string UserInfo()
+        {
+            //返回JSon
+            string UserInformation = "";
+            if (Session["UserName"]!=null)
+            {
+                UserInformation = logData.GetUserInfo(Session["UserName"].ToString()).ToString();
+            }
+            return UserInformation;
+          
+        }
 
 	}
 }

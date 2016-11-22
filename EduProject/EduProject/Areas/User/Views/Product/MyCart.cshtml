@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta property="qc:admins" content="56207406376255516375" />
     <title>购物车 - 美妆商城</title>
+    <script src="~/Content/User/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
     <style type="text/css">
@@ -88,6 +89,7 @@
 
         <div class="cart_top">
             <div class="user_box" id="JS_user_box"><div>美妆商城欢迎您，<a href="/User/Account/login">登录</a><i class="tips">|</i><a href="/User/Account/Register">免费注册</a></div></div>
+            <div id="hiddenUserName" style="display:none">@ViewBag.userName</div>
         </div>
 
         <div class="cart_header_box">
@@ -102,20 +104,22 @@
         </div>
 
     </div>
-
+    
     <script type="text/javascript">
         (function () {
             var html = '';
-            //if (RM_NICKNAME !== null) {
-            //    html = '<div>欢迎您，<a href="' + RM_SITE_MAIN_ORDERLISTURL + '/i/order/list">' + RM_NICKNAME + '</a>&nbsp;<a href="' + RM_SITE_MAIN_PASSPORTURL + 'i/account/logout" class="out">[退出]</a><i class="tips">|</i><a href="' + RM_SITE_MAIN_ORDERLISTURL + '/i/order/list" class="query">订单查询</a></div>';
-            //    document.getElementById('JS_user_box').innerHTML = html;
-            //}
+            var userName = $('#hiddenUserName').html();
+           
+            if (userName != "") {
+                html = '<div>欢迎您，<a href="#">' + userName + '</a>&nbsp;<a href="/User/Account/LogOut" class="out">[退出]</a><i class="tips">|</i><a href="#" class="query">订单查询</a></div>';
+                document.getElementById('JS_user_box').innerHTML = html;
+            }
         })()
     </script>
 
     <div id="container" style="width: auto;">
         <link rel="stylesheet" href="~/Content/User/css/jumei/show.css" />
-        <script src="~/Content/User/js/jquery-1.11.1.min.js"></script>
+        @*<script src="~/Content/User/js/jquery-1.11.1.min.js"></script>*@
         @*<script type="text/javascript" src="./website.min.js"></script>
         <script type="text/javascript" src="./boot.js"></script>*@
 

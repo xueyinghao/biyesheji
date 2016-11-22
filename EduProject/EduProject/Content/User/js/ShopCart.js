@@ -181,12 +181,16 @@ $('#shopCart').click(function () {
 
 })
 
+//去后台请求个人信息,展示在贴边购物车里面
+$('.my_qlinks').click(function () {
+    $.ajax({
+        url: '/User/Account/UserInfo',
+        type: 'Get',
+        dataType: 'string',
+        success: function (data) {
 
-//$('.ibar_closebtn').click(function () {
-//    $('.quick_links_wrap').css({ width: '0px' });
-//})
+        }
+    })
+})
 
-//$(".thickbox").click(function () {
-//    var id = $(this).parents("a").attr("id");
-//    location.href("/User/Product/Single?id=" + id);
-//})
+

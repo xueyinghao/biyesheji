@@ -84,6 +84,7 @@
     <Property Name="UType" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="Age" Type="nchar" MaxLength="10" />
     <Property Name="Sex" Type="nchar" MaxLength="10" />
+    <Property Name="Image" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_OrderDetailOrder">
     <End Role="Order" Type="Self.Order" Multiplicity="1" />
