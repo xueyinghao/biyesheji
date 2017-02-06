@@ -35,15 +35,6 @@
           <Property Name="UserUName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="OrderDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Num" Type="int" Nullable="false" />
-          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Order_Id" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id" />
@@ -83,18 +74,6 @@
           <Property Name="Sex" Type="nchar" MaxLength="10" />
           <Property Name="Image" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK_OrderDetailOrder">
-          <End Role="Order" Type="Self.Order" Multiplicity="1" />
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="Order_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TypeProduct">
           <End Role="Type" Type="Self.Type" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -122,14 +101,9 @@
         <EntityContainer Name="BShopModelStoreContainer">
           <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_OrderDetailOrder" Association="Self.FK_OrderDetailOrder">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
           <AssociationSet Name="FK_TypeProduct" Association="Self.FK_TypeProduct">
             <End Role="Type" EntitySet="Type" />
             <End Role="Product" EntitySet="Product" />
@@ -159,7 +133,6 @@
           <NavigationProperty Name="User" Relationship="BShopModel.UserOrder" FromRole="Order" ToRole="User" />
           <Property Name="UserUName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="OrderDetail" Relationship="BShopModel.OrderDetailOrder" FromRole="Order" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -175,7 +148,6 @@
           <Property Name="mlNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="AddTime" Type="DateTime" Precision="3" />
           <Property Name="pic1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="OrderDetail" Relationship="BShopModel.ProductOrderDetail" FromRole="Product" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Type">
           <Key>
@@ -204,16 +176,6 @@
           <NavigationProperty Name="Order" Relationship="BShopModel.UserOrder" FromRole="User" ToRole="Order" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="OrderDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Num" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="BShopModel.OrderDetailOrder" FromRole="OrderDetail" ToRole="Order" />
-          <NavigationProperty Name="Product" Relationship="BShopModel.ProductOrderDetail" FromRole="OrderDetail" ToRole="Product" />
-        </EntityType>
         <Association Name="FK_TypeProduct">
           <End Role="Type" Type="Self.Type" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -231,7 +193,6 @@
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="Type" EntityType="Self.Type" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <EntitySet Name="OrderDetail" EntityType="BShopModel.OrderDetail" />
           <AssociationSet Name="FK_TypeProduct" Association="Self.FK_TypeProduct">
             <End Role="Type" EntitySet="Type" />
             <End Role="Product" EntitySet="Product" />
@@ -239,14 +200,6 @@
           <AssociationSet Name="UserOrder" Association="BShopModel.UserOrder">
             <End Role="User" EntitySet="User" />
             <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="OrderDetailOrder" Association="BShopModel.OrderDetailOrder">
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-            <End Role="Order" EntitySet="Order" />
-          </AssociationSet>
-          <AssociationSet Name="ProductOrderDetail" Association="BShopModel.ProductOrderDetail">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
           <EntitySet Name="Cart" EntityType="BShopModel.Cart" />
         </EntityContainer>
@@ -261,14 +214,6 @@
               <PropertyRef Name="UserUName" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
-        <Association Name="OrderDetailOrder">
-          <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="1" />
-          <End Type="BShopModel.Order" Role="Order" Multiplicity="1" />
-        </Association>
-        <Association Name="ProductOrderDetail">
-          <End Type="BShopModel.Product" Role="Product" Multiplicity="*" />
-          <End Type="BShopModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
         </Association>
         <EntityType Name="Cart">
           <Key>
@@ -349,23 +294,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OrderDetail">
-      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.OrderDetail)">
-        <MappingFragment StoreEntitySet="OrderDetail">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Num" ColumnName="Num" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="OrderDetailOrder" TypeName="BShopModel.OrderDetailOrder" StoreEntitySet="OrderDetail">
-      <EndProperty Name="Order">
-        <ScalarProperty Name="Id" ColumnName="Order_Id" />
-      </EndProperty>
-      <EndProperty Name="OrderDetail">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
           <EntitySetMapping Name="Cart">
             <EntityTypeMapping TypeName="BShopModel.Cart">
               <MappingFragment StoreEntitySet="Cart">

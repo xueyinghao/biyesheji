@@ -14,11 +14,6 @@ namespace EduProject
     
     public partial class Product
     {
-        public Product()
-        {
-            this.OrderDetail = new HashSet<OrderDetail>();
-        }
-    
         public int Id { get; set; }
         public string PName { get; set; }
         public decimal Price { get; set; }
@@ -30,6 +25,5 @@ namespace EduProject
         public string pic1 { get; set; }
     
         public virtual Type Type { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }
 }

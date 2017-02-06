@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using EduProject.Areas.User.Models;
+using System.Data.Entity.Validation;
 
 namespace EduProject.Database
 {
@@ -28,17 +29,27 @@ namespace EduProject.Database
                 {
                     UName = userModel.UName,
                     Password = userModel.Password,
-                    Address = userModel.Address,
+                    Address = "河南省郑州市",
                     Age = userModel.Age,
                     Phone = userModel.Phone,
-                    Email = userModel.Email
+                    Email = userModel.Email,
+                    UType="02"
+                    
                 };
-                shopEntity.User.Add(user);
-                int i = shopEntity.SaveChanges();
-                if (i == 1)
+                try
                 {
-                    flag = true;
+                    shopEntity.User.Add(user);
+                    int i = shopEntity.SaveChanges();
+                    if (i == 1)
+                    {
+                        flag = true;
+                    }
                 }
+                catch (DbEntityValidationException dbEx)
+                {
+                    flag = false;
+                }
+               
             }
             return flag;
         }

@@ -101,7 +101,9 @@ namespace EduProject.Areas.User.Controllers
 
             }
             //当用户登录时将该用户名与购物车的信息关联起来
-            MigrateShoppingCart(username);
+
+            //MigrateShoppingCart(username);
+            MigrateShoppingCart( userData.First().Id.ToString());
 
             return RedirectToAction("LoginIn");
         }

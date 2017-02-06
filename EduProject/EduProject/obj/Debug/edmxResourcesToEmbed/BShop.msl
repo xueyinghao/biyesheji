@@ -60,31 +60,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OrderDetail">
-      <EntityTypeMapping TypeName="IsTypeOf(BShopModel.OrderDetail)">
-        <MappingFragment StoreEntitySet="OrderDetail">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Num" ColumnName="Num" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="OrderDetailOrder" TypeName="BShopModel.OrderDetailOrder" StoreEntitySet="OrderDetail">
-      <EndProperty Name="Order">
-        <ScalarProperty Name="Id" ColumnName="Order_Id" />
-      </EndProperty>
-      <EndProperty Name="OrderDetail">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductOrderDetail" TypeName="BShopModel.ProductOrderDetail" StoreEntitySet="ProductOrderDetail">
-      <EndProperty Name="Product">
-        <ScalarProperty Name="Id" ColumnName="Product_Id" />
-      </EndProperty>
-      <EndProperty Name="OrderDetail">
-        <ScalarProperty Name="Id" ColumnName="OrderDetail_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <EntitySetMapping Name="Cart">
       <EntityTypeMapping TypeName="BShopModel.Cart">
         <MappingFragment StoreEntitySet="Cart">

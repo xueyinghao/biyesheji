@@ -203,9 +203,6 @@
     <Compile Include="Order.cs">
       <DependentUpon>BShop.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetail.cs">
-      <DependentUpon>BShop.tt</DependentUpon>
-    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>BShop.tt</DependentUpon>
     </Compile>

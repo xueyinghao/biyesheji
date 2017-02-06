@@ -27,6 +27,5 @@ namespace EduProject
         public System.DateTime OrderDate { get; set; }
     
         public virtual User User { get; set; }
-        public virtual OrderDetail OrderDetail { get; set; }
     }
 }

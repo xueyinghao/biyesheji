@@ -30,15 +30,6 @@
     <Property Name="UserUName" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="OrderDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <EntityType Name="OrderDetail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Num" Type="int" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Order_Id" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="Id" />
@@ -52,14 +43,6 @@
     <Property Name="mlNum" Type="nchar" MaxLength="10" />
     <Property Name="AddTime" Type="datetime" />
     <Property Name="pic1" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityType Name="ProductOrderDetail">
-    <Key>
-      <PropertyRef Name="Product_Id" />
-      <PropertyRef Name="OrderDetail_Id" />
-    </Key>
-    <Property Name="Product_Id" Type="int" Nullable="false" />
-    <Property Name="OrderDetail_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Type">
     <Key>
@@ -86,42 +69,6 @@
     <Property Name="Sex" Type="nchar" MaxLength="10" />
     <Property Name="Image" Type="nvarchar(max)" />
   </EntityType>
-  <Association Name="FK_OrderDetailOrder">
-    <End Role="Order" Type="Self.Order" Multiplicity="1" />
-    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="OrderDetail">
-        <PropertyRef Name="Order_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProductOrderDetail_OrderDetail">
-    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
-    <End Role="ProductOrderDetail" Type="Self.ProductOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="OrderDetail">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProductOrderDetail">
-        <PropertyRef Name="OrderDetail_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProductOrderDetail_Product">
-    <End Role="Product" Type="Self.Product" Multiplicity="1" />
-    <End Role="ProductOrderDetail" Type="Self.ProductOrderDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProductOrderDetail">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TypeProduct">
     <End Role="Type" Type="Self.Type" Multiplicity="1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -149,23 +96,9 @@
   <EntityContainer Name="BShopModelStoreContainer">
     <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ProductOrderDetail" EntityType="Self.ProductOrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_OrderDetailOrder" Association="Self.FK_OrderDetailOrder">
-      <End Role="Order" EntitySet="Order" />
-      <End Role="OrderDetail" EntitySet="OrderDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProductOrderDetail_OrderDetail" Association="Self.FK_ProductOrderDetail_OrderDetail">
-      <End Role="OrderDetail" EntitySet="OrderDetail" />
-      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProductOrderDetail_Product" Association="Self.FK_ProductOrderDetail_Product">
-      <End Role="Product" EntitySet="Product" />
-      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetail" />
-    </AssociationSet>
     <AssociationSet Name="FK_TypeProduct" Association="Self.FK_TypeProduct">
       <End Role="Type" EntitySet="Type" />
       <End Role="Product" EntitySet="Product" />
